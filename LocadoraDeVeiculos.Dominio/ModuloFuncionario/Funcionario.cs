@@ -15,7 +15,7 @@ namespace LocadoraDeVeiculos.Dominio.ModuloFuncionario
 
         public decimal Salario { get; set; }
 
-        public Funcionario()
+        public Funcionario() 
         {
         }
 

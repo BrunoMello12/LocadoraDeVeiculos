@@ -62,7 +62,6 @@ namespace LocadoraDeVeiculos.Dominio.ModuloCliente
             RuleFor(x => x.NumeroCasa)
                 .NotEmpty().WithMessage("O campo Número da Casa não pode ser vazio.")
                 .NotNull().WithMessage("O campo Número da Casa é obrigatório.");
-
         }
     }
 }
