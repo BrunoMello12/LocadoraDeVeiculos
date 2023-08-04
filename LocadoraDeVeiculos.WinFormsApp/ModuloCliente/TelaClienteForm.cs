@@ -43,6 +43,8 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloCliente
 
         public void ConfigurarCliente(Cliente cliente)
         {
+            int numerocasa;
+
             this.cliente = cliente;
             txtBairro.Text = cliente.Bairro;
             txtCidade.Text = cliente.Cidade;
@@ -50,7 +52,10 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloCliente
             txtCpf.Text = cliente.Cpf;
             txtEmail.Text = cliente.Email;
             txtEstado.Text = cliente.Estado;
-            txtNumero.Text = cliente.NumeroCasa.ToString();
+
+            int.TryParse(txtNumero.Text, out numerocasa);
+            cliente.NumeroCasa = numerocasa;
+
             txtRua.Text = cliente.Rua;
             txtTelefone.Text = cliente.Telefone;
             txtNome.Text = cliente.Nome;
