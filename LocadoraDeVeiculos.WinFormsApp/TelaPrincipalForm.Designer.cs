@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipalForm));
             menuStrip1 = new MenuStrip();
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
             aluguelToolStripMenuItem = new ToolStripMenuItem();
@@ -48,11 +49,11 @@
             btnEditar = new ToolStripButton();
             btnExcluir = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
+            btnPrecos = new ToolStripButton();
             lblTipoCadastro = new ToolStripLabel();
             panelRegistros = new Panel();
             statusStrip1 = new StatusStrip();
             labelRodape = new ToolStripStatusLabel();
-            btnPrecos = new ToolStripButton();
             menuStrip1.SuspendLayout();
             toolBox.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -60,6 +61,7 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.BackColor = Color.DarkSeaGreen;
             menuStrip1.Items.AddRange(new ToolStripItem[] { cadastrosToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
@@ -78,34 +80,34 @@
             // 
             aluguelToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { taxasEServiçosToolStripMenuItem1, cupomToolStripMenuItem1, parceiroToolStripMenuItem1, aluguelToolStripMenuItem1 });
             aluguelToolStripMenuItem.Name = "aluguelToolStripMenuItem";
-            aluguelToolStripMenuItem.Size = new Size(180, 22);
+            aluguelToolStripMenuItem.Size = new Size(137, 22);
             aluguelToolStripMenuItem.Text = "Aluguel";
             // 
             // taxasEServiçosToolStripMenuItem1
             // 
             taxasEServiçosToolStripMenuItem1.Name = "taxasEServiçosToolStripMenuItem1";
-            taxasEServiçosToolStripMenuItem1.Size = new Size(180, 22);
+            taxasEServiçosToolStripMenuItem1.Size = new Size(157, 22);
             taxasEServiçosToolStripMenuItem1.Text = "Taxas e Serviços";
             taxasEServiçosToolStripMenuItem1.Click += taxasEServiçosToolStripMenuItem1_Click;
             // 
             // cupomToolStripMenuItem1
             // 
             cupomToolStripMenuItem1.Name = "cupomToolStripMenuItem1";
-            cupomToolStripMenuItem1.Size = new Size(180, 22);
+            cupomToolStripMenuItem1.Size = new Size(157, 22);
             cupomToolStripMenuItem1.Text = "Cupons";
             cupomToolStripMenuItem1.Click += cupomToolStripMenuItem1_Click;
             // 
             // parceiroToolStripMenuItem1
             // 
             parceiroToolStripMenuItem1.Name = "parceiroToolStripMenuItem1";
-            parceiroToolStripMenuItem1.Size = new Size(180, 22);
+            parceiroToolStripMenuItem1.Size = new Size(157, 22);
             parceiroToolStripMenuItem1.Text = "Parceiros";
             parceiroToolStripMenuItem1.Click += parceiroToolStripMenuItem1_Click;
             // 
             // aluguelToolStripMenuItem1
             // 
             aluguelToolStripMenuItem1.Name = "aluguelToolStripMenuItem1";
-            aluguelToolStripMenuItem1.Size = new Size(180, 22);
+            aluguelToolStripMenuItem1.Size = new Size(157, 22);
             aluguelToolStripMenuItem1.Text = "Aluguéis";
             aluguelToolStripMenuItem1.Click += aluguelToolStripMenuItem1_Click;
             // 
@@ -113,7 +115,7 @@
             // 
             automóvelToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { grupoDeAutomóveisToolStripMenuItem1, pToolStripMenuItem, automóvelToolStripMenuItem1 });
             automóvelToolStripMenuItem.Name = "automóvelToolStripMenuItem";
-            automóvelToolStripMenuItem.Size = new Size(180, 22);
+            automóvelToolStripMenuItem.Size = new Size(137, 22);
             automóvelToolStripMenuItem.Text = "Automóvel";
             // 
             // grupoDeAutomóveisToolStripMenuItem1
@@ -141,7 +143,7 @@
             // 
             clienteToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { condutorToolStripMenuItem1, clienteToolStripMenuItem1 });
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(180, 22);
+            clienteToolStripMenuItem.Size = new Size(137, 22);
             clienteToolStripMenuItem.Text = "Cliente";
             // 
             // condutorToolStripMenuItem1
@@ -161,7 +163,7 @@
             // funcionárioToolStripMenuItem
             // 
             funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-            funcionárioToolStripMenuItem.Size = new Size(180, 22);
+            funcionárioToolStripMenuItem.Size = new Size(137, 22);
             funcionárioToolStripMenuItem.Text = "Funcionário";
             funcionárioToolStripMenuItem.Click += funcionárioToolStripMenuItem_Click;
             // 
@@ -170,63 +172,75 @@
             toolBox.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, toolStripSeparator1, btnPrecos, lblTipoCadastro });
             toolBox.Location = new Point(0, 24);
             toolBox.Name = "toolBox";
-            toolBox.Size = new Size(567, 45);
+            toolBox.Size = new Size(567, 53);
             toolBox.TabIndex = 1;
             toolBox.Text = "toolStrip1";
             // 
             // btnAdicionar
             // 
             btnAdicionar.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnAdicionar.Image = Properties.Resources.add_FILL0_wght400_GRAD0_opsz24;
+            btnAdicionar.Image = (Image)resources.GetObject("btnAdicionar.Image");
             btnAdicionar.ImageScaling = ToolStripItemImageScaling.None;
             btnAdicionar.ImageTransparentColor = Color.Magenta;
             btnAdicionar.Name = "btnAdicionar";
             btnAdicionar.Padding = new Padding(7);
-            btnAdicionar.Size = new Size(42, 42);
+            btnAdicionar.Size = new Size(50, 50);
             btnAdicionar.Text = "toolStripButton1";
             btnAdicionar.Click += btnAdicionar_Click;
             // 
             // btnEditar
             // 
             btnEditar.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnEditar.Image = Properties.Resources.edit_FILL0_wght400_GRAD0_opsz24;
+            btnEditar.Image = (Image)resources.GetObject("btnEditar.Image");
             btnEditar.ImageScaling = ToolStripItemImageScaling.None;
             btnEditar.ImageTransparentColor = Color.Magenta;
             btnEditar.Name = "btnEditar";
             btnEditar.Padding = new Padding(7);
-            btnEditar.Size = new Size(42, 42);
+            btnEditar.Size = new Size(50, 50);
             btnEditar.Text = "toolStripButton2";
             btnEditar.Click += btnEditar_Click;
             // 
             // btnExcluir
             // 
             btnExcluir.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnExcluir.Image = Properties.Resources.delete_FILL0_wght400_GRAD0_opsz24;
+            btnExcluir.Image = (Image)resources.GetObject("btnExcluir.Image");
             btnExcluir.ImageScaling = ToolStripItemImageScaling.None;
             btnExcluir.ImageTransparentColor = Color.Magenta;
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Padding = new Padding(7);
-            btnExcluir.Size = new Size(42, 42);
+            btnExcluir.Size = new Size(50, 50);
             btnExcluir.Text = "toolStripButton3";
             btnExcluir.Click += btnExcluir_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(6, 45);
+            toolStripSeparator1.Size = new Size(6, 53);
+            // 
+            // btnPrecos
+            // 
+            btnPrecos.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnPrecos.Image = (Image)resources.GetObject("btnPrecos.Image");
+            btnPrecos.ImageScaling = ToolStripItemImageScaling.None;
+            btnPrecos.ImageTransparentColor = Color.Magenta;
+            btnPrecos.Name = "btnPrecos";
+            btnPrecos.Padding = new Padding(7);
+            btnPrecos.Size = new Size(50, 50);
+            btnPrecos.Text = "toolStripButton1";
+            btnPrecos.Click += btnPrecos_Click;
             // 
             // lblTipoCadastro
             // 
             lblTipoCadastro.Name = "lblTipoCadastro";
-            lblTipoCadastro.Size = new Size(77, 42);
+            lblTipoCadastro.Size = new Size(77, 50);
             lblTipoCadastro.Text = "TipoCadastro";
             // 
             // panelRegistros
             // 
             panelRegistros.Dock = DockStyle.Fill;
-            panelRegistros.Location = new Point(0, 69);
+            panelRegistros.Location = new Point(0, 77);
             panelRegistros.Name = "panelRegistros";
-            panelRegistros.Size = new Size(567, 280);
+            panelRegistros.Size = new Size(567, 272);
             panelRegistros.TabIndex = 2;
             // 
             // statusStrip1
@@ -242,20 +256,8 @@
             // labelRodape
             // 
             labelRodape.Name = "labelRodape";
-            labelRodape.Size = new Size(52, 17);
-            labelRodape.Text = "[rodapé]";
-            // 
-            // btnPrecos
-            // 
-            btnPrecos.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnPrecos.Image = Properties.Resources.local_gas_station_FILL0_wght400_GRAD0_opsz24;
-            btnPrecos.ImageScaling = ToolStripItemImageScaling.None;
-            btnPrecos.ImageTransparentColor = Color.Magenta;
-            btnPrecos.Name = "btnPrecos";
-            btnPrecos.Padding = new Padding(7);
-            btnPrecos.Size = new Size(42, 42);
-            btnPrecos.Text = "toolStripButton1";
-            btnPrecos.Click += btnPrecos_Click;
+            labelRodape.Size = new Size(255, 17);
+            labelRodape.Text = "Bem-Vindo! As informações irão aparecer aqui.";
             // 
             // TelaPrincipalForm
             // 

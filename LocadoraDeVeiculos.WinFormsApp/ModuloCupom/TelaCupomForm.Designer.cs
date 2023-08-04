@@ -43,7 +43,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(20, 87);
+            label7.Location = new Point(11, 81);
             label7.Name = "label7";
             label7.Size = new Size(54, 15);
             label7.TabIndex = 104;
@@ -52,22 +52,23 @@
             // dateValidade
             // 
             dateValidade.Format = DateTimePickerFormat.Short;
-            dateValidade.Location = new Point(84, 83);
+            dateValidade.Location = new Point(75, 77);
             dateValidade.Name = "dateValidade";
             dateValidade.Size = new Size(124, 23);
             dateValidade.TabIndex = 103;
             // 
             // txtValor
             // 
-            txtValor.Location = new Point(84, 54);
+            txtValor.Location = new Point(75, 48);
             txtValor.Name = "txtValor";
+            txtValor.PlaceholderText = "R$";
             txtValor.Size = new Size(124, 23);
             txtValor.TabIndex = 102;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(39, 57);
+            label6.Location = new Point(30, 51);
             label6.Name = "label6";
             label6.Size = new Size(36, 15);
             label6.TabIndex = 101;
@@ -76,37 +77,40 @@
             // btnGravar
             // 
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnGravar.BackColor = Color.DarkSeaGreen;
             btnGravar.DialogResult = DialogResult.OK;
-            btnGravar.Location = new Point(60, 163);
+            btnGravar.Location = new Point(45, 147);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(76, 34);
             btnGravar.TabIndex = 98;
             btnGravar.Text = "Gravar";
-            btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.UseVisualStyleBackColor = false;
             btnGravar.Click += btnGravar_Click_1;
             // 
             // btnCancelar
             // 
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancelar.BackColor = Color.DarkSeaGreen;
             btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.Location = new Point(142, 163);
+            btnCancelar.Location = new Point(127, 147);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(76, 34);
             btnCancelar.TabIndex = 97;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(84, 25);
+            txtNome.Location = new Point(75, 19);
             txtNome.Name = "txtNome";
+            txtNome.PlaceholderText = "Inserir...";
             txtNome.Size = new Size(124, 23);
             txtNome.TabIndex = 96;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(31, 28);
+            label5.Location = new Point(22, 22);
             label5.Name = "label5";
             label5.Size = new Size(43, 15);
             label5.TabIndex = 95;
@@ -115,7 +119,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(22, 117);
+            label1.Location = new Point(13, 111);
             label1.Name = "label1";
             label1.Size = new Size(53, 15);
             label1.TabIndex = 105;
@@ -124,7 +128,7 @@
             // cbParceiro
             // 
             cbParceiro.FormattingEnabled = true;
-            cbParceiro.Location = new Point(84, 114);
+            cbParceiro.Location = new Point(75, 108);
             cbParceiro.Name = "cbParceiro";
             cbParceiro.Size = new Size(124, 23);
             cbParceiro.TabIndex = 106;
@@ -133,7 +137,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(230, 209);
+            BackColor = Color.Honeydew;
+            ClientSize = new Size(215, 193);
             Controls.Add(cbParceiro);
             Controls.Add(label1);
             Controls.Add(label7);

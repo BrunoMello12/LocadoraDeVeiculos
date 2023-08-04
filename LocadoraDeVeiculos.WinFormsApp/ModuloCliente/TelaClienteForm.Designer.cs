@@ -59,6 +59,7 @@
             // 
             txtNome.Location = new Point(117, 20);
             txtNome.Name = "txtNome";
+            txtNome.PlaceholderText = "Inserir...";
             txtNome.Size = new Size(230, 23);
             txtNome.TabIndex = 46;
             // 
@@ -84,6 +85,7 @@
             // 
             txtBairro.Location = new Point(112, 206);
             txtBairro.Name = "txtBairro";
+            txtBairro.PlaceholderText = "Inserir....";
             txtBairro.Size = new Size(235, 23);
             txtBairro.TabIndex = 40;
             // 
@@ -100,6 +102,7 @@
             // 
             txtEstado.Location = new Point(112, 177);
             txtEstado.Name = "txtEstado";
+            txtEstado.PlaceholderText = "DF";
             txtEstado.Size = new Size(48, 23);
             txtEstado.TabIndex = 38;
             // 
@@ -133,25 +136,27 @@
             // btnGravar
             // 
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnGravar.BackColor = Color.DarkSeaGreen;
             btnGravar.DialogResult = DialogResult.OK;
             btnGravar.Location = new Point(205, 301);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(76, 34);
             btnGravar.TabIndex = 48;
             btnGravar.Text = "Gravar";
-            btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.UseVisualStyleBackColor = false;
             btnGravar.Click += btnGravar_Click;
             // 
             // btnCancelar
             // 
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancelar.BackColor = Color.DarkSeaGreen;
             btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Location = new Point(287, 301);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(76, 34);
             btnCancelar.TabIndex = 47;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
@@ -166,6 +171,7 @@
             // 
             txtEmail.Location = new Point(117, 49);
             txtEmail.Name = "txtEmail";
+            txtEmail.PlaceholderText = "g@gmail.com";
             txtEmail.Size = new Size(230, 23);
             txtEmail.TabIndex = 50;
             // 
@@ -213,6 +219,7 @@
             // 
             txtCidade.Location = new Point(222, 177);
             txtCidade.Name = "txtCidade";
+            txtCidade.PlaceholderText = "Inserir....";
             txtCidade.Size = new Size(125, 23);
             txtCidade.TabIndex = 57;
             // 
@@ -220,6 +227,7 @@
             // 
             txtRua.Location = new Point(112, 235);
             txtRua.Name = "txtRua";
+            txtRua.PlaceholderText = "Inserir....";
             txtRua.Size = new Size(235, 23);
             txtRua.TabIndex = 59;
             // 
@@ -236,7 +244,8 @@
             // 
             txtNumero.Location = new Point(112, 264);
             txtNumero.Name = "txtNumero";
-            txtNumero.Size = new Size(93, 23);
+            txtNumero.PlaceholderText = "Inserir....";
+            txtNumero.Size = new Size(48, 23);
             txtNumero.TabIndex = 61;
             // 
             // label11
@@ -253,7 +262,7 @@
             txtTelefone.Location = new Point(117, 78);
             txtTelefone.Mask = "(99) 00000-0000";
             txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(100, 23);
+            txtTelefone.Size = new Size(88, 23);
             txtTelefone.TabIndex = 62;
             // 
             // txtCpf
@@ -276,6 +285,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Honeydew;
             ClientSize = new Size(375, 347);
             Controls.Add(txtCnpj);
             Controls.Add(txtCpf);

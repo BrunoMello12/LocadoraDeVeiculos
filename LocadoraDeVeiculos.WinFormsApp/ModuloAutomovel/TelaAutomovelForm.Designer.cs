@@ -54,31 +54,34 @@
             // 
             txtMarca.Location = new Point(158, 207);
             txtMarca.Name = "txtMarca";
+            txtMarca.PlaceholderText = "Inserir....";
             txtMarca.Size = new Size(121, 23);
             txtMarca.TabIndex = 22;
             // 
             // btnGravar
             // 
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnGravar.BackColor = Color.DarkSeaGreen;
             btnGravar.DialogResult = DialogResult.OK;
             btnGravar.Location = new Point(121, 309);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(76, 34);
             btnGravar.TabIndex = 21;
             btnGravar.Text = "Gravar";
-            btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.UseVisualStyleBackColor = false;
             btnGravar.Click += btnGravar_Click;
             // 
             // btnCancelar
             // 
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancelar.BackColor = Color.DarkSeaGreen;
             btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Location = new Point(203, 309);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(76, 34);
             btnCancelar.TabIndex = 20;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -146,6 +149,7 @@
             // 
             txtCor.Location = new Point(158, 236);
             txtCor.Name = "txtCor";
+            txtCor.PlaceholderText = "Inserir....";
             txtCor.Size = new Size(121, 23);
             txtCor.TabIndex = 28;
             // 
@@ -161,6 +165,7 @@
             // 
             txtModelo.Location = new Point(158, 179);
             txtModelo.Name = "txtModelo";
+            txtModelo.PlaceholderText = "Inserir....";
             txtModelo.Size = new Size(121, 23);
             txtModelo.TabIndex = 30;
             // 
@@ -185,6 +190,7 @@
             // 
             txtCapacidadeEmLitros.Location = new Point(158, 150);
             txtCapacidadeEmLitros.Name = "txtCapacidadeEmLitros";
+            txtCapacidadeEmLitros.PlaceholderText = "Inserir....";
             txtCapacidadeEmLitros.Size = new Size(121, 23);
             txtCapacidadeEmLitros.TabIndex = 34;
             // 
@@ -201,6 +207,7 @@
             // 
             txtPlaca.Location = new Point(158, 265);
             txtPlaca.Name = "txtPlaca";
+            txtPlaca.PlaceholderText = "Inserir....";
             txtPlaca.Size = new Size(121, 23);
             txtPlaca.TabIndex = 36;
             // 
@@ -217,6 +224,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Honeydew;
             ClientSize = new Size(299, 355);
             Controls.Add(txtPlaca);
             Controls.Add(lblPlaca);

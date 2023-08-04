@@ -32,6 +32,8 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             chListTaxasSelecionadas = new CheckedListBox();
+            tabPage2 = new TabPage();
+            chTaxasAdicionais = new CheckedListBox();
             txtValorTotal = new TextBox();
             label2 = new Label();
             label13 = new Label();
@@ -61,8 +63,6 @@
             dtDataDevolucao = new DateTimePicker();
             cbNivelDoTanque = new ComboBox();
             label14 = new Label();
-            tabPage2 = new TabPage();
-            chTaxasAdicionais = new CheckedListBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -105,10 +105,31 @@
             chListTaxasSelecionadas.Size = new Size(504, 112);
             chListTaxasSelecionadas.TabIndex = 0;
             // 
+            // tabPage2
+            // 
+            tabPage2.Controls.Add(chTaxasAdicionais);
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(528, 141);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Taxas Adicionais";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // chTaxasAdicionais
+            // 
+            chTaxasAdicionais.FormattingEnabled = true;
+            chTaxasAdicionais.Location = new Point(12, 15);
+            chTaxasAdicionais.Name = "chTaxasAdicionais";
+            chTaxasAdicionais.Size = new Size(507, 112);
+            chTaxasAdicionais.TabIndex = 0;
+            // 
             // txtValorTotal
             // 
             txtValorTotal.Location = new Point(135, 394);
             txtValorTotal.Name = "txtValorTotal";
+            txtValorTotal.PlaceholderText = "R$";
+            txtValorTotal.ReadOnly = true;
             txtValorTotal.Size = new Size(121, 23);
             txtValorTotal.TabIndex = 91;
             // 
@@ -276,24 +297,26 @@
             // btnGravar
             // 
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnGravar.BackColor = Color.DarkSeaGreen;
             btnGravar.DialogResult = DialogResult.OK;
             btnGravar.Location = new Point(391, 384);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(76, 34);
             btnGravar.TabIndex = 70;
             btnGravar.Text = "Gravar";
-            btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.UseVisualStyleBackColor = false;
             // 
             // btnCancelar
             // 
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancelar.BackColor = Color.DarkSeaGreen;
             btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Location = new Point(473, 384);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(76, 34);
             btnCancelar.TabIndex = 69;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -354,29 +377,11 @@
             label14.TabIndex = 98;
             label14.Text = "Nível do Tanque:";
             // 
-            // tabPage2
-            // 
-            tabPage2.Controls.Add(chTaxasAdicionais);
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(528, 141);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Taxas Adicionais";
-            tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // chTaxasAdicionais
-            // 
-            chTaxasAdicionais.FormattingEnabled = true;
-            chTaxasAdicionais.Location = new Point(12, 15);
-            chTaxasAdicionais.Name = "chTaxasAdicionais";
-            chTaxasAdicionais.Size = new Size(507, 112);
-            chTaxasAdicionais.TabIndex = 0;
-            // 
             // TelaDevolucaoAluguelForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Honeydew;
             ClientSize = new Size(561, 430);
             Controls.Add(cbNivelDoTanque);
             Controls.Add(label14);

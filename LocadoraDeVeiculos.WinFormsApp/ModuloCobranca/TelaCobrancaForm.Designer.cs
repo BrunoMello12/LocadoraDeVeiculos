@@ -47,53 +47,50 @@
             // btnGravar
             // 
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnGravar.BackColor = Color.DarkSeaGreen;
             btnGravar.DialogResult = DialogResult.OK;
-            btnGravar.Location = new Point(329, 402);
-            btnGravar.Margin = new Padding(5, 6, 5, 6);
+            btnGravar.Location = new Point(195, 220);
             btnGravar.Name = "btnGravar";
-            btnGravar.Size = new Size(131, 68);
+            btnGravar.Size = new Size(76, 34);
             btnGravar.TabIndex = 13;
             btnGravar.Text = "Gravar";
-            btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.UseVisualStyleBackColor = false;
             btnGravar.Click += btnGravar_Click;
             // 
             // btnCancelar
             // 
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancelar.BackColor = Color.DarkSeaGreen;
             btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.Location = new Point(469, 402);
-            btnCancelar.Margin = new Padding(5, 6, 5, 6);
+            btnCancelar.Location = new Point(277, 220);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(131, 68);
+            btnCancelar.Size = new Size(76, 34);
             btnCancelar.TabIndex = 12;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             // 
             // txtPrecoDiaria
             // 
-            txtPrecoDiaria.Location = new Point(289, 102);
-            txtPrecoDiaria.Margin = new Padding(5, 6, 5, 6);
+            txtPrecoDiaria.Location = new Point(169, 51);
             txtPrecoDiaria.Name = "txtPrecoDiaria";
-            txtPrecoDiaria.Size = new Size(240, 35);
+            txtPrecoDiaria.Size = new Size(142, 23);
             txtPrecoDiaria.TabIndex = 11;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(31, 30);
-            label1.Margin = new Padding(5, 0, 5, 0);
+            label1.Location = new Point(12, 24);
             label1.Name = "label1";
-            label1.Size = new Size(220, 30);
+            label1.Size = new Size(126, 15);
             label1.TabIndex = 10;
             label1.Text = "Grupo de Automóveis:";
             // 
             // cbGrupoAutomoveis
             // 
             cbGrupoAutomoveis.FormattingEnabled = true;
-            cbGrupoAutomoveis.Location = new Point(257, 24);
-            cbGrupoAutomoveis.Margin = new Padding(5, 6, 5, 6);
+            cbGrupoAutomoveis.Location = new Point(144, 21);
             cbGrupoAutomoveis.Name = "cbGrupoAutomoveis";
-            cbGrupoAutomoveis.Size = new Size(320, 38);
+            cbGrupoAutomoveis.Size = new Size(188, 23);
             cbGrupoAutomoveis.TabIndex = 14;
             // 
             // groupBox1
@@ -106,11 +103,9 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(cbTipoPlano);
             groupBox1.Controls.Add(txtPrecoDiaria);
-            groupBox1.Location = new Point(31, 82);
-            groupBox1.Margin = new Padding(5, 6, 5, 6);
+            groupBox1.Location = new Point(21, 66);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(5, 6, 5, 6);
-            groupBox1.Size = new Size(544, 296);
+            groupBox1.Size = new Size(332, 148);
             groupBox1.TabIndex = 15;
             groupBox1.TabStop = false;
             groupBox1.Text = "Configuração de Planos";
@@ -118,84 +113,77 @@
             // txtKmDisponivel
             // 
             txtKmDisponivel.Enabled = false;
-            txtKmDisponivel.Location = new Point(289, 218);
-            txtKmDisponivel.Margin = new Padding(5, 6, 5, 6);
+            txtKmDisponivel.Location = new Point(169, 109);
             txtKmDisponivel.Name = "txtKmDisponivel";
-            txtKmDisponivel.Size = new Size(240, 35);
+            txtKmDisponivel.Size = new Size(142, 23);
             txtKmDisponivel.TabIndex = 21;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(124, 224);
-            label5.Margin = new Padding(5, 0, 5, 0);
+            label5.Location = new Point(72, 112);
             label5.Name = "label5";
-            label5.Size = new Size(159, 30);
+            label5.Size = new Size(91, 15);
             label5.TabIndex = 20;
             label5.Text = "Km Disponíveis:";
             // 
             // txtPrecoExtrapolado
             // 
             txtPrecoExtrapolado.Enabled = false;
-            txtPrecoExtrapolado.Location = new Point(289, 160);
-            txtPrecoExtrapolado.Margin = new Padding(5, 6, 5, 6);
+            txtPrecoExtrapolado.Location = new Point(169, 80);
             txtPrecoExtrapolado.Name = "txtPrecoExtrapolado";
-            txtPrecoExtrapolado.Size = new Size(240, 35);
+            txtPrecoExtrapolado.Size = new Size(142, 23);
             txtPrecoExtrapolado.TabIndex = 19;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 166);
-            label4.Margin = new Padding(5, 0, 5, 0);
+            label4.Location = new Point(7, 83);
             label4.Name = "label4";
-            label4.Size = new Size(270, 30);
+            label4.Size = new Size(156, 15);
             label4.TabIndex = 18;
             label4.Text = "Preço Por Km (Extrapolado):";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(154, 105);
-            label3.Margin = new Padding(5, 0, 5, 0);
+            label3.Location = new Point(90, 52);
             label3.Name = "label3";
-            label3.Size = new Size(130, 30);
+            label3.Size = new Size(73, 15);
             label3.TabIndex = 17;
             label3.Text = "Preço Diária:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(139, 50);
-            label2.Margin = new Padding(5, 0, 5, 0);
+            label2.Location = new Point(81, 25);
             label2.Name = "label2";
-            label2.Size = new Size(145, 30);
+            label2.Size = new Size(82, 15);
             label2.TabIndex = 16;
             label2.Text = "Tipo de Plano:";
             // 
             // cbTipoPlano
             // 
             cbTipoPlano.FormattingEnabled = true;
-            cbTipoPlano.Location = new Point(289, 44);
-            cbTipoPlano.Margin = new Padding(5, 6, 5, 6);
+            cbTipoPlano.Location = new Point(169, 22);
             cbTipoPlano.Name = "cbTipoPlano";
-            cbTipoPlano.Size = new Size(240, 38);
+            cbTipoPlano.Size = new Size(142, 23);
             cbTipoPlano.TabIndex = 16;
             cbTipoPlano.SelectedIndexChanged += cbTipoPlano_SelectedIndexChanged;
             // 
             // TelaCobrancaForm
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(620, 494);
+            BackColor = Color.Honeydew;
+            ClientSize = new Size(365, 266);
             Controls.Add(groupBox1);
             Controls.Add(cbGrupoAutomoveis);
             Controls.Add(btnGravar);
             Controls.Add(btnCancelar);
             Controls.Add(label1);
-            Margin = new Padding(5, 6, 5, 6);
             Name = "TelaCobrancaForm";
-            Text = "Cadastro de Cobranca";
+            Text = "Cadastro de Cobrança";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

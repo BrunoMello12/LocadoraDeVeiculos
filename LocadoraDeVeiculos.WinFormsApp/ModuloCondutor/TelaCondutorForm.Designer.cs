@@ -86,32 +86,34 @@
             // btnGravar
             // 
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnGravar.BackColor = Color.DarkSeaGreen;
             btnGravar.DialogResult = DialogResult.OK;
-            btnGravar.Location = new Point(217, 258);
+            btnGravar.Location = new Point(239, 217);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(76, 34);
             btnGravar.TabIndex = 86;
             btnGravar.Text = "Gravar";
-            btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.UseVisualStyleBackColor = false;
             btnGravar.Click += btnGravar_Click;
             // 
             // btnCancelar
             // 
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancelar.BackColor = Color.DarkSeaGreen;
             btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.Location = new Point(299, 258);
+            btnCancelar.Location = new Point(321, 217);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(76, 34);
             btnCancelar.TabIndex = 85;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             // 
             // cbCliente
             // 
             cbCliente.FormattingEnabled = true;
             cbCliente.Location = new Point(86, 26);
             cbCliente.Name = "cbCliente";
-            cbCliente.Size = new Size(230, 23);
+            cbCliente.Size = new Size(276, 23);
             cbCliente.TabIndex = 87;
             // 
             // chEhCondutor
@@ -127,7 +129,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(192, 144);
+            label4.Location = new Point(225, 144);
             label4.Name = "label4";
             label4.Size = new Size(31, 15);
             label4.TabIndex = 89;
@@ -145,7 +147,7 @@
             // dateValidade
             // 
             dateValidade.Format = DateTimePickerFormat.Short;
-            dateValidade.Location = new Point(86, 199);
+            dateValidade.Location = new Point(262, 170);
             dateValidade.Name = "dateValidade";
             dateValidade.Size = new Size(100, 23);
             dateValidade.TabIndex = 93;
@@ -153,7 +155,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(22, 203);
+            label7.Location = new Point(202, 173);
             label7.Name = "label7";
             label7.Size = new Size(54, 15);
             label7.TabIndex = 94;
@@ -163,14 +165,16 @@
             // 
             txtEmail.Location = new Point(86, 112);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(230, 23);
+            txtEmail.PlaceholderText = "g@gmail.com";
+            txtEmail.Size = new Size(276, 23);
             txtEmail.TabIndex = 95;
             // 
             // txtNome
             // 
             txtNome.Location = new Point(86, 83);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(230, 23);
+            txtNome.PlaceholderText = "Inserir...";
+            txtNome.Size = new Size(276, 23);
             txtNome.TabIndex = 96;
             // 
             // txtCnh
@@ -183,10 +187,10 @@
             // 
             // txtCpf
             // 
-            txtCpf.Location = new Point(223, 141);
+            txtCpf.Location = new Point(262, 141);
             txtCpf.Mask = "999,999,999-99";
             txtCpf.Name = "txtCpf";
-            txtCpf.Size = new Size(93, 23);
+            txtCpf.Size = new Size(100, 23);
             txtCpf.TabIndex = 98;
             // 
             // txtTelefone
@@ -201,7 +205,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(387, 304);
+            BackColor = Color.Honeydew;
+            ClientSize = new Size(409, 263);
             Controls.Add(txtCnh);
             Controls.Add(txtCpf);
             Controls.Add(txtTelefone);

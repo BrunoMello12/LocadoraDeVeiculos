@@ -43,29 +43,32 @@
             // btnGravar
             // 
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnGravar.BackColor = Color.DarkSeaGreen;
             btnGravar.DialogResult = DialogResult.OK;
             btnGravar.Location = new Point(131, 148);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(76, 34);
             btnGravar.TabIndex = 11;
             btnGravar.Text = "Gravar";
-            btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.UseVisualStyleBackColor = false;
             // 
             // btnCancelar
             // 
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancelar.BackColor = Color.DarkSeaGreen;
             btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Location = new Point(213, 148);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(76, 34);
             btnCancelar.TabIndex = 10;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             // 
             // txtGasolina
             // 
             txtGasolina.Location = new Point(89, 21);
             txtGasolina.Name = "txtGasolina";
+            txtGasolina.PlaceholderText = "Inserir....";
             txtGasolina.Size = new Size(201, 23);
             txtGasolina.TabIndex = 13;
             // 
@@ -82,6 +85,7 @@
             // 
             txtGas.Location = new Point(89, 50);
             txtGas.Name = "txtGas";
+            txtGas.PlaceholderText = "Inserir....";
             txtGas.Size = new Size(201, 23);
             txtGas.TabIndex = 15;
             // 
@@ -98,6 +102,7 @@
             // 
             txtDiesel.Location = new Point(89, 79);
             txtDiesel.Name = "txtDiesel";
+            txtDiesel.PlaceholderText = "Inserir....";
             txtDiesel.Size = new Size(201, 23);
             txtDiesel.TabIndex = 17;
             // 
@@ -114,6 +119,7 @@
             // 
             txtAlcool.Location = new Point(89, 108);
             txtAlcool.Name = "txtAlcool";
+            txtAlcool.PlaceholderText = "Inserir....";
             txtAlcool.Size = new Size(201, 23);
             txtAlcool.TabIndex = 19;
             // 
@@ -130,6 +136,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Honeydew;
             ClientSize = new Size(301, 194);
             Controls.Add(txtAlcool);
             Controls.Add(label4);

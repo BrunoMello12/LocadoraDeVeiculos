@@ -38,7 +38,7 @@
             // 
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnGravar.DialogResult = DialogResult.OK;
-            btnGravar.Location = new Point(140, 74);
+            btnGravar.Location = new Point(120, 58);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(76, 34);
             btnGravar.TabIndex = 102;
@@ -50,7 +50,7 @@
             // 
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.Location = new Point(222, 74);
+            btnCancelar.Location = new Point(202, 58);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(76, 34);
             btnCancelar.TabIndex = 101;
@@ -59,15 +59,16 @@
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(74, 26);
+            txtNome.Location = new Point(69, 21);
             txtNome.Name = "txtNome";
+            txtNome.PlaceholderText = "Inserir...";
             txtNome.Size = new Size(209, 23);
             txtNome.TabIndex = 100;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(21, 29);
+            label5.Location = new Point(16, 24);
             label5.Name = "label5";
             label5.Size = new Size(43, 15);
             label5.TabIndex = 99;
@@ -77,7 +78,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(310, 120);
+            BackColor = Color.Honeydew;
+            ClientSize = new Size(290, 104);
             Controls.Add(btnGravar);
             Controls.Add(btnCancelar);
             Controls.Add(txtNome);

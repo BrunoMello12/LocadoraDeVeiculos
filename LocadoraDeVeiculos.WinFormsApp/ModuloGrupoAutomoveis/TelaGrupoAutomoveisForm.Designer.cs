@@ -38,10 +38,9 @@
             // 
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnGravar.DialogResult = DialogResult.OK;
-            btnGravar.Location = new Point(166, 113);
-            btnGravar.Margin = new Padding(4, 5, 4, 5);
+            btnGravar.Location = new Point(111, 56);
             btnGravar.Name = "btnGravar";
-            btnGravar.Size = new Size(109, 57);
+            btnGravar.Size = new Size(76, 34);
             btnGravar.TabIndex = 9;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
@@ -51,42 +50,40 @@
             // 
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.Location = new Point(283, 113);
-            btnCancelar.Margin = new Padding(4, 5, 4, 5);
+            btnCancelar.Location = new Point(193, 56);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(109, 57);
+            btnCancelar.Size = new Size(76, 34);
             btnCancelar.TabIndex = 8;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(97, 38);
-            txtNome.Margin = new Padding(4, 5, 4, 5);
+            txtNome.Location = new Point(68, 23);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(285, 31);
+            txtNome.PlaceholderText = "Inserir...";
+            txtNome.Size = new Size(201, 23);
             txtNome.TabIndex = 7;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(23, 43);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(16, 26);
             label1.Name = "label1";
-            label1.Size = new Size(70, 25);
+            label1.Size = new Size(46, 15);
             label1.TabIndex = 6;
             label1.Text = "Nome: ";
             // 
             // TelaGrupoAutomoveisForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(409, 190);
+            BackColor = Color.Honeydew;
+            ClientSize = new Size(281, 102);
             Controls.Add(btnGravar);
             Controls.Add(btnCancelar);
             Controls.Add(txtNome);
             Controls.Add(label1);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "TelaGrupoAutomoveisForm";
             Text = "Cadastro de Grupo de Automovel";
             ResumeLayout(false);

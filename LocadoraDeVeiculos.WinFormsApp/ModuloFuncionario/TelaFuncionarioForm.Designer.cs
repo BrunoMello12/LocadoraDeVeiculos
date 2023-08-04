@@ -50,36 +50,40 @@
             // 
             txtSalario.Location = new Point(87, 79);
             txtSalario.Name = "txtSalario";
+            txtSalario.PlaceholderText = "R$";
             txtSalario.Size = new Size(100, 23);
             txtSalario.TabIndex = 14;
             // 
             // btnGravar
             // 
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnGravar.BackColor = Color.DarkSeaGreen;
             btnGravar.DialogResult = DialogResult.OK;
-            btnGravar.Location = new Point(154, 124);
+            btnGravar.Location = new Point(132, 117);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(76, 34);
             btnGravar.TabIndex = 13;
             btnGravar.Text = "Gravar";
-            btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.UseVisualStyleBackColor = false;
             btnGravar.Click += btnGravar_Click;
             // 
             // btnCancelar
             // 
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancelar.BackColor = Color.DarkSeaGreen;
             btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.Location = new Point(236, 124);
+            btnCancelar.Location = new Point(214, 117);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(76, 34);
             btnCancelar.TabIndex = 12;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             // 
             // txtNome
             // 
             txtNome.Location = new Point(87, 22);
             txtNome.Name = "txtNome";
+            txtNome.PlaceholderText = "Inserir...";
             txtNome.Size = new Size(201, 23);
             txtNome.TabIndex = 11;
             // 
@@ -114,7 +118,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(324, 170);
+            BackColor = Color.Honeydew;
+            ClientSize = new Size(302, 163);
             Controls.Add(dateAdmissao);
             Controls.Add(txtSalario);
             Controls.Add(btnGravar);
@@ -123,6 +128,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            ForeColor = SystemColors.ControlText;
             Name = "TelaFuncionarioForm";
             Text = "Cadastro de Funcionário";
             ResumeLayout(false);

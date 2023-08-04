@@ -43,10 +43,9 @@
             // rdbCobranca
             // 
             rdbCobranca.AutoSize = true;
-            rdbCobranca.Location = new Point(228, 66);
-            rdbCobranca.Margin = new Padding(5, 6, 5, 6);
+            rdbCobranca.Location = new Point(133, 33);
             rdbCobranca.Name = "rdbCobranca";
-            rdbCobranca.Size = new Size(186, 34);
+            rdbCobranca.Size = new Size(109, 19);
             rdbCobranca.TabIndex = 61;
             rdbCobranca.Text = "Cobrança Diária";
             rdbCobranca.UseVisualStyleBackColor = true;
@@ -54,29 +53,27 @@
             // rdbPrecoFixo
             // 
             rdbPrecoFixo.AutoSize = true;
-            rdbPrecoFixo.Location = new Point(48, 62);
-            rdbPrecoFixo.Margin = new Padding(5, 6, 5, 6);
+            rdbPrecoFixo.Location = new Point(28, 31);
             rdbPrecoFixo.Name = "rdbPrecoFixo";
-            rdbPrecoFixo.Size = new Size(133, 34);
+            rdbPrecoFixo.Size = new Size(80, 19);
             rdbPrecoFixo.TabIndex = 60;
             rdbPrecoFixo.Text = "Preço Fixo";
             rdbPrecoFixo.UseVisualStyleBackColor = true;
             // 
             // txtPreco
             // 
-            txtPreco.Location = new Point(120, 104);
-            txtPreco.Margin = new Padding(5, 6, 5, 6);
+            txtPreco.Location = new Point(70, 52);
             txtPreco.Name = "txtPreco";
-            txtPreco.Size = new Size(158, 35);
+            txtPreco.PlaceholderText = "R$";
+            txtPreco.Size = new Size(72, 23);
             txtPreco.TabIndex = 59;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(41, 110);
-            label4.Margin = new Padding(5, 0, 5, 0);
+            label4.Location = new Point(24, 55);
             label4.Name = "label4";
-            label4.Size = new Size(70, 30);
+            label4.Size = new Size(40, 15);
             label4.TabIndex = 58;
             label4.Text = "Preço:";
             // 
@@ -84,10 +81,9 @@
             // 
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnGravar.DialogResult = DialogResult.OK;
-            btnGravar.Location = new Point(189, 384);
-            btnGravar.Margin = new Padding(5, 6, 5, 6);
+            btnGravar.Location = new Point(106, 176);
             btnGravar.Name = "btnGravar";
-            btnGravar.Size = new Size(130, 68);
+            btnGravar.Size = new Size(76, 34);
             btnGravar.TabIndex = 57;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
@@ -97,29 +93,27 @@
             // 
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.Location = new Point(329, 384);
-            btnCancelar.Margin = new Padding(5, 6, 5, 6);
+            btnCancelar.Location = new Point(188, 176);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(130, 68);
+            btnCancelar.Size = new Size(76, 34);
             btnCancelar.TabIndex = 56;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(120, 46);
-            txtNome.Margin = new Padding(5, 6, 5, 6);
+            txtNome.Location = new Point(70, 23);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(330, 35);
+            txtNome.PlaceholderText = "Inserir...";
+            txtNome.Size = new Size(194, 23);
             txtNome.TabIndex = 55;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(34, 52);
-            label1.Margin = new Padding(5, 0, 5, 0);
+            label1.Location = new Point(20, 26);
             label1.Name = "label1";
-            label1.Size = new Size(75, 30);
+            label1.Size = new Size(43, 15);
             label1.TabIndex = 54;
             label1.Text = "Nome:";
             // 
@@ -127,20 +121,19 @@
             // 
             groupBox1.Controls.Add(rdbCobranca);
             groupBox1.Controls.Add(rdbPrecoFixo);
-            groupBox1.Location = new Point(21, 188);
-            groupBox1.Margin = new Padding(5, 6, 5, 6);
+            groupBox1.Location = new Point(12, 94);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(5, 6, 5, 6);
-            groupBox1.Size = new Size(432, 146);
+            groupBox1.Size = new Size(252, 73);
             groupBox1.TabIndex = 62;
             groupBox1.TabStop = false;
             groupBox1.Text = "Plano de Calculo";
             // 
             // TelaTaxasServicosForm
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(480, 476);
+            BackColor = Color.Honeydew;
+            ClientSize = new Size(276, 222);
             Controls.Add(groupBox1);
             Controls.Add(txtPreco);
             Controls.Add(label4);
@@ -148,7 +141,6 @@
             Controls.Add(btnCancelar);
             Controls.Add(txtNome);
             Controls.Add(label1);
-            Margin = new Padding(5, 6, 5, 6);
             Name = "TelaTaxasServicosForm";
             Text = "Cadastro de Taxa e Serviços";
             groupBox1.ResumeLayout(false);

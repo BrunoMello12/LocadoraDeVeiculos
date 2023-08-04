@@ -95,24 +95,26 @@
             // btnGravar
             // 
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnGravar.BackColor = Color.DarkSeaGreen;
             btnGravar.DialogResult = DialogResult.OK;
             btnGravar.Location = new Point(393, 385);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(76, 34);
             btnGravar.TabIndex = 39;
             btnGravar.Text = "Gravar";
-            btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.UseVisualStyleBackColor = false;
             // 
             // btnCancelar
             // 
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancelar.BackColor = Color.DarkSeaGreen;
             btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Location = new Point(475, 385);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(76, 34);
             btnCancelar.TabIndex = 38;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -202,12 +204,13 @@
             // 
             // btnAplicarCupom
             // 
+            btnAplicarCupom.BackColor = Color.DarkSeaGreen;
             btnAplicarCupom.Location = new Point(416, 134);
             btnAplicarCupom.Name = "btnAplicarCupom";
-            btnAplicarCupom.Size = new Size(121, 23);
+            btnAplicarCupom.Size = new Size(121, 28);
             btnAplicarCupom.TabIndex = 58;
             btnAplicarCupom.Text = "Aplicar";
-            btnAplicarCupom.UseVisualStyleBackColor = true;
+            btnAplicarCupom.UseVisualStyleBackColor = false;
             // 
             // dtLocacao
             // 
@@ -256,6 +259,8 @@
             // 
             txtValorTotal.Location = new Point(135, 392);
             txtValorTotal.Name = "txtValorTotal";
+            txtValorTotal.PlaceholderText = "R$";
+            txtValorTotal.ReadOnly = true;
             txtValorTotal.Size = new Size(121, 23);
             txtValorTotal.TabIndex = 65;
             // 
@@ -308,6 +313,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Honeydew;
             ClientSize = new Size(563, 431);
             Controls.Add(txtCupom);
             Controls.Add(tabControl1);
