@@ -10,9 +10,8 @@ namespace LocadoraDeVeiculos.Dominio.ModuloParceiro
         {
         }
 
-        public Parceiro(Guid id, string nome)
+        public Parceiro(string nome)
         {
-            Id = id;
             Nome = nome;
         }
 

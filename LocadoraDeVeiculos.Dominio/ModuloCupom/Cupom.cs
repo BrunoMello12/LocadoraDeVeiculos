@@ -21,6 +21,16 @@ namespace LocadoraDeVeiculos.Dominio.ModuloCupom
             
         }
 
+        public Cupom(string nome)
+        {
+            Nome = nome;
+        }
+
+        public Cupom(Guid id, string nome) : this(nome)
+        {
+            this.Id = id;
+        }
+
         public Cupom(string nome, decimal valor, DateTime dataValidade, Parceiro parceiro, List<Cliente> clientesJaUtilizados)
         {
             Nome = nome;

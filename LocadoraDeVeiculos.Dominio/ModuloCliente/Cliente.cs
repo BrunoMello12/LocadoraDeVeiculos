@@ -34,6 +34,11 @@ namespace LocadoraDeVeiculos.Dominio.ModuloCliente
             
         }
 
+        public Cliente(string nome)
+        {
+            Nome = nome;
+        }
+
         public override void Atualizar(Cliente registro)
         {
             Nome = registro.Nome;
