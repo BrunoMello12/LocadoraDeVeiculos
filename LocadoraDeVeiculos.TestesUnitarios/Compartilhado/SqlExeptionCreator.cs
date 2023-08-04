@@ -1,8 +1,6 @@
 ﻿using System.Data.SqlClient;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Data.SqlClient;
+
 
 namespace LocadoraDeVeiculos.TestesUnitarios.Compartilhado
 {

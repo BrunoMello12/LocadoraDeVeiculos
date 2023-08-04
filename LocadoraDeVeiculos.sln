@@ -31,11 +31,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocadoraDeVeiculos.Infra.Js
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 Unit", "5.1 Unit", "{6077C002-5C5D-45B7-B681-16375D1B3367}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocadoraDeVeiculos.TestesUnitarios", "LocadoraDeVeiculos.TestesUnitarios\LocadoraDeVeiculos.TestesUnitarios.csproj", "{6A17C9A4-BDA4-4B73-9E8A-9345DBFB6DDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocadoraDeVeiculos.TestesUnitarios", "LocadoraDeVeiculos.TestesUnitarios\LocadoraDeVeiculos.TestesUnitarios.csproj", "{6A17C9A4-BDA4-4B73-9E8A-9345DBFB6DDF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 Unit", "5.1 Unit", "{6077C002-5C5D-45B7-B681-16375D1B3367}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 IntegrationTests", "5.2 IntegrationTests", "{0DD349BD-1B3F-42D8-BA4C-9DF15DF8785D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocadoraDeVeiculos.TestesUnitarios", "LocadoraDeVeiculos.TestesUnitarios\LocadoraDeVeiculos.TestesUnitarios.csproj", "{6A17C9A4-BDA4-4B73-9E8A-9345DBFB6DDF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocadoraDeVeiculos.TesteIntegracao", "LocadoraDeVeiculos.TesteIntegracao\LocadoraDeVeiculos.TesteIntegracao.csproj", "{3F9DE3F5-7138-4FA9-95DF-7633862880AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +67,10 @@ Global
 		{6A17C9A4-BDA4-4B73-9E8A-9345DBFB6DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A17C9A4-BDA4-4B73-9E8A-9345DBFB6DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A17C9A4-BDA4-4B73-9E8A-9345DBFB6DDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F9DE3F5-7138-4FA9-95DF-7633862880AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F9DE3F5-7138-4FA9-95DF-7633862880AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F9DE3F5-7138-4FA9-95DF-7633862880AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F9DE3F5-7138-4FA9-95DF-7633862880AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +86,8 @@ Global
 		{24D6549C-26E4-4551-8B6B-C68FA99BCA58} = {F63B9C62-7784-4A0F-A9DA-31A342FEA03C}
 		{6077C002-5C5D-45B7-B681-16375D1B3367} = {4E9EC0FA-E9D4-42D3-AEE3-4E5A4FF30376}
 		{6A17C9A4-BDA4-4B73-9E8A-9345DBFB6DDF} = {6077C002-5C5D-45B7-B681-16375D1B3367}
+		{0DD349BD-1B3F-42D8-BA4C-9DF15DF8785D} = {4E9EC0FA-E9D4-42D3-AEE3-4E5A4FF30376}
+		{3F9DE3F5-7138-4FA9-95DF-7633862880AA} = {0DD349BD-1B3F-42D8-BA4C-9DF15DF8785D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ACFA3A38-98A0-40E0-AE6D-9EC5831DF503}
