@@ -94,7 +94,7 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloParceiro
 
                 return Result.Ok();
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 List<string> erros = new List<string>();
 
@@ -102,6 +102,10 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloParceiro
 
                 if (ex.Message.Contains("FK_TBAluguel_TBParceiro"))
                     msgErro = "Este parceiro está relacionada com um aluguel e não pode ser excluído";
+
+                else if (ex.Message.Contains("FK_TBCupom_TBParceiro"))
+                    msgErro = "Este parceiro está relacionado com um cupom e não pode ser excluído";
+
                 else
                     msgErro = "Falha ao tentar excluir parceiro";
 

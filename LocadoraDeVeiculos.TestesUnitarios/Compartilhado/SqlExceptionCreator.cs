@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace LocadoraDeVeiculos.TestesUnitarios.Compartilhado
 {
-    public class SqlExeptionCreator
+    public class SqlExceptionCreator
     {
         private static T Construct<T>(params object[] p)
         {

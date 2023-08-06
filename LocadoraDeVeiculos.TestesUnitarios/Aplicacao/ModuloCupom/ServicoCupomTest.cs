@@ -248,7 +248,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloCupom
             repositorioCupomMoq.Setup(x => x.Existe(It.IsAny<Cupom>()))
               .Throws(() =>
               {
-                  return SqlExeptionCreator.NewSqlException();
+                  return SqlExceptionCreator.NewSqlException();
               });
 
             //action
@@ -258,5 +258,30 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloCupom
             resultado.Should().BeFailure();
             resultado.Reasons[0].Message.Should().Be("Falha ao tentar excluir cupom");
         }
+
+        //[TestMethod]
+        //public void Nao_deve_excluir_cupom_caso_ele_esteja_relacionado_com_aluguel() //cenário 4
+        //{
+        //    var cupom = new Cupom("CUPOM01");
+
+        //    repositorioCupomMoq.Setup(x => x.Existe(cupom))
+        //       .Returns(() =>
+        //       {
+        //           return true;
+        //       });
+
+        //    repositorioCupomMoq.Setup(x => x.Excluir(It.IsAny<Cupom>()))
+        //        .Throws(() =>
+        //        {
+        //            return SqlExceptionCreator.NewSqlException(errorMessage: "FK_TBAluguel_TBCupom");
+        //        });
+
+        //    //action
+        //    Result resultado = servicoCupom.Excluir(cupom);
+
+        //    //assert 
+        //    resultado.Should().BeFailure();
+        //    resultado.Reasons[0].Message.Should().Be("Este cupom está relacionada com um aluguel e não pode ser excluído");
+        //}
     }
 }
