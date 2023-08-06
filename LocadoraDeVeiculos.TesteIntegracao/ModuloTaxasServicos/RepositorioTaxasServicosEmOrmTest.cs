@@ -12,56 +12,59 @@ namespace LocadoraDeVeiculos.TesteIntegracao.ModuloTaxasServicos
         [TestMethod]
         public void Deve_Inserir_Taxas_ou_Servicos()
         {
+            //arrange
             var taxa = Builder<TaxasServicos>.CreateNew().Build();
-            taxa.PrecoDiaria = true;
+
+            //action
             repositorioTaxasServicos.Inserir(taxa);
 
-            repositorioFuncionario.SelecionarPorId(taxa.Id).Should().Be(taxa);
+            //Assert
+            repositorioTaxasServicos.SelecionarPorId(taxa.Id).Should().Be(taxa);
         }
 
         [TestMethod]
         public void Deve_Editar_Taxas_ou_Servicos()
         {
-            var funcionarioId = Builder<Funcionario>.CreateNew().Persist().Id;
+            var taxaId = Builder<TaxasServicos>.CreateNew().Persist().Id;
 
-            var funcionario = repositorioFuncionario.SelecionarPorId(funcionarioId);
-            funcionario.Nome = "Cleiton";
+            var taxa = repositorioTaxasServicos.SelecionarPorId(taxaId);
+            taxa.Nome = "taxa";
 
-            repositorioFuncionario.Editar(funcionario);
+            repositorioTaxasServicos.Editar(taxa);
 
-            repositorioFuncionario.SelecionarPorId(funcionario.Id)
-                .Should().Be(funcionario);
+            repositorioTaxasServicos.SelecionarPorId(taxa.Id)
+                .Should().Be(taxa);
         }
 
         [TestMethod]
         public void Deve_excluir_Taxas_ou_Servicos()
         {
-            var funcionario = Builder<Funcionario>.CreateNew().Persist();
-            repositorioFuncionario.Excluir(funcionario);
+            var taxa = Builder<TaxasServicos>.CreateNew().Persist();
+            repositorioTaxasServicos.Excluir(taxa);
 
-            repositorioFuncionario.SelecionarPorId(funcionario.Id).Should().BeNull();
+            repositorioTaxasServicos.SelecionarPorId(taxa.Id).Should().BeNull();
         }
 
         [TestMethod]
         public void Deve_selecionar_todos_Taxas_ou_Servicos()
         {
-            var funcionario1 = Builder<Funcionario>.CreateNew().Persist();
-            var funcionario2 = Builder<Funcionario>.CreateNew().Persist();
+            var taxa1 = Builder<TaxasServicos>.CreateNew().Persist();
+            var taxa2 = Builder<TaxasServicos>.CreateNew().Persist();
 
-            var funcionarios = repositorioFuncionario.SelecionarTodos();
+            var taxas = repositorioTaxasServicos.SelecionarTodos();
 
-            funcionarios.Should().ContainInOrder(funcionario1, funcionario2);
-            funcionarios.Should().HaveCount(2);
+            taxas.Should().ContainInOrder(taxa1, taxa2);
+            taxas.Should().HaveCount(2);
         }
 
         [TestMethod]
         public void Deve_selecionar_Taxas_ou_Servicos_por_nome()
         {
-            var funcionario = Builder<Funcionario>.CreateNew().Persist();
+            var taxa = Builder<TaxasServicos>.CreateNew().Persist();
 
-            var funcionarioEncontrado = repositorioFuncionario.SelecionarPorNome(funcionario.Nome);
+            var taxaEncontrada = repositorioTaxasServicos.SelecionarPorNome(taxa.Nome);
 
-            funcionarioEncontrado.Should().Be(funcionario);
+            taxaEncontrada.Should().Be(taxa);
         }
 
         [TestMethod]
@@ -69,7 +72,7 @@ namespace LocadoraDeVeiculos.TesteIntegracao.ModuloTaxasServicos
         {
             var taxa = Builder<TaxasServicos>.CreateNew().Persist();
 
-            var taxaEncontrada = repositorioFuncionario.SelecionarPorId(taxa.Id);
+            var taxaEncontrada = repositorioTaxasServicos.SelecionarPorId(taxa.Id);
           
             taxaEncontrada.Should().Be(taxa);
         }
