@@ -25,7 +25,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Compartilhado
                 .GetMethod("CreateException", BindingFlags.NonPublic | BindingFlags.Static, null,
                     CallingConventions.ExplicitThis, new[] { typeof(SqlErrorCollection), typeof(string) },
                     new ParameterModifier[] { })
-                .Invoke(null, new object[] { collection, "7.0.0" }) as SqlException;
+                .Invoke(null, new object[] { collection, "6.0.0" }) as SqlException;
         }
     }
 }

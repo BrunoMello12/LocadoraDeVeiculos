@@ -112,7 +112,7 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloCondutor
 
         private void CarregarCondutores()
         {
-            List<Condutor> condutores = repositorioCondutor.SelecionarTodos();
+            List<Condutor> condutores = repositorioCondutor.SelecionarTodos(incluirCliente: true);
 
             tabelaCondutor.AtualizarRegistros(condutores);
 
