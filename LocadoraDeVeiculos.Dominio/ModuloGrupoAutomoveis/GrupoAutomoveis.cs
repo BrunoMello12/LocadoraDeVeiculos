@@ -17,9 +17,8 @@ namespace LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis
             
         }
 
-        public GrupoAutomoveis(Guid id, string nome)
+        public GrupoAutomoveis(string nome)
         {
-            Id = id;
             Nome = nome;
             listaDeAutomoveis = new List<Automovel>();
         }
