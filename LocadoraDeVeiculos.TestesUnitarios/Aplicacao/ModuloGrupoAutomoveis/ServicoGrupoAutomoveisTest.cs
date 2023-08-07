@@ -291,4 +291,5 @@ namespace LocadorDeVeiculos.TesteUnitarios.Aplicacao.ModuloGrupoAutomoveis
             //    resultado.Reasons[0].Message.Should().Be("Falha ao tentar excluir Grupo de Automoveis");
             //}
         }
+    }
 }
