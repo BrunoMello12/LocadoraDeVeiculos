@@ -9,7 +9,7 @@ namespace LocadoraDeVeiculos.Infra.Orm.ModuloCobranca
         public void Configure(EntityTypeBuilder<Cobranca> builder)
         {
             builder.ToTable("TBCobranca");
-            builder.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Property(x => x.Id).IsRequired().ValueGeneratedNever();
             builder.Property(x => x.TipoPlano).IsRequired();
             builder.Property(x => x.KmDisponivel).IsRequired(false);
             builder.Property(x => x.PrecoDiaria).IsRequired();

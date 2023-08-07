@@ -10,7 +10,7 @@ namespace LocadoraDeVeiculos.Infra.Orm.ModuloGrupoAutomoveis
         {
             builder.ToTable("TBGrupoAutomoveis");
 
-            builder.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Property(x => x.Id).IsRequired().ValueGeneratedNever();
 
             builder.Property(x => x.Nome).IsRequired();
         }

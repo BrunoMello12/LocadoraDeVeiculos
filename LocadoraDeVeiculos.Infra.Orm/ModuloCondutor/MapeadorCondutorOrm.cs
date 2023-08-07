@@ -9,7 +9,7 @@ namespace LocadoraDeVeiculos.Infra.Orm.ModuloCondutor
         public void Configure(EntityTypeBuilder<Condutor> builder)
         {
             builder.ToTable("TBCondutor");
-            builder.Property(x => x.Id).ValueGeneratedOnAdd().IsRequired();
+            builder.Property(x => x.Id).ValueGeneratedNever().IsRequired();
             builder.Property(x => x.Cnh).IsRequired();
             builder.Property(x => x.Telefone).IsRequired();
             builder.Property(x => x.Cpf).IsRequired();

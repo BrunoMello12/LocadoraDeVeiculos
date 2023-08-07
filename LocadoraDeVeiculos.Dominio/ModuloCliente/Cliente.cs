@@ -31,12 +31,31 @@ namespace LocadoraDeVeiculos.Dominio.ModuloCliente
 
         public Cliente()
         {
-            
+
         }
 
         public Cliente(string nome)
         {
             Nome = nome;
+        }
+
+        public Cliente(Guid id, string nome) : this(nome)
+        {
+            this.Id = id;
+        }
+
+        public Cliente(string nome, string email, string telefone, TipoClienteEnum tipoCliente, string cpf, string cnpj, string estado, string cidade, string bairro, string rua, int numeroCasa)
+        {
+            Email = email;
+            Telefone = telefone;
+            TipoCliente = tipoCliente;
+            Cpf = cpf;
+            Cnpj = cnpj;
+            Estado = estado;
+            Cidade = cidade;
+            Bairro = bairro;
+            Rua = rua;
+            NumeroCasa = numeroCasa;
         }
 
         public override void Atualizar(Cliente registro)
@@ -50,7 +69,7 @@ namespace LocadoraDeVeiculos.Dominio.ModuloCliente
             Cidade = registro.Cidade;
             Bairro = registro.Bairro;
             Rua = registro.Rua;
-            NumeroCasa = registro.NumeroCasa;   
+            NumeroCasa = registro.NumeroCasa;
         }
 
         public override string ToString()

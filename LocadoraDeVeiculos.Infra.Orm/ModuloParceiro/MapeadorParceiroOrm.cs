@@ -15,7 +15,7 @@ namespace LocadoraDeVeiculos.Infra.Orm.ModuloParceiro
         {
             builder.ToTable("TBParceiro");
 
-            builder.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Property(x => x.Id).IsRequired().ValueGeneratedNever();
 
             builder.Property(x => x.Nome).HasColumnType("varchar(MAX)").IsRequired();
         }

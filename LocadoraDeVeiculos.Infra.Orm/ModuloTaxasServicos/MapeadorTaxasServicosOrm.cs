@@ -16,7 +16,7 @@ namespace LocadoraDeVeiculos.Infra.Orm.ModuloTaxasServicos
         {
             builder.ToTable("TBTaxasServicos");
 
-            builder.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Property(x => x.Id).IsRequired().ValueGeneratedNever();
 
             builder.Property(x => x.Nome).HasColumnType("varchar(MAX)").IsRequired();
 
