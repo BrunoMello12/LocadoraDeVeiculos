@@ -30,10 +30,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloCupom
             servicoCupom = new ServicoCupom(repositorioCupomMoq.Object, validadorMoq.Object);
             parceiro = new Parceiro("Jorge");
 
-            List<Cliente> clientes = new List<Cliente>();
-            clientes.Add(new Cliente ("Mariana"));
-
-            cupom = new Cupom("CUPOM10", 200, new DateTime(24/02/2024), parceiro, clientes);
+            cupom = new Cupom("CUPOM10", 200, new DateTime(24/02/2024), parceiro);
         }
 
         [TestMethod]

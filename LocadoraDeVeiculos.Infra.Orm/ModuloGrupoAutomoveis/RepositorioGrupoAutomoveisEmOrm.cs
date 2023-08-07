@@ -1,11 +1,6 @@
-﻿using LocadoraDeVeiculos.Dominio.ModuloFuncionario;
-using LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis;
+﻿using LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis;
 using LocadoraDeVeiculos.Infra.Orm.Compartilhado;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace LocadoraDeVeiculos.Infra.Orm.ModuloGrupoAutomoveis
 {
@@ -18,6 +13,32 @@ namespace LocadoraDeVeiculos.Infra.Orm.ModuloGrupoAutomoveis
         public GrupoAutomoveis SelecionarPorNome(string nome)
         {
             return registros.FirstOrDefault(x => x.Nome == nome);
+        }
+
+        public List<GrupoAutomoveis> SelecionarTodos(bool incluirAutomoveis = false, bool incluirCobrancas = false)
+        {
+            if (incluirAutomoveis && incluirCobrancas)
+            {
+                return registros
+                        .Include(x => x.listaDeAutomoveis)
+                        .Include(x => x.listaDeCobrancas)
+                        .ToList();
+            }
+
+            else if (incluirAutomoveis)
+            {
+                return registros
+                        .Include(x => x.listaDeAutomoveis)
+                        .ToList();
+            }
+
+            else if (incluirCobrancas)
+            {
+                return registros
+                        .Include(x => x.listaDeCobrancas)
+                        .ToList();
+            }
+            return registros.ToList();
         }
     }
 }

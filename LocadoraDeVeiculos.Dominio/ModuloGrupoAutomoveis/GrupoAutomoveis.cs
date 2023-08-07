@@ -14,13 +14,19 @@ namespace LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis
 
         public GrupoAutomoveis()
         {
-            
+
         }
 
         public GrupoAutomoveis(string nome)
         {
             Nome = nome;
             listaDeAutomoveis = new List<Automovel>();
+            listaDeCobrancas = new List<Cobranca>();
+        }
+
+        public GrupoAutomoveis(Guid id, string nome) : this(nome)
+        {
+            this.Id = id;
         }
 
         public override void Atualizar(GrupoAutomoveis registro)
@@ -31,6 +37,26 @@ namespace LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis
         public override string ToString()
         {
             return Nome;
+        }
+
+        public bool AdicionarAutomovel(Automovel automovel)
+        {
+            if (listaDeAutomoveis.Contains(automovel))
+                return false;
+
+            listaDeAutomoveis.Add(automovel);
+
+            return true;
+        }
+
+        public bool AdicionarCobranca(Cobranca cobranca)
+        {
+            if (listaDeCobrancas.Contains(cobranca))
+                return false;
+
+            listaDeCobrancas.Add(cobranca);
+
+            return true;
         }
     }
 }

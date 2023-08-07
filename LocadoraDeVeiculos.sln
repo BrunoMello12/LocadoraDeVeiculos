@@ -35,7 +35,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocadoraDeVeiculos.TestesUn
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 IntegrationTests", "5.2 IntegrationTests", "{0DD349BD-1B3F-42D8-BA4C-9DF15DF8785D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocadoraDeVeiculos.TesteIntegracao", "LocadoraDeVeiculos.TesteIntegracao\LocadoraDeVeiculos.TesteIntegracao.csproj", "{3F9DE3F5-7138-4FA9-95DF-7633862880AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocadoraDeVeiculos.TesteIntegracao", "LocadoraDeVeiculos.TesteIntegracao\LocadoraDeVeiculos.TesteIntegracao.csproj", "{3F9DE3F5-7138-4FA9-95DF-7633862880AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
