@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LocadoraDeVeiculos.Infra.Orm.Migrations
 {
     [DbContext(typeof(LocadoraDeVeiculosDbContext))]
-    [Migration("20230806230916_ConfigNewTables")]
-    partial class ConfigNewTables
+    [Migration("20230807032251_ConfigTables")]
+    partial class ConfigTables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

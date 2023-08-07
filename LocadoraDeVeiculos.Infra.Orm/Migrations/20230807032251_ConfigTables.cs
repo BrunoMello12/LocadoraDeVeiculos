@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace LocadoraDeVeiculos.Infra.Orm.Migrations
 {
     /// <inheritdoc />
-    public partial class ConfigNewTables : Migration
+    public partial class ConfigTables : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
