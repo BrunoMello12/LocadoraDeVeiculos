@@ -27,14 +27,14 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloParceiro
         [TestMethod]
         public void Deve_permitir_adicionar_cupons_no_parceiro()
         {
-            //Cenário -- Arrange
+            //Arrange
             cupom02 = new Cupom("Cupom02", 500, DateTime.Now, parceiro);
 
-            //Ação -- Action
+            //Action
             parceiro.AdicionarCupom(cupom01);
             parceiro.AdicionarCupom(cupom02);
 
-            //Verificação -- Assert            
+            //Assert            
             parceiro.Cupons.Count.Should().Be(2);
         }
 

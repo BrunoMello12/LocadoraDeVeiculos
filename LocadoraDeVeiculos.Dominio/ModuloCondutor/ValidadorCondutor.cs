@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using LocadoraDeVeiculos.Dominio.Compartilhado;
 
 namespace LocadoraDeVeiculos.Dominio.ModuloCondutor
 {
@@ -9,7 +10,8 @@ namespace LocadoraDeVeiculos.Dominio.ModuloCondutor
             RuleFor(x => x.Nome)
                 .NotEmpty()
                 .NotNull()
-                .MinimumLength(3);
+                .MinimumLength(3)
+                .NaoPodeCaracteresEspeciais();
 
             RuleFor(x => x.Cliente)
                 .NotNull()
