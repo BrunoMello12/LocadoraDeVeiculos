@@ -25,14 +25,14 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloCliente
         [TestMethod]
         public void Deve_permitir_adicionar_condutores_na_cliente()
         {
-            //Cenário -- Arrange
+            //Arrange
             Condutor condutor02 = new Condutor();
 
-            //Ação -- Action
+            //Action
             cliente.AdicionarCondutor(condutor01);
             cliente.AdicionarCondutor(condutor02);
 
-            //Verificação -- Assert            
+            //Assert            
             cliente.Condutores.Count.Should().Be(2);
         }
 
