@@ -1,5 +1,11 @@
 ﻿using LocadoraDeVeiculos.Dominio.Compartilhado;
 using LocadoraDeVeiculos.Dominio.ModuloAluguel;
+using LocadoraDeVeiculos.Dominio.ModuloFuncionario;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace LocadoraDeVeiculos.Dominio.ModuloTaxasServicos
 {
@@ -14,10 +20,6 @@ namespace LocadoraDeVeiculos.Dominio.ModuloTaxasServicos
 
         public TaxasServicos()
         {
-        }
-        public TaxasServicos(string nome)
-        {
-            Nome = nome;
         }
 
         public TaxasServicos(string nome)
