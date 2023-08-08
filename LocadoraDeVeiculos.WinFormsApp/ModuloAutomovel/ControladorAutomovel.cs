@@ -6,6 +6,12 @@ using LocadoraDeVeiculos.Dominio.ModuloPrecos;
 using LocadoraDeVeiculos.Infra.Json.ModuloPrecos;
 using LocadoraDeVeiculos.WinFormsApp.Compartilhado;
 using LocadoraDeVeiculos.WinFormsApp.ModuloPrecos;
+using System;
+using System.Collections.Generic;
+using System.Drawing.Drawing2D;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
 {
@@ -154,6 +160,34 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
                 Precos precoEscolhido = tela.ObterPrecos();
                 repositorioPrecosJson.Salvar(registroPreco);
             }
+        }
+
+        public override void Filtrar()
+        {
+            TelaFiltroForm tela = new(repositorioGrupoAutomoveis);
+
+            DialogResult resultado = tela.ShowDialog();
+
+            if (resultado == DialogResult.OK)
+            {
+                List<Automovel> automoveis = repositorioAutomovel.SelecionarPorGrupo(tela.grupoAutomovel);
+
+                CarregarAutomoveis(automoveis);
+
+            }
+            else if (resultado == DialogResult.Abort)
+            {
+                CarregarAutomoveis();
+            }
+        }
+
+        private void CarregarAutomoveis(List<Automovel> automoveis)
+        {
+            tabelaAutomovel.AtualizarRegistros(automoveis);
+
+            mensagemRodape = string.Format($"Visualizando {automoveis.Count} automóve{0}", automoveis.Count == 1 ? "l" : "is");
+
+            TelaPrincipalForm.Instancia.AtualizarRodape(mensagemRodape);
         }
     }
 }

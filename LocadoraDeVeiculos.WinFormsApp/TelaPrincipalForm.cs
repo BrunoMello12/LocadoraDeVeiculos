@@ -251,6 +251,11 @@ namespace LocadoraDeVeiculos.WinFormsApp
             controlador.Precos();
         }
 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            controlador.Filtrar();
+        }
+
         private void funcionárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConfigurarTelaPrincipal(controladores["ControladorFuncionario"]);

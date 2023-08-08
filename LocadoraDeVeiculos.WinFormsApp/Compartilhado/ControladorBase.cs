@@ -30,5 +30,9 @@ namespace LocadoraDeVeiculos.WinFormsApp.Compartilhado
             return mensagemRodape;
         }
 
+        internal void Filtrar()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
