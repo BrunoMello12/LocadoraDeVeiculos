@@ -18,9 +18,9 @@ namespace LocadoraDeVeiculos.WinFormsApp.Compartilhado
 
         public abstract string TooltipExcluir { get; }
 
-        public abstract string TooltipPrecos { get; }
+        public virtual string TooltipPrecos { get; }
 
-        public abstract string TooltipFiltrar { get; }
+        public virtual string TooltipFiltrar { get; }
 
         #endregion
 
@@ -31,9 +31,9 @@ namespace LocadoraDeVeiculos.WinFormsApp.Compartilhado
 
         public virtual bool ExcluirHabilitado { get { return true; } }
 
-        public virtual bool PrecoHabilitado { get { return true; } }
+        public virtual bool PrecoHabilitado { get { return false; } }
 
-        public virtual bool FiltrarHabilitado { get { return true; } }
+        public virtual bool FiltrarHabilitado { get { return false; } }
 
         #endregion
     }
