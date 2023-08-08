@@ -19,6 +19,12 @@ namespace LocadoraDeVeiculos.Dominio.ModuloFuncionario
         {
         }
 
+        public Funcionario(Guid id, string nome)
+        {
+            Id = id;
+            Nome = nome;
+        }
+
         public Funcionario(Guid id, string nome, DateTime dataAdmissao, decimal salario)
         {
             Id = id;

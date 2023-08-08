@@ -18,6 +18,10 @@ namespace LocadoraDeVeiculos.Dominio.ModuloTaxasServicos
         public TaxasServicos()
         {
         }
+        public TaxasServicos(string nome)
+        {
+            Nome = nome;
+        }
 
         public TaxasServicos(string nome, decimal preco)
         {

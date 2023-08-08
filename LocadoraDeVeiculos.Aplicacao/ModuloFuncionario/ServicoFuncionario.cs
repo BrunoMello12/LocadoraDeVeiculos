@@ -93,7 +93,7 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloFuncionario
 
                 return Result.Ok();
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 List<string> erros = new List<string>();
 

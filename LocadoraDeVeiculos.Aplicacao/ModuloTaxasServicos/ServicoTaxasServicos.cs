@@ -88,7 +88,7 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloTaxasServicos
 
                 return Result.Ok();
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 List<string> erros = new List<string>();
 

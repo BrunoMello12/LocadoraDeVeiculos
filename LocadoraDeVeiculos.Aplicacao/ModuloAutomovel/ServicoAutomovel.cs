@@ -1,4 +1,5 @@
 ﻿using LocadoraDeVeiculos.Dominio.ModuloAutomovel;
+using LocadoraDeVeiculos.Dominio.ModuloCupom;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,9 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloAutomovel
     public class ServicoAutomovel
     {
         private IRepositorioAutomovel repositorioAutomovel;
-        private ValidadorAutomovel validadorAutomovel;
+        private IValidadorAutomovel validadorAutomovel;
 
-        public ServicoAutomovel(IRepositorioAutomovel repositorioAutmovel, ValidadorAutomovel validadorAutomovel)
+        public ServicoAutomovel(IRepositorioAutomovel repositorioAutmovel, IValidadorAutomovel validadorAutomovel)
         {
             this.repositorioAutomovel = repositorioAutmovel;
             this.validadorAutomovel = validadorAutomovel;
@@ -78,6 +79,15 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloAutomovel
 
             try
             {
+                bool automovelExiste = repositorioAutomovel.Existe(automovel);
+
+                if (automovelExiste == false)
+                {
+                    Log.Warning("Automovel {automovelId} não encontrado", automovel.Id);
+
+                    return Result.Fail("Automovel não encontrado");
+                }
+
                 repositorioAutomovel.Excluir(automovel);
 
                 Log.Debug("Automóvel {AutomovelId} editada com sucesso", automovel.Id);
@@ -100,11 +110,13 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloAutomovel
 
         private List<string> ValidarAutomovel(Automovel automovel)
         {
-            List<string> erros = validadorAutomovel.Validate(automovel)
-                .Errors.Select(x => x.ErrorMessage).ToList();
+            var resultadoValidacao = validadorAutomovel.Validate(automovel);
 
-            //if (NomeDuplicado(automovel))
-            //    erros.Add($"Este nome '{automovel.Nome}' já está sendo utilizado");
+            List<string> erros = new List<string>();
+
+            if (resultadoValidacao != null)
+                erros.AddRange(resultadoValidacao.Errors.Select(x => x.ErrorMessage));
+
 
             foreach (string erro in erros)
             {
