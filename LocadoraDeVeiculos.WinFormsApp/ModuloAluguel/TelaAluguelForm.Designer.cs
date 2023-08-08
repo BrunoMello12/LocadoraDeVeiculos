@@ -95,7 +95,7 @@
             // btnGravar
             // 
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnGravar.BackColor = Color.DarkSeaGreen;
+            btnGravar.BackColor = Color.IndianRed;
             btnGravar.DialogResult = DialogResult.OK;
             btnGravar.Location = new Point(393, 385);
             btnGravar.Name = "btnGravar";
@@ -107,7 +107,7 @@
             // btnCancelar
             // 
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnCancelar.BackColor = Color.DarkSeaGreen;
+            btnCancelar.BackColor = Color.IndianRed;
             btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Location = new Point(475, 385);
             btnCancelar.Name = "btnCancelar";
@@ -204,7 +204,7 @@
             // 
             // btnAplicarCupom
             // 
-            btnAplicarCupom.BackColor = Color.DarkSeaGreen;
+            btnAplicarCupom.BackColor = Color.IndianRed;
             btnAplicarCupom.Location = new Point(416, 134);
             btnAplicarCupom.Name = "btnAplicarCupom";
             btnAplicarCupom.Size = new Size(121, 28);
@@ -313,7 +313,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Honeydew;
+            BackColor = Color.SeaShell;
             ClientSize = new Size(563, 431);
             Controls.Add(txtCupom);
             Controls.Add(tabControl1);

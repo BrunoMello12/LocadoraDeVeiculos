@@ -4,7 +4,6 @@ using FluentResults.Extensions.FluentAssertions;
 using FluentValidation.Results;
 using LocadoraDeVeiculos.Aplicacao.ModuloCobranca;
 using LocadoraDeVeiculos.Dominio.ModuloCobranca;
-using LocadoraDeVeiculos.Dominio.ModuloCupom;
 using LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis;
 using LocadoraDeVeiculos.TestesUnitarios.Compartilhado;
 using Moq;

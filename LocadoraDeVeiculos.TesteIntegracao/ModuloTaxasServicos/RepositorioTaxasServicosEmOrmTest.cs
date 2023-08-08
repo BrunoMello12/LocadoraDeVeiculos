@@ -1,6 +1,5 @@
 ﻿using FizzWare.NBuilder;
 using FluentAssertions;
-using LocadoraDeVeiculos.Dominio.ModuloFuncionario;
 using LocadoraDeVeiculos.Dominio.ModuloTaxasServicos;
 using LocadoraDeVeiculos.TesteIntegracao.Compartilhado;
 

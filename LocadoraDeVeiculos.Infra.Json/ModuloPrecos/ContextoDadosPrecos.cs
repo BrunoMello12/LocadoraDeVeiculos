@@ -1,8 +1,6 @@
-﻿using System.Text.Json.Serialization;
-using System.Text.Json;
+﻿using LocadoraDeVeiculos.Dominio.Compartilhado;
 using LocadoraDeVeiculos.Dominio.ModuloPrecos;
 using LocadoraDeVeiculos.Infra.Json.Serializadores;
-using LocadoraDeVeiculos.Dominio.Compartilhado;
 
 namespace LocadoraDeVeiculos.Infra.Json.ModuloPrecos
 {

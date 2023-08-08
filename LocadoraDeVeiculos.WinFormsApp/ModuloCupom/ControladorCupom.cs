@@ -1,11 +1,8 @@
 ﻿using FluentResults;
-using LocadoraDeVeiculos.Aplicacao.ModuloCobranca;
 using LocadoraDeVeiculos.Aplicacao.ModuloCupom;
-using LocadoraDeVeiculos.Dominio.ModuloCobranca;
 using LocadoraDeVeiculos.Dominio.ModuloCupom;
 using LocadoraDeVeiculos.Dominio.ModuloParceiro;
 using LocadoraDeVeiculos.WinFormsApp.Compartilhado;
-using LocadoraDeVeiculos.WinFormsApp.ModuloCobranca;
 
 namespace LocadoraDeVeiculos.WinFormsApp.ModuloCupom
 {

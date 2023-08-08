@@ -1,6 +1,5 @@
 ﻿using LocadoraDeVeiculos.Dominio.Compartilhado;
 using LocadoraDeVeiculos.Dominio.ModuloPrecos;
-using Microsoft.Win32;
 
 namespace LocadoraDeVeiculos.Infra.Json.ModuloPrecos
 {

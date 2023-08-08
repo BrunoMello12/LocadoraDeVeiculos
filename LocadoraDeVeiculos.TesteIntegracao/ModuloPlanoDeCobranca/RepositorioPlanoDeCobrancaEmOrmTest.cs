@@ -1,11 +1,8 @@
 ﻿using FizzWare.NBuilder;
 using FluentAssertions;
 using LocadoraDeVeiculos.Dominio.ModuloCobranca;
-using LocadoraDeVeiculos.Dominio.ModuloCupom;
 using LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis;
-using LocadoraDeVeiculos.Dominio.ModuloParceiro;
 using LocadoraDeVeiculos.TesteIntegracao.Compartilhado;
-using System.Drawing.Drawing2D;
 
 namespace LocadoraDeVeiculos.TestesIntegracao.ModuloPlanoDeCobranca
 {

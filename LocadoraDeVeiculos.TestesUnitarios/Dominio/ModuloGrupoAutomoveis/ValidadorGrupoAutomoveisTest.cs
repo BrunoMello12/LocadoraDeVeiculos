@@ -1,11 +1,5 @@
-﻿using LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis;
-using FluentValidation.TestHelper;
-using LocadoraDeVeiculos.Dominio.ModuloTaxasServicos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentValidation.TestHelper;
+using LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis;
 
 namespace LocadorDeVeiculos.TesteUnitarios.Dominio.ModuloGrupoAutomoveis
 {

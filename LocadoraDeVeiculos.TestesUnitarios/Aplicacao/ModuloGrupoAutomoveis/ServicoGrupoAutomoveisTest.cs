@@ -4,13 +4,7 @@ using FluentResults.Extensions.FluentAssertions;
 using FluentValidation.Results;
 using LocadoraDeVeiculos.Aplicacao.ModuloGrupoAutomoveis;
 using LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis;
-using LocadoraDeVeiculos.TestesUnitarios.Compartilhado;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LocadorDeVeiculos.TesteUnitarios.Aplicacao.ModuloGrupoAutomoveis
 {
