@@ -11,5 +11,9 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloCobranca
         public override string TooltipEditar => "Editar Plano de Cobrança";
 
         public override string TooltipExcluir => "Excluir Plano de Cobrança";
+
+        public virtual bool FiltrarHabilitado { get { return false; } }
+
+        public virtual bool PrecoHabilitado { get { return false; } }
     }
 }

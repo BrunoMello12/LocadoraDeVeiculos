@@ -11,5 +11,9 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloFuncionario
         public override string TooltipEditar => "Editar Funcionario";
 
         public override string TooltipExcluir => "Excluir Funcionario";
+
+        public virtual bool FiltrarHabilitado { get { return false; } }
+
+        public virtual bool PrecoHabilitado { get { return false; } }
     }
 }

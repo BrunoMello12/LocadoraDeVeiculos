@@ -11,5 +11,9 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloTaxasServicos
         public override string TooltipEditar => "Editar Serviço";
 
         public override string TooltipExcluir => "Excluir Serviço";
+
+        public virtual bool FiltrarHabilitado { get { return false; } }
+
+        public virtual bool PrecoHabilitado { get { return false; } }
     }
 }

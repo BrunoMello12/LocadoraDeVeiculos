@@ -61,6 +61,7 @@
             // 
             // txtListaGrupoAutomoveis
             // 
+            txtListaGrupoAutomoveis.DropDownStyle = ComboBoxStyle.DropDownList;
             txtListaGrupoAutomoveis.FormattingEnabled = true;
             txtListaGrupoAutomoveis.Location = new Point(140, 27);
             txtListaGrupoAutomoveis.Name = "txtListaGrupoAutomoveis";

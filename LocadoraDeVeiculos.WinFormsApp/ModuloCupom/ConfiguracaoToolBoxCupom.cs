@@ -11,5 +11,9 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloCupom
         public override string TooltipEditar => "Editar Cupom";
 
         public override string TooltipExcluir => "Excluir Cupom";
+
+        public virtual bool FiltrarHabilitado { get { return false; } }
+
+        public virtual bool PrecoHabilitado { get { return false; } }
     }
 }

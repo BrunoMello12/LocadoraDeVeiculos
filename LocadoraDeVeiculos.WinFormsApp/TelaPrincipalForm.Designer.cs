@@ -50,7 +50,7 @@
             btnExcluir = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
             btnPrecos = new ToolStripButton();
-            toolStripButton1 = new ToolStripButton();
+            btnFiltrar = new ToolStripButton();
             lblTipoCadastro = new ToolStripLabel();
             panelRegistros = new Panel();
             statusStrip1 = new StatusStrip();
@@ -183,7 +183,7 @@
             // 
             // toolBox
             // 
-            toolBox.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, toolStripSeparator1, btnPrecos, toolStripButton1, lblTipoCadastro });
+            toolBox.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, toolStripSeparator1, btnPrecos, btnFiltrar, lblTipoCadastro });
             toolBox.Location = new Point(0, 24);
             toolBox.Name = "toolBox";
             toolBox.Size = new Size(567, 53);
@@ -193,37 +193,37 @@
             // btnAdicionar
             // 
             btnAdicionar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnAdicionar.Enabled = false;
             btnAdicionar.Image = Properties.Resources.new_document;
             btnAdicionar.ImageScaling = ToolStripItemImageScaling.None;
             btnAdicionar.ImageTransparentColor = Color.Magenta;
             btnAdicionar.Name = "btnAdicionar";
             btnAdicionar.Padding = new Padding(7);
             btnAdicionar.Size = new Size(50, 50);
-            btnAdicionar.Text = "toolStripButton1";
             btnAdicionar.Click += btnAdicionar_Click;
             // 
             // btnEditar
             // 
             btnEditar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnEditar.Enabled = false;
             btnEditar.Image = Properties.Resources.quill;
             btnEditar.ImageScaling = ToolStripItemImageScaling.None;
             btnEditar.ImageTransparentColor = Color.Magenta;
             btnEditar.Name = "btnEditar";
             btnEditar.Padding = new Padding(7);
             btnEditar.Size = new Size(50, 50);
-            btnEditar.Text = "toolStripButton2";
             btnEditar.Click += btnEditar_Click;
             // 
             // btnExcluir
             // 
             btnExcluir.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnExcluir.Enabled = false;
             btnExcluir.Image = Properties.Resources.trash_can;
             btnExcluir.ImageScaling = ToolStripItemImageScaling.None;
             btnExcluir.ImageTransparentColor = Color.Magenta;
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Padding = new Padding(7);
             btnExcluir.Size = new Size(50, 50);
-            btnExcluir.Text = "toolStripButton3";
             btnExcluir.Click += btnExcluir_Click;
             // 
             // toolStripSeparator1
@@ -234,26 +234,26 @@
             // btnPrecos
             // 
             btnPrecos.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnPrecos.Enabled = false;
             btnPrecos.Image = Properties.Resources.gas_station__1_;
             btnPrecos.ImageScaling = ToolStripItemImageScaling.None;
             btnPrecos.ImageTransparentColor = Color.Magenta;
             btnPrecos.Name = "btnPrecos";
             btnPrecos.Padding = new Padding(7);
             btnPrecos.Size = new Size(50, 50);
-            btnPrecos.Text = "toolStripButton1";
             btnPrecos.Click += btnPrecos_Click;
             // 
-            // toolStripButton1
+            // btnFiltrar
             // 
-            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
-            toolStripButton1.ImageScaling = ToolStripItemImageScaling.None;
-            toolStripButton1.ImageTransparentColor = Color.Magenta;
-            toolStripButton1.Name = "toolStripButton1";
-            toolStripButton1.Padding = new Padding(7);
-            toolStripButton1.Size = new Size(50, 50);
-            toolStripButton1.Text = "toolStripButton1";
-            toolStripButton1.Click += toolStripButton1_Click;
+            btnFiltrar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnFiltrar.Enabled = false;
+            btnFiltrar.Image = (Image)resources.GetObject("btnFiltrar.Image");
+            btnFiltrar.ImageScaling = ToolStripItemImageScaling.None;
+            btnFiltrar.ImageTransparentColor = Color.Magenta;
+            btnFiltrar.Name = "btnFiltrar";
+            btnFiltrar.Padding = new Padding(7);
+            btnFiltrar.Size = new Size(50, 50);
+            btnFiltrar.Click += btnFiltrar_Click;
             // 
             // lblTipoCadastro
             // 
@@ -335,6 +335,6 @@
         private ToolStripMenuItem automóvelToolStripMenuItem1;
         private ToolStripMenuItem clienteToolStripMenuItem1;
         private ToolStripButton btnPrecos;
-        private ToolStripButton toolStripButton1;
+        private ToolStripButton btnFiltrar;
     }
 }
