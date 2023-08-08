@@ -17,7 +17,7 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
             InitializeComponent();
             this.ConfigurarDialog();
 
-            CarregarGrupoDeAltomoveis(grupoDeAutomoveis);
+            CarregarGrupoDeAutomoveis(grupoDeAutomoveis);
             CarregarTipoCombustivel();
         }
 
@@ -36,6 +36,10 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
             automovel.GrupoDoAutomovel = (GrupoAutomoveis)cbGrpAutomoveis.SelectedItem;
             automovel.TipoCombustivel = (TipoCombustivelEnum)cbTipoCombustivel.SelectedItem;
 
+            byte[] foto = null;
+            foto = ConverterImagemEmByte(foto);
+            automovel.Foto = foto;
+
             return automovel;
         }
 
@@ -50,6 +54,45 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
             txtCapacidadeEmLitros.Text = automovel.CapacidadeLitros.ToString();
             cbGrpAutomoveis.SelectedItem = automovel.GrupoDoAutomovel;
             cbTipoCombustivel.SelectedItem = automovel.TipoCombustivel;
+
+            Image foto = null;
+            foto = ConverterByteEmImagem(automovel, foto);
+            picFotoCarro.Image = foto;
+        }
+
+        private byte[]? ConverterImagemEmByte(byte[]? foto)
+        {
+            try
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    picFotoCarro.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    foto = ms.ToArray();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao converter a imagem em byte array: {ex.Message}");
+            }
+
+            return foto;
+        }
+
+        private Image? ConverterByteEmImagem(Automovel automovel, Image? foto)
+        {
+            try
+            {
+                using (MemoryStream ms = new MemoryStream(automovel.Foto))
+                {
+                    foto = Image.FromStream(ms);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao converter o byte array em imagem: {ex.Message}");
+            }
+
+            return foto;
         }
 
         private void CarregarTipoCombustivel()
@@ -64,11 +107,9 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
             }
 
             cbTipoCombustivel.DataSource = items;
-            //cbTipoCombustivel.DisplayMember = "Value";
-            //cbTipoCombustivel.ValueMember = "Key";
         }
 
-        private void CarregarGrupoDeAltomoveis(List<GrupoAutomoveis> grupoDeAutomoveis)
+        private void CarregarGrupoDeAutomoveis(List<GrupoAutomoveis> grupoDeAutomoveis)
         {
             cbGrpAutomoveis.Items.Clear();
 
@@ -90,6 +131,22 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
                 TelaPrincipalForm.Instancia.AtualizarRodape(erro);
 
                 DialogResult = DialogResult.None;
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Arquivos de Imagem |*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            openFileDialog.Title = "Selecione uma imagem";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string caminhoDaImagem = openFileDialog.FileName;
+
+                Image imagem = Image.FromFile(caminhoDaImagem);
+
+                picFotoCarro.Image = imagem;
             }
         }
     }

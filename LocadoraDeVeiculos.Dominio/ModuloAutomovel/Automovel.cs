@@ -19,6 +19,8 @@ namespace LocadoraDeVeiculos.Dominio.ModuloAutomovel
 
         public int Ano { get; set; }
 
+        public byte[] Foto { get; set; }
+
         public GrupoAutomoveis GrupoDoAutomovel { get; set; }
 
         public Automovel()
@@ -41,6 +43,18 @@ namespace LocadoraDeVeiculos.Dominio.ModuloAutomovel
             Ano = ano;
         }
 
+        public Automovel(string placa, string marca, string cor, string modelo, TipoCombustivelEnum tipoCombustivel, decimal capacidadeLitros, int ano, Byte[] foto)
+        {
+            Placa = placa;
+            Marca = marca;
+            Cor = cor;
+            Modelo = modelo;
+            TipoCombustivel = tipoCombustivel;
+            CapacidadeLitros = capacidadeLitros;
+            Foto = foto;
+            Ano = ano;
+        }
+
         public override void Atualizar(Automovel registro)
         {
             Placa = registro.Placa;
@@ -50,6 +64,7 @@ namespace LocadoraDeVeiculos.Dominio.ModuloAutomovel
             TipoCombustivel = registro.TipoCombustivel;
             CapacidadeLitros = registro.CapacidadeLitros;
             Ano = registro.Ano;
+            Foto = registro.Foto;   
         }
     }
 }

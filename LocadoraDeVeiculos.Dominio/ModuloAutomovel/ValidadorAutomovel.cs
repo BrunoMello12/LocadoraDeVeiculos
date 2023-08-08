@@ -27,6 +27,8 @@ namespace LocadoraDeVeiculos.Dominio.ModuloAutomovel
                 .GreaterThan(20)
                 .LessThan(150);
 
+            RuleFor(x => x.Foto).Must(x => x == null || x.Length <= 2697000).WithMessage("O tamanho da foto deve ser menor ou igual a 2 megabytes.");
+
             RuleFor(x => x.Placa)
             .NotEmpty().WithMessage("A placa do carro não pode ser vazia.")
             .NotNull().WithMessage("A placa do carro é obrigatória.")
