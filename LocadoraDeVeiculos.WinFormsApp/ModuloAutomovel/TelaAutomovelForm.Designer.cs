@@ -61,7 +61,7 @@
             // btnGravar
             // 
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnGravar.BackColor = Color.DarkSeaGreen;
+            btnGravar.BackColor = Color.IndianRed;
             btnGravar.DialogResult = DialogResult.OK;
             btnGravar.Location = new Point(121, 309);
             btnGravar.Name = "btnGravar";
@@ -74,7 +74,7 @@
             // btnCancelar
             // 
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnCancelar.BackColor = Color.DarkSeaGreen;
+            btnCancelar.BackColor = Color.IndianRed;
             btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Location = new Point(203, 309);
             btnCancelar.Name = "btnCancelar";
@@ -112,12 +112,13 @@
             // 
             // btnBuscar
             // 
+            btnBuscar.BackColor = Color.IndianRed;
             btnBuscar.Location = new Point(190, 26);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(89, 25);
             btnBuscar.TabIndex = 24;
             btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
@@ -130,6 +131,7 @@
             // 
             // picFotoCarro
             // 
+            picFotoCarro.BackColor = Color.Transparent;
             picFotoCarro.Location = new Point(55, 12);
             picFotoCarro.Name = "picFotoCarro";
             picFotoCarro.Size = new Size(129, 55);
@@ -224,7 +226,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Honeydew;
+            BackColor = Color.SeaShell;
             ClientSize = new Size(299, 355);
             Controls.Add(txtPlaca);
             Controls.Add(lblPlaca);

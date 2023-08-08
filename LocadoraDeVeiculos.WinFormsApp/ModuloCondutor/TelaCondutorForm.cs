@@ -13,7 +13,6 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloCondutor
         public TelaCondutorForm(List<Cliente> clientes)
         {
             InitializeComponent();
-
             this.ConfigurarDialog();
 
             CarregarClientes(clientes);

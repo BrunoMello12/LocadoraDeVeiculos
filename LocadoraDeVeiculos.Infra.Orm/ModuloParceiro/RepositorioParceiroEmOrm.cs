@@ -1,12 +1,5 @@
-﻿using LocadoraDeVeiculos.Dominio.ModuloFuncionario;
-using LocadoraDeVeiculos.Dominio.ModuloParceiro;
+﻿using LocadoraDeVeiculos.Dominio.ModuloParceiro;
 using LocadoraDeVeiculos.Infra.Orm.Compartilhado;
-using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LocadoraDeVeiculos.Infra.Orm.ModuloParceiro
 {

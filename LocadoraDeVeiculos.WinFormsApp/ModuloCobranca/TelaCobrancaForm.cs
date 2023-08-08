@@ -16,6 +16,7 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloCobranca
         {
             InitializeComponent();
             this.ConfigurarDialog();
+
             CarregarGrupoAutomoveis(grupoAutomoveis);
             CarregarEnum();
 

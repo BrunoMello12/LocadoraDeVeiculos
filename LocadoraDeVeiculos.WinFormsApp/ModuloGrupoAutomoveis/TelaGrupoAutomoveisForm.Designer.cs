@@ -37,25 +37,27 @@
             // btnGravar
             // 
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnGravar.BackColor = Color.IndianRed;
             btnGravar.DialogResult = DialogResult.OK;
             btnGravar.Location = new Point(111, 56);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(76, 34);
             btnGravar.TabIndex = 9;
             btnGravar.Text = "Gravar";
-            btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.UseVisualStyleBackColor = false;
             btnGravar.Click += btnGravar_Click;
             // 
             // btnCancelar
             // 
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancelar.BackColor = Color.IndianRed;
             btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Location = new Point(193, 56);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(76, 34);
             btnCancelar.TabIndex = 8;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             // 
             // txtNome
             // 
@@ -78,7 +80,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Honeydew;
+            BackColor = Color.SeaShell;
             ClientSize = new Size(281, 102);
             Controls.Add(btnGravar);
             Controls.Add(btnCancelar);

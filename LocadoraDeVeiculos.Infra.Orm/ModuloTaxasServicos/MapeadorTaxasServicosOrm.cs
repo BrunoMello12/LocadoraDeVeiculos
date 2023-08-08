@@ -1,12 +1,6 @@
-﻿using LocadoraDeVeiculos.Dominio.ModuloFuncionario;
-using LocadoraDeVeiculos.Dominio.ModuloTaxasServicos;
+﻿using LocadoraDeVeiculos.Dominio.ModuloTaxasServicos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LocadoraDeVeiculos.Infra.Orm.ModuloTaxasServicos
 {

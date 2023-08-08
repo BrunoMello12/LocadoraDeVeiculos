@@ -1,5 +1,4 @@
-﻿using LocadoraDeVeiculos.Dominio.ModuloCliente;
-using LocadoraDeVeiculos.Dominio.ModuloPrecos;
+﻿using LocadoraDeVeiculos.Dominio.ModuloPrecos;
 using LocadoraDeVeiculos.WinFormsApp.Compartilhado;
 
 namespace LocadoraDeVeiculos.WinFormsApp.ModuloPrecos

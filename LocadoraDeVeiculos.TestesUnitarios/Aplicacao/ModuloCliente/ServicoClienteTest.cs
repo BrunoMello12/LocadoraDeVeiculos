@@ -3,7 +3,6 @@ using FluentResults;
 using FluentResults.Extensions.FluentAssertions;
 using FluentValidation.Results;
 using LocadoraDeVeiculos.Aplicacao.ModuloCliente;
-using LocadoraDeVeiculos.Aplicacao.ModuloCupom;
 using LocadoraDeVeiculos.Dominio.ModuloCliente;
 using LocadoraDeVeiculos.Dominio.ModuloCupom;
 using LocadoraDeVeiculos.TestesUnitarios.Compartilhado;

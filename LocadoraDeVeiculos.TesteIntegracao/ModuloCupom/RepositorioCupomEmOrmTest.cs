@@ -1,14 +1,8 @@
 ﻿using FizzWare.NBuilder;
 using FluentAssertions;
-using LocadoraDeVeiculos.Dominio.ModuloCliente;
 using LocadoraDeVeiculos.Dominio.ModuloCupom;
 using LocadoraDeVeiculos.Dominio.ModuloParceiro;
 using LocadoraDeVeiculos.TesteIntegracao.Compartilhado;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LocadoraDeVeiculos.TesteIntegracao.ModuloCupom
 {

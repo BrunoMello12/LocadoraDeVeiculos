@@ -2,11 +2,6 @@
 using LocadoraDeVeiculos.Dominio.ModuloAutomovel;
 using LocadoraDeVeiculos.Dominio.ModuloCobranca;
 using LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LocadorDeVeiculos.TesteUnitarios.Dominio.ModuloGrupoAutomoveis
 {

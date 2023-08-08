@@ -1,6 +1,5 @@
 ﻿using GeradorTestes.WinApp;
 using LocadoraDeVeiculos.Dominio.ModuloCobranca;
-using LocadoraDeVeiculos.WinFormsApp.Compartilhado;
 
 namespace LocadoraDeVeiculos.WinFormsApp.ModuloCobranca
 {

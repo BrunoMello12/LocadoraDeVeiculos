@@ -6,12 +6,6 @@ using LocadoraDeVeiculos.Dominio.ModuloPrecos;
 using LocadoraDeVeiculos.Infra.Json.ModuloPrecos;
 using LocadoraDeVeiculos.WinFormsApp.Compartilhado;
 using LocadoraDeVeiculos.WinFormsApp.ModuloPrecos;
-using System;
-using System.Collections.Generic;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
 {

@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using LocadoraDeVeiculos.Dominio.ModuloAluguel;
 
 namespace LocadoraDeVeiculos.Dominio.ModuloAutomovel
 {

@@ -16,6 +16,7 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
         {
             InitializeComponent();
             this.ConfigurarDialog();
+
             CarregarGrupoDeAltomoveis(grupoDeAutomoveis);
             CarregarTipoCombustivel();
         }
