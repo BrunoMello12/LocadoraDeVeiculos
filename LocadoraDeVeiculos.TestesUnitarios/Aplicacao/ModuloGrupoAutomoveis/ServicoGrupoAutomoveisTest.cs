@@ -264,25 +264,26 @@ namespace LocadorDeVeiculos.TesteUnitarios.Aplicacao.ModuloGrupoAutomoveis
         //    resultado.Reasons[0].Message.Should().Be("Este grupo de automoveis está relacionada com um aluguel e não pode ser excluído");
         //}
 
-        //[TestMethod]
-        //public void Deve_tratar_erro_caso_ocorra_falha_ao_tentar_excluir_grupoAutomoveis() //cenário 4
-        //{
-        //    Guid id = new Guid();
+        [TestMethod]
+        public void Deve_tratar_erro_caso_ocorra_falha_ao_tentar_excluir_grupoAutomoveis() //cenário 4
+        {
+            //    Guid id = new Guid();
 
-        //    var disciplina = new GrupoAutomoveis(id, "Grupo01");
+            //    var disciplina = new GrupoAutomoveis(id, "Grupo01");
 
-        //    repositorioGrupoAutomoveisMoq.Setup(x => x.Existe(grupoAutomoveis))
-        //      .Throws(() =>
-        //      {
-        //          return SqlExceptionCreator.NewSqlException();
-        //      });
+            //    repositorioGrupoAutomoveisMoq.Setup(x => x.Existe(grupoAutomoveis))
+            //      .Throws(() =>
+            //      {
+            //          return SqlExceptionCreator.NewSqlException();
+            //      });
 
-        //    //action
-        //    Result resultado = servicoGrupoAutomoveis.Excluir(grupoAutomoveis);
+            //    //action
+            //    Result resultado = servicoGrupoAutomoveis.Excluir(grupoAutomoveis);
 
-        //    //assert 
-        //    resultado.Should().BeFailure();
-        //    resultado.Reasons[0].Message.Should().Be("Falha ao tentar excluir Grupo de Automoveis");
-        //}
+            //    //assert 
+            //    resultado.Should().BeFailure();
+            //    resultado.Reasons[0].Message.Should().Be("Falha ao tentar excluir Grupo de Automoveis");
+            //}
+        }
     }
 }
