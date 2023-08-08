@@ -26,6 +26,17 @@ namespace LocadoraDeVeiculos.Dominio.ModuloCondutor
             
         }
 
+        public Condutor(Guid id, string nome)
+        {
+            Id = id;
+            Nome = nome;
+        }
+
+        public Condutor(string nome)
+        {
+            Nome = nome;
+        }
+
         public Condutor(Cliente cliente, bool clienteCondutor, string nome, string email, string telefone, string cpf, string cnh, DateTime validade)
         {
             Cliente = cliente;
