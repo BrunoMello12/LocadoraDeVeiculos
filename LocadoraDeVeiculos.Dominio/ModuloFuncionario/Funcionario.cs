@@ -10,8 +10,14 @@ namespace LocadoraDeVeiculos.Dominio.ModuloFuncionario
 
         public decimal Salario { get; set; }
 
-        public Funcionario() 
+        public Funcionario()
         {
+        }
+
+        public Funcionario(Guid id, string nome)
+        {
+            Id = id;
+            Nome = nome;
         }
 
         public Funcionario(Guid id, string nome, DateTime dataAdmissao, decimal salario)

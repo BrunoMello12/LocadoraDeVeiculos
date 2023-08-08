@@ -25,6 +25,11 @@ namespace LocadoraDeVeiculos.Dominio.ModuloAutomovel
         {
         }
 
+        public Automovel(string placa, string marca, string cor, string modelo, TipoCombustivelEnum tipoCombustivel, decimal capacidadeLitros, int ano, GrupoAutomoveis grupoDoAutomovel) : this(placa, marca, cor, modelo, tipoCombustivel, capacidadeLitros, ano)
+        {
+            GrupoDoAutomovel = grupoDoAutomovel;
+        }
+
         public Automovel(string placa, string marca, string cor, string modelo, TipoCombustivelEnum tipoCombustivel, decimal capacidadeLitros, int ano)
         {
             Placa = placa;
@@ -40,7 +45,7 @@ namespace LocadoraDeVeiculos.Dominio.ModuloAutomovel
         {
             Placa = registro.Placa;
             Marca = registro.Marca;
-            Cor = registro.Cor; 
+            Cor = registro.Cor;
             Modelo = registro.Modelo;
             TipoCombustivel = registro.TipoCombustivel;
             CapacidadeLitros = registro.CapacidadeLitros;

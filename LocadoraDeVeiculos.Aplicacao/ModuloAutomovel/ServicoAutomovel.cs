@@ -5,9 +5,9 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloAutomovel
     public class ServicoAutomovel
     {
         private IRepositorioAutomovel repositorioAutomovel;
-        private ValidadorAutomovel validadorAutomovel;
+        private IValidadorAutomovel validadorAutomovel;
 
-        public ServicoAutomovel(IRepositorioAutomovel repositorioAutmovel, ValidadorAutomovel validadorAutomovel)
+        public ServicoAutomovel(IRepositorioAutomovel repositorioAutmovel, IValidadorAutomovel validadorAutomovel)
         {
             this.repositorioAutomovel = repositorioAutmovel;
             this.validadorAutomovel = validadorAutomovel;

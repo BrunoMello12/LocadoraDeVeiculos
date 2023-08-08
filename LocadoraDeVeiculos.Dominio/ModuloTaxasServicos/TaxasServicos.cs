@@ -1,4 +1,5 @@
 ﻿using LocadoraDeVeiculos.Dominio.Compartilhado;
+using LocadoraDeVeiculos.Dominio.ModuloAluguel;
 
 namespace LocadoraDeVeiculos.Dominio.ModuloTaxasServicos
 {
@@ -9,14 +10,23 @@ namespace LocadoraDeVeiculos.Dominio.ModuloTaxasServicos
         public bool PrecoFixo { get; set; }
         public bool PrecoDiaria { get; set; }
 
+        public List<Aluguel> ListaAlugueis { get; set; }
+
         public TaxasServicos()
         {
+        }
+
+        public TaxasServicos(string nome)
+        {
+            Nome = nome;
+            ListaAlugueis = new List<Aluguel>();
         }
 
         public TaxasServicos(string nome, decimal preco)
         {
             Nome = nome;
             Preco = preco;
+            ListaAlugueis = new List<Aluguel>();
         }
 
         public override void Atualizar(TaxasServicos registro)
