@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LocadoraDeVeiculos.Infra.Orm.Migrations
 {
     [DbContext(typeof(LocadoraDeVeiculosDbContext))]
-    [Migration("20230808140422_ConfigurarTabelas")]
+    [Migration("20230808153348_ConfigurarTabelas")]
     partial class ConfigurarTabelas
     {
         /// <inheritdoc />
@@ -114,7 +114,6 @@ namespace LocadoraDeVeiculos.Infra.Orm.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("Foto")
-                        .IsRequired()
                         .HasColumnType("varbinary(max)");
 
                     b.Property<Guid>("GrupoDoAutomovelId")

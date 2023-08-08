@@ -15,6 +15,7 @@ namespace LocadoraDeVeiculos.Infra.Orm.ModuloAutomovel
             builderAutomovel.Property(a => a.Cor).IsRequired(true);
             builderAutomovel.Property(a => a.TipoCombustivel).IsRequired(true);
             builderAutomovel.Property(a => a.CapacidadeLitros).IsRequired(true);
+            builderAutomovel.Property(a => a.Foto).HasColumnType("varbinary(max)").IsRequired(false);
 
 
             builderAutomovel.HasOne(a => a.GrupoDoAutomovel)

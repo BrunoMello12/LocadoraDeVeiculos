@@ -76,7 +76,7 @@ namespace LocadoraDeVeiculos.Infra.Orm.Migrations
                     TipoCombustivel = table.Column<int>(type: "int", nullable: false),
                     CapacidadeLitros = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Ano = table.Column<int>(type: "int", nullable: false),
-                    Foto = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
+                    Foto = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
                     GrupoDoAutomovelId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>

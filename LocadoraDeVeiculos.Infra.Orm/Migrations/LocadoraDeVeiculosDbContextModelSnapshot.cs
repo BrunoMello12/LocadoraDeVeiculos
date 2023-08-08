@@ -111,7 +111,6 @@ namespace LocadoraDeVeiculos.Infra.Orm.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("Foto")
-                        .IsRequired()
                         .HasColumnType("varbinary(max)");
 
                     b.Property<Guid>("GrupoDoAutomovelId")
