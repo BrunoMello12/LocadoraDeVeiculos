@@ -21,6 +21,11 @@ namespace LocadoraDeVeiculos.WinFormsApp.Compartilhado
 
         }
 
+        public virtual void Filtrar()
+        {
+         
+        }
+
         public abstract UserControl ObtemListagem();
 
         public abstract ConfiguracaoToolBoxBase ObtemConfiguracaoToolbox();
@@ -28,11 +33,6 @@ namespace LocadoraDeVeiculos.WinFormsApp.Compartilhado
         public string ObterMensagemRodape()
         {
             return mensagemRodape;
-        }
-
-        internal void Filtrar()
-        {
-            throw new NotImplementedException();
         }
     }
 }

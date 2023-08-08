@@ -1,20 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis;
+using LocadoraDeVeiculos.WinFormsApp.Compartilhado;
 
 namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
 {
     public partial class TelaFiltroForm : Form
     {
-        public TelaFiltroForm()
+        public GrupoAutomoveis grupoAutomovel;
+
+        public TelaFiltroForm(IRepositorioGrupoAutomoveis repositorioGrupoAutomovel)
         {
             InitializeComponent();
+            this.ConfigurarDialog();
+            ConfigurarComboBox(repositorioGrupoAutomovel);
+        }
+
+        private void ConfigurarComboBox(IRepositorioGrupoAutomoveis repositorioGrupoAutomovel)
+        {
+            foreach (var item in repositorioGrupoAutomovel.SelecionarTodos())
+            {
+                txtListaGrupoAutomoveis.Items.Add(item);
+            }
+        }
+
+        private void btnGravar_Click_1(object sender, EventArgs e)
+        {
+            grupoAutomovel = (GrupoAutomoveis)txtListaGrupoAutomoveis.SelectedItem;
         }
     }
 }
