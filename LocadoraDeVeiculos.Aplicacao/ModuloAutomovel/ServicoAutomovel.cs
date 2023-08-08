@@ -1,4 +1,10 @@
 ﻿using LocadoraDeVeiculos.Dominio.ModuloAutomovel;
+using LocadoraDeVeiculos.Dominio.ModuloCupom;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace LocadoraDeVeiculos.Aplicacao.ModuloAutomovel
 {
@@ -73,6 +79,15 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloAutomovel
 
             try
             {
+                bool automovelExiste = repositorioAutomovel.Existe(automovel);
+
+                if (automovelExiste == false)
+                {
+                    Log.Warning("Automovel {automovelId} não encontrado", automovel.Id);
+
+                    return Result.Fail("Automovel não encontrado");
+                }
+
                 repositorioAutomovel.Excluir(automovel);
 
                 Log.Debug("Automóvel {AutomovelId} editada com sucesso", automovel.Id);
@@ -95,11 +110,13 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloAutomovel
 
         private List<string> ValidarAutomovel(Automovel automovel)
         {
-            List<string> erros = validadorAutomovel.Validate(automovel)
-                .Errors.Select(x => x.ErrorMessage).ToList();
+            var resultadoValidacao = validadorAutomovel.Validate(automovel);
 
-            //if (NomeDuplicado(automovel))
-            //    erros.Add($"Este nome '{automovel.Nome}' já está sendo utilizado");
+            List<string> erros = new List<string>();
+
+            if (resultadoValidacao != null)
+                erros.AddRange(resultadoValidacao.Errors.Select(x => x.ErrorMessage));
+
 
             foreach (string erro in erros)
             {

@@ -37,11 +37,13 @@ namespace LocadoraDeVeiculos.Dominio.ModuloCliente
         public Cliente(string nome)
         {
             Nome = nome;
+            Condutores = new List<Condutor>();
         }
 
         public Cliente(Guid id, string nome) : this(nome)
         {
             this.Id = id;
+            Condutores = new List<Condutor>();
         }
 
         public Cliente(string nome, string email, string telefone, TipoClienteEnum tipoCliente, string cpf, string cnpj, string estado, string cidade, string bairro, string rua, int numeroCasa)
@@ -56,6 +58,7 @@ namespace LocadoraDeVeiculos.Dominio.ModuloCliente
             Bairro = bairro;
             Rua = rua;
             NumeroCasa = numeroCasa;
+            Condutores = new List<Condutor>();
         }
 
         public override void Atualizar(Cliente registro)
@@ -75,6 +78,16 @@ namespace LocadoraDeVeiculos.Dominio.ModuloCliente
         public override string ToString()
         {
             return Nome;
+        }
+
+        public bool AdicionarCondutor(Condutor condutor)
+        {
+            if (Condutores.Contains(condutor))
+                return false;
+
+            Condutores.Add(condutor);
+
+            return true;
         }
     }
 }
