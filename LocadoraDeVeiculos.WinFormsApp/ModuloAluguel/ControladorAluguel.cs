@@ -53,7 +53,7 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
         {
             List<Aluguel> aluguel = repositorioAluguel.SelecionarTodos();
 
-            TelaAluguelForm tela = new TelaAluguelForm(repositorioFuncionario.SelecionarTodos(), repositorioCliente.SelecionarTodos(), repositorioGrupoAutomoveis.SelecionarTodos(),
+            TelaAluguelForm tela = new TelaAluguelForm(repositorioFuncionario.SelecionarTodos(), repositorioCliente.SelecionarTodos(),repositorioGrupoAutomoveis.SelecionarTodos(),
                                                        repositorioCobranca.SelecionarTodos(), repositorioCondutor.SelecionarTodos(), repositorioAutomovel.SelecionarTodos(),
                                                        repositorioCupom.SelecionarTodos(), repositorioTaxasServicos.SelecionarTodos());
 

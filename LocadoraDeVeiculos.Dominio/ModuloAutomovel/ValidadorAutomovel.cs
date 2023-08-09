@@ -6,6 +6,10 @@ namespace LocadoraDeVeiculos.Dominio.ModuloAutomovel
     {
         public ValidadorAutomovel()
         {
+            RuleFor(x => x.Foto)
+                .NotNull().WithMessage("Necessario colocar uma foto")
+                .Must(x => x == null || x.Length <= 2697000).WithMessage("O tamanho da foto deve ser menor ou igual a 2 MB.");
+
             RuleFor(x => x.GrupoDoAutomovel)
                 .NotNull().WithMessage("O Grupo do Automóvel deve ser informado.");
 
@@ -27,12 +31,10 @@ namespace LocadoraDeVeiculos.Dominio.ModuloAutomovel
                 .GreaterThan(20)
                 .LessThan(150);
 
-            RuleFor(x => x.Foto).Must(x => x == null || x.Length <= 2697000).WithMessage("O tamanho da foto deve ser menor ou igual a 2 megabytes.");
-
             RuleFor(x => x.Placa)
-            .NotEmpty().WithMessage("A placa do carro não pode ser vazia.")
-            .NotNull().WithMessage("A placa do carro é obrigatória.")
-            .Matches(@"^[A-Z]{3}-\d{4}$").WithMessage("A placa do carro deve estar no formato AAA-1234.");
+                .NotEmpty().WithMessage("A placa do carro não pode ser vazia.")
+                .NotNull().WithMessage("A placa do carro é obrigatória.")
+                .Matches(@"^[A-Z]{3}-\d{4}$").WithMessage("A placa do carro deve estar no formato AAA-1234.");
         }
     }
 }

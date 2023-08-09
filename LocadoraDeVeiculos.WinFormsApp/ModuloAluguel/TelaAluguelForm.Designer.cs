@@ -32,7 +32,6 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             chListTaxas = new CheckedListBox();
-            txtValorTotal = new TextBox();
             label2 = new Label();
             label13 = new Label();
             dtDevolucaoPrevista = new DateTimePicker();
@@ -55,6 +54,9 @@
             btnGravar = new Button();
             btnCancelar = new Button();
             label1 = new Label();
+            button1 = new Button();
+            button2 = new Button();
+            txtValorTotal = new TextBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             SuspendLayout();
@@ -63,31 +65,29 @@
             // 
             cbCupom.Enabled = false;
             cbCupom.FormattingEnabled = true;
-            cbCupom.Location = new Point(704, 154);
-            cbCupom.Margin = new Padding(5, 6, 5, 6);
+            cbCupom.Location = new Point(412, 77);
             cbCupom.Name = "cbCupom";
-            cbCupom.Size = new Size(205, 38);
+            cbCupom.Size = new Size(121, 23);
             cbCupom.TabIndex = 92;
+            cbCupom.SelectedIndexChanged += cbCupom_SelectedIndexChanged;
             // 
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.ImeMode = ImeMode.NoControl;
-            tabControl1.Location = new Point(18, 352);
-            tabControl1.Margin = new Padding(5, 6, 5, 6);
+            tabControl1.Location = new Point(10, 154);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(919, 338);
+            tabControl1.Size = new Size(536, 169);
             tabControl1.TabIndex = 91;
             // 
             // tabPage1
             // 
             tabPage1.Controls.Add(chListTaxas);
-            tabPage1.Location = new Point(4, 39);
-            tabPage1.Margin = new Padding(5, 6, 5, 6);
+            tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(5, 6, 5, 6);
-            tabPage1.Size = new Size(911, 295);
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(528, 141);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Taxas Selecionadas";
             tabPage1.UseVisualStyleBackColor = true;
@@ -97,38 +97,27 @@
             chListTaxas.CheckOnClick = true;
             chListTaxas.Enabled = false;
             chListTaxas.FormattingEnabled = true;
-            chListTaxas.Location = new Point(26, 30);
-            chListTaxas.Margin = new Padding(5, 6, 5, 6);
+            chListTaxas.Location = new Point(15, 15);
             chListTaxas.Name = "chListTaxas";
-            chListTaxas.Size = new Size(861, 196);
+            chListTaxas.Size = new Size(504, 94);
             chListTaxas.TabIndex = 0;
-            // 
-            // txtValorTotal
-            // 
-            txtValorTotal.Location = new Point(225, 730);
-            txtValorTotal.Margin = new Padding(5, 6, 5, 6);
-            txtValorTotal.Name = "txtValorTotal";
-            txtValorTotal.ReadOnly = true;
-            txtValorTotal.Size = new Size(205, 35);
-            txtValorTotal.TabIndex = 90;
+            chListTaxas.SelectedIndexChanged += chListTaxas_SelectedIndexChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(28, 736);
-            label2.Margin = new Padding(5, 0, 5, 0);
+            label2.Location = new Point(12, 340);
             label2.Name = "label2";
-            label2.Size = new Size(193, 30);
+            label2.Size = new Size(109, 15);
             label2.TabIndex = 89;
             label2.Text = "Valor Total Previsto:";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(51, 270);
-            label13.Margin = new Padding(5, 0, 5, 0);
+            label13.Location = new Point(296, 109);
             label13.Name = "label13";
-            label13.Size = new Size(194, 30);
+            label13.Size = new Size(110, 15);
             label13.TabIndex = 88;
             label13.Text = "Devolução Prevista:";
             // 
@@ -136,19 +125,18 @@
             // 
             dtDevolucaoPrevista.Enabled = false;
             dtDevolucaoPrevista.Format = DateTimePickerFormat.Short;
-            dtDevolucaoPrevista.Location = new Point(249, 264);
-            dtDevolucaoPrevista.Margin = new Padding(5, 6, 5, 6);
+            dtDevolucaoPrevista.Location = new Point(412, 106);
             dtDevolucaoPrevista.Name = "dtDevolucaoPrevista";
-            dtDevolucaoPrevista.Size = new Size(205, 35);
+            dtDevolucaoPrevista.Size = new Size(121, 23);
             dtDevolucaoPrevista.TabIndex = 87;
+            dtDevolucaoPrevista.ValueChanged += dtDevolucaoPrevista_ValueChanged;
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(97, 212);
-            label12.Margin = new Padding(5, 0, 5, 0);
+            label12.Location = new Point(57, 106);
             label12.Name = "label12";
-            label12.Size = new Size(144, 30);
+            label12.Size = new Size(81, 15);
             label12.TabIndex = 86;
             label12.Text = "Data Locação:";
             // 
@@ -156,152 +144,138 @@
             // 
             dtLocacao.Enabled = false;
             dtLocacao.Format = DateTimePickerFormat.Short;
-            dtLocacao.Location = new Point(249, 206);
-            dtLocacao.Margin = new Padding(5, 6, 5, 6);
+            dtLocacao.Location = new Point(145, 103);
             dtLocacao.Name = "dtLocacao";
-            dtLocacao.Size = new Size(205, 35);
+            dtLocacao.Size = new Size(121, 23);
             dtLocacao.TabIndex = 85;
+            dtLocacao.ValueChanged += dtLocacao_ValueChanged;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(508, 108);
-            label11.Margin = new Padding(5, 0, 5, 0);
+            label11.Location = new Point(296, 54);
             label11.Name = "label11";
-            label11.Size = new Size(192, 30);
+            label11.Size = new Size(110, 15);
             label11.TabIndex = 84;
             label11.Text = "KM do Automóvel: ";
             // 
             // cbAutomovel
             // 
             cbAutomovel.FormattingEnabled = true;
-            cbAutomovel.Location = new Point(707, 40);
-            cbAutomovel.Margin = new Padding(5, 6, 5, 6);
+            cbAutomovel.Location = new Point(412, 20);
             cbAutomovel.Name = "cbAutomovel";
-            cbAutomovel.Size = new Size(205, 38);
+            cbAutomovel.Size = new Size(121, 23);
             cbAutomovel.TabIndex = 83;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(573, 46);
-            label10.Margin = new Padding(5, 0, 5, 0);
+            label10.Location = new Point(334, 23);
             label10.Name = "label10";
-            label10.Size = new Size(125, 30);
+            label10.Size = new Size(72, 15);
             label10.TabIndex = 82;
             label10.Text = "Automóvel: ";
             // 
             // cbCondutor
             // 
             cbCondutor.FormattingEnabled = true;
-            cbCondutor.Location = new Point(812, -87);
-            cbCondutor.Margin = new Padding(5, 6, 5, 6);
+            cbCondutor.Location = new Point(474, -44);
             cbCondutor.Name = "cbCondutor";
-            cbCondutor.Size = new Size(205, 38);
+            cbCondutor.Size = new Size(121, 23);
             cbCondutor.TabIndex = 81;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(692, -81);
-            label9.Margin = new Padding(5, 0, 5, 0);
+            label9.Location = new Point(404, -40);
             label9.Name = "label9";
-            label9.Size = new Size(111, 30);
+            label9.Size = new Size(64, 15);
             label9.TabIndex = 80;
             label9.Text = "Condutor: ";
             // 
             // cbPlanoDeCobranca
             // 
             cbPlanoDeCobranca.FormattingEnabled = true;
-            cbPlanoDeCobranca.Location = new Point(249, 148);
-            cbPlanoDeCobranca.Margin = new Padding(5, 6, 5, 6);
+            cbPlanoDeCobranca.Location = new Point(145, 74);
             cbPlanoDeCobranca.Name = "cbPlanoDeCobranca";
-            cbPlanoDeCobranca.Size = new Size(205, 38);
+            cbPlanoDeCobranca.Size = new Size(121, 23);
             cbPlanoDeCobranca.TabIndex = 79;
+            cbPlanoDeCobranca.SelectedIndexChanged += cbPlanoDeCobranca_SelectedIndexChanged_1;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(45, 154);
-            label8.Margin = new Padding(5, 0, 5, 0);
+            label8.Location = new Point(26, 77);
             label8.Name = "label8";
-            label8.Size = new Size(199, 30);
+            label8.Size = new Size(113, 15);
             label8.TabIndex = 78;
             label8.Text = "Plano de Cobrança: ";
             // 
             // cbGrupoAutomoveis
             // 
             cbGrupoAutomoveis.FormattingEnabled = true;
-            cbGrupoAutomoveis.Location = new Point(249, 90);
-            cbGrupoAutomoveis.Margin = new Padding(5, 6, 5, 6);
+            cbGrupoAutomoveis.Location = new Point(145, 45);
             cbGrupoAutomoveis.Name = "cbGrupoAutomoveis";
-            cbGrupoAutomoveis.Size = new Size(205, 38);
+            cbGrupoAutomoveis.Size = new Size(121, 23);
             cbGrupoAutomoveis.TabIndex = 77;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(18, 96);
-            label4.Margin = new Padding(5, 0, 5, 0);
+            label4.Location = new Point(10, 48);
             label4.Name = "label4";
-            label4.Size = new Size(226, 30);
+            label4.Size = new Size(129, 15);
             label4.TabIndex = 76;
             label4.Text = "Grupo de Automóveis: ";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(603, 162);
-            label7.Margin = new Padding(5, 0, 5, 0);
+            label7.Location = new Point(352, 81);
             label7.Name = "label7";
-            label7.Size = new Size(91, 30);
+            label7.Size = new Size(53, 15);
             label7.TabIndex = 75;
             label7.Text = "Cupom: ";
             // 
             // cbCliente
             // 
             cbCliente.FormattingEnabled = true;
-            cbCliente.Location = new Point(249, 32);
-            cbCliente.Margin = new Padding(5, 6, 5, 6);
+            cbCliente.Location = new Point(145, 16);
             cbCliente.Name = "cbCliente";
-            cbCliente.Size = new Size(205, 38);
+            cbCliente.Size = new Size(121, 23);
             cbCliente.TabIndex = 74;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(155, 40);
-            label6.Margin = new Padding(5, 0, 5, 0);
+            label6.Location = new Point(90, 20);
             label6.Name = "label6";
-            label6.Size = new Size(82, 30);
+            label6.Size = new Size(47, 15);
             label6.TabIndex = 73;
             label6.Text = "Cliente:";
             // 
             // txtKmAutomovel
             // 
-            txtKmAutomovel.Location = new Point(707, 98);
-            txtKmAutomovel.Margin = new Padding(5, 6, 5, 6);
+            txtKmAutomovel.Location = new Point(412, 49);
             txtKmAutomovel.Name = "txtKmAutomovel";
-            txtKmAutomovel.Size = new Size(205, 35);
+            txtKmAutomovel.Size = new Size(121, 23);
             txtKmAutomovel.TabIndex = 72;
             // 
             // cbFuncionario
             // 
             cbFuncionario.FormattingEnabled = true;
-            cbFuncionario.Location = new Point(354, -95);
-            cbFuncionario.Margin = new Padding(5, 6, 5, 6);
+            cbFuncionario.Location = new Point(206, -48);
             cbFuncionario.Name = "cbFuncionario";
-            cbFuncionario.Size = new Size(205, 38);
+            cbFuncionario.Size = new Size(121, 23);
             cbFuncionario.TabIndex = 71;
             // 
             // btnGravar
             // 
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnGravar.DialogResult = DialogResult.OK;
-            btnGravar.Location = new Point(572, 834);
-            btnGravar.Margin = new Padding(5, 6, 5, 6);
+            btnGravar.Location = new Point(330, 388);
             btnGravar.Name = "btnGravar";
-            btnGravar.Size = new Size(130, 68);
+            btnGravar.Size = new Size(76, 34);
             btnGravar.TabIndex = 70;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
@@ -310,10 +284,9 @@
             // 
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.Location = new Point(712, 834);
-            btnCancelar.Margin = new Padding(5, 6, 5, 6);
+            btnCancelar.Location = new Point(411, 388);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(130, 68);
+            btnCancelar.Size = new Size(76, 34);
             btnCancelar.TabIndex = 69;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -321,21 +294,57 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(216, -87);
-            label1.Margin = new Padding(5, 0, 5, 0);
+            label1.Location = new Point(126, -44);
             label1.Name = "label1";
-            label1.Size = new Size(126, 30);
+            label1.Size = new Size(73, 15);
             label1.TabIndex = 68;
             label1.Text = "Funcionário:";
             // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button1.BackColor = Color.IndianRed;
+            button1.DialogResult = DialogResult.OK;
+            button1.Location = new Point(389, 329);
+            button1.Name = "button1";
+            button1.Size = new Size(76, 34);
+            button1.TabIndex = 94;
+            button1.Text = "Gravar";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button2.BackColor = Color.IndianRed;
+            button2.DialogResult = DialogResult.Cancel;
+            button2.Location = new Point(471, 329);
+            button2.Name = "button2";
+            button2.Size = new Size(76, 34);
+            button2.TabIndex = 93;
+            button2.Text = "Cancelar";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // txtValorTotal
+            // 
+            txtValorTotal.Location = new Point(127, 336);
+            txtValorTotal.Name = "txtValorTotal";
+            txtValorTotal.PlaceholderText = "R$";
+            txtValorTotal.ReadOnly = true;
+            txtValorTotal.Size = new Size(121, 23);
+            txtValorTotal.TabIndex = 95;
+            // 
             // TelaAluguelForm
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(965, 807);
+            BackColor = Color.SeaShell;
+            ClientSize = new Size(559, 375);
+            Controls.Add(txtValorTotal);
+            Controls.Add(button1);
+            Controls.Add(button2);
             Controls.Add(cbCupom);
             Controls.Add(tabControl1);
-            Controls.Add(txtValorTotal);
             Controls.Add(label2);
             Controls.Add(label13);
             Controls.Add(dtDevolucaoPrevista);
@@ -358,8 +367,9 @@
             Controls.Add(btnGravar);
             Controls.Add(btnCancelar);
             Controls.Add(label1);
+            Margin = new Padding(2);
             Name = "TelaAluguelForm";
-            Text = "TelaAluguelForm";
+            Text = "Cadastro de Aluguel";
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             ResumeLayout(false);
@@ -372,7 +382,6 @@
         private TabControl tabControl1;
         private TabPage tabPage1;
         private CheckedListBox chListTaxas;
-        private TextBox txtValorTotal;
         private Label label2;
         private Label label13;
         private DateTimePicker dtDevolucaoPrevista;
@@ -395,5 +404,8 @@
         private Button btnGravar;
         private Button btnCancelar;
         private Label label1;
+        private Button button1;
+        private Button button2;
+        private TextBox txtValorTotal;
     }
 }

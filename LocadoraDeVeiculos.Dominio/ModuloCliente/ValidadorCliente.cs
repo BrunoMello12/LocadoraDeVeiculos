@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using LocadoraDeVeiculos.Dominio.ModuloFuncionario;
 
 namespace LocadoraDeVeiculos.Dominio.ModuloCliente
 {
@@ -22,15 +23,21 @@ namespace LocadoraDeVeiculos.Dominio.ModuloCliente
                 .NotNull().WithMessage("O campo Telefone é obrigatório.")
                 .Matches(@"^\(\d{2}\) \d{5}-\d{4}$").WithMessage("O campo Telefone deve estar no formato (99) 99999-9999.");
 
-            RuleFor(x => x.Cpf)
-                .NotEmpty().WithMessage("O campo CPF não pode ser vazio.")
-                .NotNull().WithMessage("O campo CPF é obrigatório.")
-                .Matches(@"^\d{3}\.\d{3}\.\d{3}-\d{2}$").WithMessage("O campo CPF deve estar no formato 999.999.999-99.");
-
-            RuleFor(x => x.Cnpj)
+            When(x => x.TipoCliente == TipoClienteEnum.PessoaJuridica, () =>
+            {
+                RuleFor(x => x.Cnpj)
                 .NotEmpty().WithMessage("O campo CNPJ não pode ser vazio.")
                 .NotNull().WithMessage("O campo CNPJ é obrigatório.")
                 .Matches(@"^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$").WithMessage("O campo CNPJ deve estar no formato 99.999.999/9999-99.");
+            });
+
+            When(x => x.TipoCliente == TipoClienteEnum.PessoaFisica, () =>
+            {
+                RuleFor(x => x.Cpf)
+                .NotEmpty().WithMessage("O campo CPF não pode ser vazio.")
+                .NotNull().WithMessage("O campo CPF é obrigatório.")
+                .Matches(@"^\d{3}\.\d{3}\.\d{3}-\d{2}$").WithMessage("O campo CPF deve estar no formato 999.999.999-99.");
+            });
 
             RuleFor(x => x.Estado)
                 .NotEmpty().WithMessage("O campo Estado não pode ser vazio.")

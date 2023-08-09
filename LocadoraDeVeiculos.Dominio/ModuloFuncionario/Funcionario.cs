@@ -34,5 +34,10 @@ namespace LocadoraDeVeiculos.Dominio.ModuloFuncionario
             DataAdmissao = registro.DataAdmissao;
             Salario = registro.Salario;
         }
+
+        public override string ToString()
+        {
+            return Nome;
+        }
     }
 }

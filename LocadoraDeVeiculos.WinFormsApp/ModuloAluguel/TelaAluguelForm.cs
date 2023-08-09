@@ -178,7 +178,25 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
             return chListTaxas.CheckedItems.Cast<TaxasServicos>().ToList();
         }
 
-        private void btnGravar_Click(object sender, EventArgs e)
+        private void cbPlanoDeCobranca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dtLocacao.Enabled = true;
+            dtDevolucaoPrevista.Enabled = true;
+            cbCupom.Enabled = true;
+            chListTaxas.Enabled = true;
+            RealizarCalculoValorTotal();
+        }
+
+        private void RealizarCalculoValorTotal()
+        {
+            aluguel = ObterAluguel();
+
+            aluguel.CalcularValorTotal();
+
+            txtValorTotal.Text = aluguel.ValorTotalPrevisto.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             this.aluguel = ObterAluguel();
 
@@ -194,7 +212,7 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
             }
         }
 
-        private void cbPlanoDeCobranca_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbPlanoDeCobranca_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             dtLocacao.Enabled = true;
             dtDevolucaoPrevista.Enabled = true;
@@ -222,15 +240,5 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
         {
             RealizarCalculoValorTotal();
         }
-
-        private void RealizarCalculoValorTotal()
-        {
-            aluguel = ObterAluguel();
-
-            aluguel.CalcularValorTotal();
-
-            txtValorTotal.Text = aluguel.ValorTotalPrevisto.ToString();
-        }
-
     }
 }
