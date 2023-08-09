@@ -15,5 +15,7 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloCondutor
         public override bool FiltrarHabilitado { get { return false; } }
 
         public override bool PrecoHabilitado { get { return false; } }
+
+        public override bool DevolucaoHabilitado { get { return false; } }
     }
 }

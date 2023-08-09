@@ -20,6 +20,11 @@
          
         }
 
+        public virtual void Devolucao()
+        {
+
+        }
+
         public abstract UserControl ObtemListagem();
 
         public abstract ConfiguracaoToolBoxBase ObtemConfiguracaoToolbox();
@@ -27,11 +32,6 @@
         public string ObterMensagemRodape()
         {
             return mensagemRodape;
-        }
-
-        internal void Devolucao()
-        {
-            throw new NotImplementedException();
         }
     }
 }
