@@ -58,6 +58,9 @@
             panelRegistros = new Panel();
             statusStrip1 = new StatusStrip();
             labelRodape = new ToolStripStatusLabel();
+            btnPdf = new ToolStripButton();
+            btnEmail = new ToolStripButton();
+            toolStripSeparator4 = new ToolStripSeparator();
             menuStrip1.SuspendLayout();
             toolBox.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -69,7 +72,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { cadastrosToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(567, 24);
+            menuStrip1.Size = new Size(638, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -186,17 +189,16 @@
             // 
             // toolBox
             // 
-            toolBox.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, toolStripSeparator1, btnDevolucao, btnPrecos, toolStripSeparator2, btnFiltrar, toolStripSeparator3, lblTipoCadastro });
+            toolBox.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, toolStripSeparator1, btnDevolucao, btnPrecos, toolStripSeparator4, btnPdf, btnEmail, toolStripSeparator2, btnFiltrar, toolStripSeparator3, lblTipoCadastro });
             toolBox.Location = new Point(0, 24);
             toolBox.Name = "toolBox";
-            toolBox.Size = new Size(567, 53);
+            toolBox.Size = new Size(638, 53);
             toolBox.TabIndex = 1;
             toolBox.Text = "toolStrip1";
             // 
             // btnAdicionar
             // 
             btnAdicionar.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnAdicionar.Enabled = false;
             btnAdicionar.Image = Properties.Resources.new_document;
             btnAdicionar.ImageScaling = ToolStripItemImageScaling.None;
             btnAdicionar.ImageTransparentColor = Color.Magenta;
@@ -208,7 +210,6 @@
             // btnEditar
             // 
             btnEditar.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnEditar.Enabled = false;
             btnEditar.Image = Properties.Resources.quill;
             btnEditar.ImageScaling = ToolStripItemImageScaling.None;
             btnEditar.ImageTransparentColor = Color.Magenta;
@@ -220,7 +221,6 @@
             // btnExcluir
             // 
             btnExcluir.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnExcluir.Enabled = false;
             btnExcluir.Image = Properties.Resources.trash_can;
             btnExcluir.ImageScaling = ToolStripItemImageScaling.None;
             btnExcluir.ImageTransparentColor = Color.Magenta;
@@ -237,7 +237,6 @@
             // btnDevolucao
             // 
             btnDevolucao.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnDevolucao.Enabled = false;
             btnDevolucao.Image = Properties.Resources.file;
             btnDevolucao.ImageScaling = ToolStripItemImageScaling.None;
             btnDevolucao.ImageTransparentColor = Color.Magenta;
@@ -249,7 +248,6 @@
             // btnPrecos
             // 
             btnPrecos.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnPrecos.Enabled = false;
             btnPrecos.Image = Properties.Resources.gas_station__1_;
             btnPrecos.ImageScaling = ToolStripItemImageScaling.None;
             btnPrecos.ImageTransparentColor = Color.Magenta;
@@ -266,7 +264,6 @@
             // btnFiltrar
             // 
             btnFiltrar.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnFiltrar.Enabled = false;
             btnFiltrar.Image = (Image)resources.GetObject("btnFiltrar.Image");
             btnFiltrar.ImageScaling = ToolStripItemImageScaling.None;
             btnFiltrar.ImageTransparentColor = Color.Magenta;
@@ -291,16 +288,16 @@
             panelRegistros.Dock = DockStyle.Fill;
             panelRegistros.Location = new Point(0, 77);
             panelRegistros.Name = "panelRegistros";
-            panelRegistros.Size = new Size(567, 272);
+            panelRegistros.Size = new Size(638, 306);
             panelRegistros.TabIndex = 2;
             // 
             // statusStrip1
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { labelRodape });
-            statusStrip1.Location = new Point(0, 327);
+            statusStrip1.Location = new Point(0, 361);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(567, 22);
+            statusStrip1.Size = new Size(638, 22);
             statusStrip1.TabIndex = 3;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -310,11 +307,38 @@
             labelRodape.Size = new Size(255, 17);
             labelRodape.Text = "Bem-Vindo! As informações irão aparecer aqui.";
             // 
+            // btnPdf
+            // 
+            btnPdf.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnPdf.Image = Properties.Resources.pdf;
+            btnPdf.ImageScaling = ToolStripItemImageScaling.None;
+            btnPdf.ImageTransparentColor = Color.Magenta;
+            btnPdf.Name = "btnPdf";
+            btnPdf.Padding = new Padding(7);
+            btnPdf.Size = new Size(50, 50);
+            btnPdf.Text = "toolStripButton1";
+            // 
+            // btnEmail
+            // 
+            btnEmail.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnEmail.Image = Properties.Resources.mail__1_;
+            btnEmail.ImageScaling = ToolStripItemImageScaling.None;
+            btnEmail.ImageTransparentColor = Color.Magenta;
+            btnEmail.Name = "btnEmail";
+            btnEmail.Padding = new Padding(7);
+            btnEmail.Size = new Size(50, 50);
+            btnEmail.Text = "toolStripButton1";
+            // 
+            // toolStripSeparator4
+            // 
+            toolStripSeparator4.Name = "toolStripSeparator4";
+            toolStripSeparator4.Size = new Size(6, 53);
+            // 
             // TelaPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(567, 349);
+            ClientSize = new Size(638, 383);
             Controls.Add(statusStrip1);
             Controls.Add(panelRegistros);
             Controls.Add(toolBox);
@@ -364,5 +388,8 @@
         private ToolStripButton btnDevolucao;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripSeparator toolStripSeparator3;
+        private ToolStripButton btnPdf;
+        private ToolStripButton btnEmail;
+        private ToolStripSeparator toolStripSeparator4;
     }
 }

@@ -193,6 +193,16 @@ namespace LocadoraDeVeiculos.WinFormsApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mail__1_ {
+            get {
+                object obj = ResourceManager.GetObject("mail (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap moped {
             get {
                 object obj = ResourceManager.GetObject("moped", resourceCulture);
@@ -223,6 +233,26 @@ namespace LocadoraDeVeiculos.WinFormsApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pdf {
+            get {
+                object obj = ResourceManager.GetObject("pdf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap postbox {
+            get {
+                object obj = ResourceManager.GetObject("postbox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap quill {
             get {
                 object obj = ResourceManager.GetObject("quill", resourceCulture);
@@ -236,6 +266,16 @@ namespace LocadoraDeVeiculos.WinFormsApp.Properties {
         internal static System.Drawing.Bitmap sales_funnel {
             get {
                 object obj = ResourceManager.GetObject("sales-funnel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sales_funnel1 {
+            get {
+                object obj = ResourceManager.GetObject("sales-funnel1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
