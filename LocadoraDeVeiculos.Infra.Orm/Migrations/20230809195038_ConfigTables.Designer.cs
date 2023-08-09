@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LocadoraDeVeiculos.Infra.Orm.Migrations
 {
     [DbContext(typeof(LocadoraDeVeiculosDbContext))]
-    [Migration("20230808153348_ConfigurarTabelas")]
-    partial class ConfigurarTabelas
+    [Migration("20230809195038_ConfigTables")]
+    partial class ConfigTables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -208,6 +208,10 @@ namespace LocadoraDeVeiculos.Infra.Orm.Migrations
 
                     b.Property<decimal?>("KmDisponivel")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("PrecoDiaria")
                         .HasColumnType("decimal(18,2)");

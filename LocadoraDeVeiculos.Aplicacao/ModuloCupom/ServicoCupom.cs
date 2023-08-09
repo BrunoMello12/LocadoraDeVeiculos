@@ -1,16 +1,20 @@
-﻿using LocadoraDeVeiculos.Dominio.ModuloCupom;
+﻿using LocadoraDeVeiculos.Dominio.Compartilhado;
+using LocadoraDeVeiculos.Dominio.ModuloCupom;
+using LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis;
 
 namespace LocadoraDeVeiculos.Aplicacao.ModuloCupom
 {
     public class ServicoCupom
     {
-        private IRepositorioCupom repositorioCupom;
-        private IValidadorCupom validadorCupom;
+        private readonly IRepositorioCupom repositorioCupom;
+        private readonly IValidadorCupom validadorCupom;
+        private readonly IContextoPersistencia contextoPersistencia;
 
-        public ServicoCupom(IRepositorioCupom repositorioCupom, IValidadorCupom validadorCupom)
+        public ServicoCupom(IRepositorioCupom repositorioCupom, IValidadorCupom validadorCupom, IContextoPersistencia contextoPersistencia)
         {
             this.repositorioCupom = repositorioCupom;
             this.validadorCupom = validadorCupom;
+            this.contextoPersistencia = contextoPersistencia;
         }
 
         public Result Inserir(Cupom cupom)
@@ -20,11 +24,17 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloCupom
             List<string> erros = ValidarCupom(cupom);
 
             if (erros.Count() > 0)
+            {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 return Result.Fail(erros);
+            }
 
             try
             {
                 repositorioCupom.Inserir(cupom);
+
+                contextoPersistencia.GravarDados();
 
                 Log.Debug("Cupom {cupomId} inserido com sucesso", cupom.Id);
 
@@ -32,6 +42,8 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloCupom
             }
             catch (Exception exc)
             {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 string msgErro = "Falha ao tentar inserir cupom.";
 
                 Log.Error(exc, msgErro + "{@d}", cupom);
@@ -47,11 +59,17 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloCupom
             List<string> erros = ValidarCupom(cupom);
 
             if (erros.Count() > 0)
+            {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 return Result.Fail(erros);
+            }
 
             try
             {
                 repositorioCupom.Editar(cupom);
+
+                contextoPersistencia.GravarDados();
 
                 Log.Debug("Cupom {cupomId} editado com sucesso", cupom.Id);
 
@@ -59,6 +77,8 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloCupom
             }
             catch (Exception exc)
             {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 string msgErro = "Falha ao tentar editar Cupom.";
 
                 Log.Error(exc, msgErro + "{@d}", cupom);
@@ -84,12 +104,16 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloCupom
 
                 repositorioCupom.Excluir(cupom);
 
+                contextoPersistencia.GravarDados();
+
                 Log.Debug("Cupom {cupomId} excluído com sucesso", cupom.Id);
 
                 return Result.Ok();
             }
             catch (Exception ex)
             {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 List<string> erros = new List<string>();
 
                 string msgErro;

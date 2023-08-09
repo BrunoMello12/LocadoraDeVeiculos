@@ -1,16 +1,19 @@
-﻿using LocadoraDeVeiculos.Dominio.ModuloCliente;
+﻿using LocadoraDeVeiculos.Dominio.Compartilhado;
+using LocadoraDeVeiculos.Dominio.ModuloCliente;
 
 namespace LocadoraDeVeiculos.Aplicacao.ModuloCliente
 {
     public class ServicoCliente
     {
-        private IRepositorioCliente repositorioCliente;
-        private IValidadorCliente validadorCliente;
+        private readonly IRepositorioCliente repositorioCliente;
+        private readonly IValidadorCliente validadorCliente;
+        private readonly IContextoPersistencia contextoPersistencia;
 
-        public ServicoCliente(IRepositorioCliente repositorioCliente, IValidadorCliente validadorCliente)
+        public ServicoCliente(IRepositorioCliente repositorioCliente, IValidadorCliente validadorCliente, IContextoPersistencia contextoPersistencia)
         {
             this.repositorioCliente = repositorioCliente;
             this.validadorCliente = validadorCliente;
+            this.contextoPersistencia = contextoPersistencia;
         }
 
         public Result Inserir(Cliente cliente)
@@ -20,11 +23,17 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloCliente
             List<string> erros = ValidarCliente(cliente);
 
             if (erros.Count() > 0)
-                return Result.Fail(erros); 
+            {
+                contextoPersistencia.DesfazerAlteracoes();
+
+                return Result.Fail(erros);
+            }
 
             try
             {
                 repositorioCliente.Inserir(cliente);
+
+                contextoPersistencia.GravarDados();
 
                 Log.Debug("Cliente {Clienteid} inserido com sucesso", cliente.Id);
 
@@ -32,11 +41,13 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloCliente
             }
             catch (Exception exc)
             {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 string msgErro = "Falha ao tentar inserir cliente.";
 
                 Log.Error(exc, msgErro + "{@d}", cliente);
 
-                return Result.Fail(msgErro); 
+                return Result.Fail(msgErro);
             }
         }
 
@@ -47,11 +58,17 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloCliente
             List<string> erros = ValidarCliente(cliente);
 
             if (erros.Count() > 0)
+            {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 return Result.Fail(erros);
+            }
 
             try
             {
                 repositorioCliente.Editar(cliente);
+
+                contextoPersistencia.GravarDados();
 
                 Log.Debug("Cliente {ClienteId} editado com sucesso", cliente.Id);
 
@@ -59,6 +76,8 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloCliente
             }
             catch (Exception exc)
             {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 string msgErro = "Falha ao tentar editar cliente.";
 
                 Log.Error(exc, msgErro + "{@d}", cliente);
@@ -84,12 +103,16 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloCliente
 
                 repositorioCliente.Excluir(cliente);
 
+                contextoPersistencia.GravarDados();
+
                 Log.Debug("Cliente {ClienteId} excluído com sucesso", cliente.Id);
 
                 return Result.Ok();
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 List<string> erros = new List<string>();
 
                 string msgErro;

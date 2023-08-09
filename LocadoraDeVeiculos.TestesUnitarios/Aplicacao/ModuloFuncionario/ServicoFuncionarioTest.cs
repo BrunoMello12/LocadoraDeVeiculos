@@ -3,9 +3,15 @@ using FluentResults;
 using FluentResults.Extensions.FluentAssertions;
 using FluentValidation.Results;
 using LocadoraDeVeiculos.Aplicacao.ModuloFuncionario;
+using LocadoraDeVeiculos.Dominio.Compartilhado;
 using LocadoraDeVeiculos.Dominio.ModuloFuncionario;
 using LocadoraDeVeiculos.TestesUnitarios.Compartilhado;
 using Moq;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace LocadorDeVeiculos.TesteUnitarios.Aplicacao
 {
@@ -14,6 +20,7 @@ namespace LocadorDeVeiculos.TesteUnitarios.Aplicacao
     {
         Mock<IRepositorioFuncionario> repositorioFuncionarioMoq;
         Mock<IValidadorFuncionario> validadorMoq;
+        Mock<IContextoPersistencia> contextoMoq;
 
         private ServicoFuncionario servicoFuncionario;
 
@@ -23,7 +30,8 @@ namespace LocadorDeVeiculos.TesteUnitarios.Aplicacao
         {
             repositorioFuncionarioMoq = new Mock<IRepositorioFuncionario>();
             validadorMoq = new Mock<IValidadorFuncionario>();
-            servicoFuncionario = new ServicoFuncionario(repositorioFuncionarioMoq.Object, validadorMoq.Object);
+            contextoMoq = new Mock<IContextoPersistencia>();
+            servicoFuncionario = new ServicoFuncionario(repositorioFuncionarioMoq.Object, validadorMoq.Object, contextoMoq.Object);
             funcionario = new Funcionario(new Guid(), "Gabriel", DateTime.Now, 2000);
         }
 
@@ -286,4 +294,3 @@ namespace LocadorDeVeiculos.TesteUnitarios.Aplicacao
         }
     }
 }
-

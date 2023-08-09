@@ -206,6 +206,10 @@ namespace LocadoraDeVeiculos.Infra.Orm.Migrations
                     b.Property<decimal?>("KmDisponivel")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<decimal>("PrecoDiaria")
                         .HasColumnType("decimal(18,2)");
 

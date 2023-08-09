@@ -3,9 +3,15 @@ using FluentResults;
 using FluentResults.Extensions.FluentAssertions;
 using FluentValidation.Results;
 using LocadoraDeVeiculos.Aplicacao.ModuloParceiro;
+using LocadoraDeVeiculos.Dominio.Compartilhado;
 using LocadoraDeVeiculos.Dominio.ModuloParceiro;
 using LocadoraDeVeiculos.TestesUnitarios.Compartilhado;
 using Moq;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloParceiro
 {
@@ -14,6 +20,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloParceiro
     {
         Mock<IRepositorioParceiro> repositorioParceiroMoq;
         Mock<IValidadorParceiro> validadorMoq;
+        Mock<IContextoPersistencia> contextoMoq;
 
         private ServicoParceiro servicoParceiro;
 
@@ -23,7 +30,8 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloParceiro
         {
             repositorioParceiroMoq = new Mock<IRepositorioParceiro>();
             validadorMoq = new Mock<IValidadorParceiro>();
-            servicoParceiro = new ServicoParceiro(repositorioParceiroMoq.Object, validadorMoq.Object);
+            contextoMoq = new Mock<IContextoPersistencia>();
+            servicoParceiro = new ServicoParceiro(repositorioParceiroMoq.Object, validadorMoq.Object, contextoMoq.Object);
             parceiro = new Parceiro("Parceiro01");
         }
 
@@ -246,6 +254,8 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloParceiro
                {
                    return true;
                });
+
+            // como configurar um método para ele lançar uma sqlexception utilizando moq
 
             repositorioParceiroMoq.Setup(x => x.Excluir(It.IsAny<Parceiro>()))
                 .Throws(() =>

@@ -3,6 +3,7 @@ using FluentResults;
 using FluentResults.Extensions.FluentAssertions;
 using FluentValidation.Results;
 using LocadoraDeVeiculos.Aplicacao.ModuloCobranca;
+using LocadoraDeVeiculos.Dominio.Compartilhado;
 using LocadoraDeVeiculos.Dominio.ModuloCobranca;
 using LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis;
 using LocadoraDeVeiculos.TestesUnitarios.Compartilhado;
@@ -16,6 +17,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloCobranca
         Mock<IRepositorioGrupoAutomoveis> repositorioGrupoAutomoveis;
         Mock<IRepositorioCobranca> repositorioCobrancaMoq;
         Mock<IValidadorCobranca> validadorMoq;
+        Mock<IContextoPersistencia> contextoMoq;
 
         private ServicoCobranca servicoCobranca;
 
@@ -26,10 +28,11 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloCobranca
         {
             repositorioCobrancaMoq = new Mock<IRepositorioCobranca>();
             validadorMoq = new Mock<IValidadorCobranca>();
-            servicoCobranca = new ServicoCobranca(repositorioCobrancaMoq.Object, validadorMoq.Object);
+            contextoMoq = new Mock<IContextoPersistencia>();
+            servicoCobranca = new ServicoCobranca(repositorioCobrancaMoq.Object, validadorMoq.Object, contextoMoq.Object);
 
             grupoAutomoveis = new GrupoAutomoveis("Picape");
-            cobranca = new Cobranca(grupoAutomoveis, TipoPlanoEnum.PlanoDiario, 20, 0);
+            cobranca = new Cobranca(grupoAutomoveis, "Camila", TipoPlanoEnum.PlanoDiario, 20, 0);
         }
 
         [TestMethod]
@@ -147,7 +150,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloCobranca
         }
 
         [TestMethod]
-        public void Nao_deve_excluir_cupom_caso_ele_nao_esteja_cadastrado() //cenário 2
+        public void Nao_deve_excluir_cobranca_caso_ele_nao_esteja_cadastrado() //cenário 2
         {
             //arrange
             repositorioCobrancaMoq.Setup(x => x.Existe(cobranca))
@@ -165,7 +168,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloCobranca
         }
 
         [TestMethod]
-        public void Deve_tratar_erro_caso_ocorra_falha_ao_tentar_excluir_cupom() //cenário 3
+        public void Deve_tratar_erro_caso_ocorra_falha_ao_tentar_excluir_cobranca() //cenário 3
         {
             repositorioCobrancaMoq.Setup(x => x.Existe(It.IsAny<Cobranca>()))
               .Throws(() =>
@@ -205,3 +208,4 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloCobranca
         }
     }
 }
+

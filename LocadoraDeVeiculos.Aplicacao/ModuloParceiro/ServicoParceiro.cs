@@ -1,4 +1,10 @@
-﻿using LocadoraDeVeiculos.Dominio.ModuloParceiro;
+﻿using LocadoraDeVeiculos.Dominio.Compartilhado;
+using LocadoraDeVeiculos.Dominio.ModuloParceiro;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace LocadoraDeVeiculos.Aplicacao.ModuloParceiro
 {
@@ -6,12 +12,14 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloParceiro
     {
         private IRepositorioParceiro repositorioParceiro;
         private IValidadorParceiro validadorParceiro;
+        private readonly IContextoPersistencia contextoPersistencia;
 
-        public ServicoParceiro(IRepositorioParceiro repositorioParceiro, IValidadorParceiro validadorParceiro)
+        public ServicoParceiro(IRepositorioParceiro repositorioParceiro, IValidadorParceiro validadorParceiro, IContextoPersistencia contextoPersistencia)
         {
             this.repositorioParceiro = repositorioParceiro;
             this.repositorioParceiro = repositorioParceiro;
             this.validadorParceiro = validadorParceiro;
+            this.contextoPersistencia = contextoPersistencia;
         }
 
         public Result Inserir(Parceiro parceiro)
@@ -21,11 +29,17 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloParceiro
             List<string> erros = ValidarParceiro(parceiro);
 
             if (erros.Count() > 0)
+            {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 return Result.Fail(erros);
+            }
 
             try
             {
                 repositorioParceiro.Inserir(parceiro);
+
+                contextoPersistencia.GravarDados();
 
                 Log.Debug("Parceiro {ParceiroId} inserida com sucesso", parceiro.Id);
 
@@ -33,11 +47,13 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloParceiro
             }
             catch (Exception exc)
             {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 string msgErro = "Falha ao tentar inserir parceiro.";
 
                 Log.Error(exc, msgErro + "{@d}", parceiro);
 
-                return Result.Fail(msgErro); 
+                return Result.Fail(msgErro);
             }
         }
 
@@ -48,11 +64,17 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloParceiro
             List<string> erros = ValidarParceiro(parceiro);
 
             if (erros.Count() > 0)
+            {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 return Result.Fail(erros);
+            }
 
             try
             {
                 repositorioParceiro.Editar(parceiro);
+
+                contextoPersistencia.GravarDados();
 
                 Log.Debug("Parceiro {ParceiroId} editada com sucesso", parceiro.Id);
 
@@ -60,6 +82,8 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloParceiro
             }
             catch (Exception exc)
             {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 string msgErro = "Falha ao tentar editar parceiro.";
 
                 Log.Error(exc, msgErro + "{@d}", parceiro);
@@ -85,18 +109,22 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloParceiro
 
                 repositorioParceiro.Excluir(parceiro);
 
+                contextoPersistencia.GravarDados();
+
                 Log.Debug("Parceiro {ParceiroId} excluída com sucesso", parceiro.Id);
 
                 return Result.Ok();
             }
             catch (Exception ex)
             {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 List<string> erros = new List<string>();
 
                 string msgErro;
 
                 if (ex.Message.Contains("FK_TBAluguel_TBParceiro"))
-                    msgErro = "Este parceiro está relacionada com um aluguel e não pode ser excluído";
+                    msgErro = "Este parceiro está relacionado com um aluguel e não pode ser excluído";
 
                 else if (ex.Message.Contains("FK_TBCupom_TBParceiro"))
                     msgErro = "Este parceiro está relacionado com um cupom e não pode ser excluído";

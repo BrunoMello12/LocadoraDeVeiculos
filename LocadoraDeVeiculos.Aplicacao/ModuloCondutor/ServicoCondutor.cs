@@ -1,16 +1,19 @@
-﻿using LocadoraDeVeiculos.Dominio.ModuloCondutor;
+﻿using LocadoraDeVeiculos.Dominio.Compartilhado;
+using LocadoraDeVeiculos.Dominio.ModuloCondutor;
 
 namespace LocadoraDeVeiculos.Aplicacao.ModuloCondutor
 {
     public class ServicoCondutor
     {
-        private IRepositorioCondutor repositorioCondutor;
-        private IValidadorCondutor validadorCondutor;
+        private readonly IRepositorioCondutor repositorioCondutor;
+        private readonly IValidadorCondutor validadorCondutor;
+        private readonly IContextoPersistencia contextoPersistencia;
 
-        public ServicoCondutor(IRepositorioCondutor repositorioCondutor, IValidadorCondutor validadorCondutor)
+        public ServicoCondutor(IRepositorioCondutor repositorioCondutor, IValidadorCondutor validadorCondutor, IContextoPersistencia contextoPersistencia)
         {
             this.repositorioCondutor = repositorioCondutor;
             this.validadorCondutor = validadorCondutor;
+            this.contextoPersistencia = contextoPersistencia;
         }
 
         public Result Inserir(Condutor condutor)
@@ -20,11 +23,17 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloCondutor
             List<string> erros = ValidarCondutor(condutor);
 
             if (erros.Count() > 0)
+            {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 return Result.Fail(erros);
+            }
 
             try
             {
                 repositorioCondutor.Inserir(condutor);
+
+                contextoPersistencia.GravarDados();
 
                 Log.Debug("Condutor {CondutorId} inserido com sucesso", condutor.Id);
 
@@ -32,6 +41,8 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloCondutor
             }
             catch (Exception exc)
             {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 string msgErro = "Falha ao tentar inserir Condutor.";
 
                 Log.Error(exc, msgErro + "{@d}", condutor);
@@ -47,11 +58,17 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloCondutor
             List<string> erros = ValidarCondutor(condutor);
 
             if (erros.Count() > 0)
+            {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 return Result.Fail(erros);
+            }
 
             try
             {
                 repositorioCondutor.Editar(condutor);
+
+                contextoPersistencia.GravarDados();
 
                 Log.Debug("Condutor {condutorId} editado com sucesso", condutor.Id);
 
@@ -59,6 +76,8 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloCondutor
             }
             catch (Exception exc)
             {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 string msgErro = "Falha ao tentar editar Condutor.";
 
                 Log.Error(exc, msgErro + "{@d}", condutor);
@@ -84,12 +103,16 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloCondutor
 
                 repositorioCondutor.Excluir(condutor);
 
+                contextoPersistencia.GravarDados();
+
                 Log.Debug("Condutor {condutorId} excluído com sucesso", condutor.Id);
 
                 return Result.Ok();
             }
             catch (Exception ex)
             {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 List<string> erros = new List<string>();
 
                 string msgErro;

@@ -3,6 +3,8 @@ using FluentResults;
 using FluentResults.Extensions.FluentAssertions;
 using FluentValidation.Results;
 using LocadoraDeVeiculos.Aplicacao.ModuloCupom;
+using LocadoraDeVeiculos.Dominio.Compartilhado;
+using LocadoraDeVeiculos.Dominio.ModuloCliente;
 using LocadoraDeVeiculos.Dominio.ModuloCupom;
 using LocadoraDeVeiculos.Dominio.ModuloParceiro;
 using LocadoraDeVeiculos.TestesUnitarios.Compartilhado;
@@ -16,6 +18,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloCupom
     {
         Mock<IRepositorioCupom> repositorioCupomMoq;
         Mock<IValidadorCupom> validadorMoq;
+        Mock<IContextoPersistencia> contextoMoq;
 
         private ServicoCupom servicoCupom;
 
@@ -26,10 +29,11 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloCupom
         {
             repositorioCupomMoq = new Mock<IRepositorioCupom>();
             validadorMoq = new Mock<IValidadorCupom>();
-            servicoCupom = new ServicoCupom(repositorioCupomMoq.Object, validadorMoq.Object);
+            contextoMoq = new Mock<IContextoPersistencia>();
+            servicoCupom = new ServicoCupom(repositorioCupomMoq.Object, validadorMoq.Object, contextoMoq.Object);
             parceiro = new Parceiro("Jorge");
 
-            cupom = new Cupom("CUPOM10", 200, new DateTime(24/02/2024), parceiro);
+            cupom = new Cupom("CUPOM10", 200, new DateTime(24 / 02 / 2024), parceiro);
         }
 
         [TestMethod]
@@ -146,7 +150,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloCupom
                      return new Cupom(id, "CUPOM10");
                  });
 
-        
+
             Cupom outroCupom = new Cupom(id, "CUPOM10");
 
             //action

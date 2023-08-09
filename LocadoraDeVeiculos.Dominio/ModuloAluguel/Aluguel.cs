@@ -7,6 +7,12 @@ using LocadoraDeVeiculos.Dominio.ModuloCupom;
 using LocadoraDeVeiculos.Dominio.ModuloFuncionario;
 using LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis;
 using LocadoraDeVeiculos.Dominio.ModuloTaxasServicos;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace LocadoraDeVeiculos.Dominio.ModuloAluguel
 {
@@ -23,10 +29,11 @@ namespace LocadoraDeVeiculos.Dominio.ModuloAluguel
         public DateTime DevolucaoPrevista { get; set; }
         public Cupom Cupom { get; set; }
         public decimal ValorTotalPrevisto { get; set; }
-        public List<TaxasServicos> listaTaxasSelecionadas { get; set; }
+        public List<TaxasServicos> ListaTaxasSelecionadas { get; set; }
 
         public Aluguel()
         {
+            ListaTaxasSelecionadas = new List<TaxasServicos>();
         }
 
         public Aluguel(Funcionario funcionario, Cliente cliente, GrupoAutomoveis grupoAutomoveis, Cobranca cobranca, Condutor condutor, Automovel automovel, decimal kmAutomovel, DateTime dataLocacao, DateTime devolucaoPrevista, Cupom cupom, decimal valorTotalPrevisto)
@@ -42,6 +49,7 @@ namespace LocadoraDeVeiculos.Dominio.ModuloAluguel
             DevolucaoPrevista = devolucaoPrevista;
             Cupom = cupom;
             ValorTotalPrevisto = valorTotalPrevisto;
+            ListaTaxasSelecionadas = new List<TaxasServicos>();
         }
 
         public override void Atualizar(Aluguel registro)
@@ -57,7 +65,62 @@ namespace LocadoraDeVeiculos.Dominio.ModuloAluguel
             DevolucaoPrevista = registro.DevolucaoPrevista;
             Cupom = registro.Cupom;
             ValorTotalPrevisto = registro.ValorTotalPrevisto;
-            listaTaxasSelecionadas = registro.listaTaxasSelecionadas;
+            ListaTaxasSelecionadas = registro.ListaTaxasSelecionadas;
+        }
+
+        public void CalcularValorTotal()
+        {
+            decimal valorTotal = 0;
+
+            // Calcular o valor base considerando o plano selecionado
+            switch (Cobranca.TipoPlano)
+            {
+                case TipoPlanoEnum.PlanoDiario:
+
+                    valorTotal += Cobranca.PrecoDiaria * (decimal)(DevolucaoPrevista - DataLocacao).TotalDays;
+
+                    break;
+
+                case TipoPlanoEnum.PlanoControlador:
+
+                    decimal dias = (decimal)(DevolucaoPrevista - DataLocacao).TotalDays;
+
+                    valorTotal += dias * Cobranca.PrecoDiaria;
+
+                    break;
+
+                case TipoPlanoEnum.PlanoLivre:
+
+                    valorTotal += Cobranca.PrecoDiaria;
+
+                    break;
+            }
+
+            valorTotal = AdicionandoValorTaxas(valorTotal);
+
+            if (Cupom != null)
+                valorTotal = CalcularValorComCupom(valorTotal);
+
+            ValorTotalPrevisto = valorTotal;
+        }
+
+        private decimal AdicionandoValorTaxas(decimal valorTotal)
+        {
+            foreach (TaxasServicos taxa in ListaTaxasSelecionadas)
+            {
+                if (taxa.PrecoDiaria)
+                    valorTotal += taxa.Preco * (decimal)(DevolucaoPrevista - DataLocacao).TotalDays;
+                else
+                    valorTotal += taxa.Preco;
+            }
+
+            return valorTotal;
+        }
+
+        private decimal CalcularValorComCupom(decimal valorTotal)
+        {
+            valorTotal = valorTotal - Cupom.Valor;
+            return valorTotal;
         }
     }
 }

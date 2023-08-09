@@ -1,22 +1,19 @@
-﻿using LocadoraDeVeiculos.Dominio.ModuloAutomovel;
-using LocadoraDeVeiculos.Dominio.ModuloCupom;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LocadoraDeVeiculos.Dominio.Compartilhado;
+using LocadoraDeVeiculos.Dominio.ModuloAutomovel;
 
 namespace LocadoraDeVeiculos.Aplicacao.ModuloAutomovel
 {
     public class ServicoAutomovel
     {
-        private IRepositorioAutomovel repositorioAutomovel;
-        private IValidadorAutomovel validadorAutomovel;
+        private readonly IRepositorioAutomovel repositorioAutomovel;
+        private readonly IValidadorAutomovel validadorAutomovel;
+        private readonly IContextoPersistencia contextoPersistencia;
 
-        public ServicoAutomovel(IRepositorioAutomovel repositorioAutmovel, IValidadorAutomovel validadorAutomovel)
+        public ServicoAutomovel(IRepositorioAutomovel repositorioAutmovel, IValidadorAutomovel validadorAutomovel, IContextoPersistencia contextoPersistencia)
         {
             this.repositorioAutomovel = repositorioAutmovel;
             this.validadorAutomovel = validadorAutomovel;
+            this.contextoPersistencia = contextoPersistencia;
         }
 
         public Result Inserir(Automovel automovel)
@@ -26,11 +23,17 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloAutomovel
             List<string> erros = ValidarAutomovel(automovel);
 
             if (erros.Count() > 0)
+            {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 return Result.Fail(erros);
+            }
 
             try
             {
                 repositorioAutomovel.Inserir(automovel);
+
+                contextoPersistencia.GravarDados();
 
                 Log.Debug("Automóvel {AutomovelId} inserido com sucesso", automovel.Id);
 
@@ -53,11 +56,17 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloAutomovel
             List<string> erros = ValidarAutomovel(automovel);
 
             if (erros.Count() > 0)
+            {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 return Result.Fail(erros);
+            }
 
             try
             {
                 repositorioAutomovel.Editar(automovel);
+
+                contextoPersistencia.GravarDados();
 
                 Log.Debug("Automóvel {AutomovelId} editado com sucesso", automovel.Id);
 
@@ -90,12 +99,16 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloAutomovel
 
                 repositorioAutomovel.Excluir(automovel);
 
+                contextoPersistencia.GravarDados();
+
                 Log.Debug("Automóvel {AutomovelId} editada com sucesso", automovel.Id);
 
                 return Result.Ok();
             }
             catch (Exception ex)
             {
+                contextoPersistencia.DesfazerAlteracoes();
+
                 List<string> erros = new List<string>();
 
                 string msgErro = ObterMensagemErro(ex);

@@ -3,6 +3,7 @@ using FluentResults;
 using FluentResults.Extensions.FluentAssertions;
 using FluentValidation.Results;
 using LocadoraDeVeiculos.Aplicacao.ModuloTaxasServicos;
+using LocadoraDeVeiculos.Dominio.Compartilhado;
 using LocadoraDeVeiculos.Dominio.ModuloTaxasServicos;
 using LocadoraDeVeiculos.TestesUnitarios.Compartilhado;
 using Moq;
@@ -14,6 +15,7 @@ namespace LocadorDeVeiculos.TesteUnitarios.Aplicacao.ModuloTaxasServicos
     {
         Mock<IRepositorioTaxasServicos> repositorioTaxasServicosMoq;
         Mock<IValidadorTaxasServicos> validadorMoq;
+        Mock<IContextoPersistencia> contextoMoq;
 
         private ServicoTaxasServicos servicoTaxasServicos;
 
@@ -23,7 +25,8 @@ namespace LocadorDeVeiculos.TesteUnitarios.Aplicacao.ModuloTaxasServicos
         {
             repositorioTaxasServicosMoq = new Mock<IRepositorioTaxasServicos>();
             validadorMoq = new Mock<IValidadorTaxasServicos>();
-            servicoTaxasServicos = new ServicoTaxasServicos(repositorioTaxasServicosMoq.Object, validadorMoq.Object);
+            contextoMoq = new Mock<IContextoPersistencia>();
+            servicoTaxasServicos = new ServicoTaxasServicos(repositorioTaxasServicosMoq.Object, validadorMoq.Object, contextoMoq.Object);
 
             taxasServicos = new TaxasServicos("LIMPEZA", 100);
         }

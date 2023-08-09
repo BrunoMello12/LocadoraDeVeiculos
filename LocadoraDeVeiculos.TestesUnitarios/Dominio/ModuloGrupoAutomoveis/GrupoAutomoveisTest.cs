@@ -2,6 +2,11 @@
 using LocadoraDeVeiculos.Dominio.ModuloAutomovel;
 using LocadoraDeVeiculos.Dominio.ModuloCobranca;
 using LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace LocadorDeVeiculos.TesteUnitarios.Dominio.ModuloGrupoAutomoveis
 {
@@ -16,7 +21,7 @@ namespace LocadorDeVeiculos.TesteUnitarios.Dominio.ModuloGrupoAutomoveis
         {
             grupoAutomoveis = new GrupoAutomoveis("Grupo01");
             automovel1 = new Automovel("Ford", "AAA-3333", "Preto", "FordK", TipoCombustivelEnum.Gasolina, 50, 2010);
-            cobranca01 = new Cobranca(grupoAutomoveis, TipoPlanoEnum.PlanoDiario, 20, 10);
+            cobranca01 = new Cobranca(grupoAutomoveis, "Camila", TipoPlanoEnum.PlanoDiario, 20, 10);
         }
 
         [TestMethod]
@@ -44,8 +49,8 @@ namespace LocadorDeVeiculos.TesteUnitarios.Dominio.ModuloGrupoAutomoveis
         public void Teste_Permitir_Inserir_Cobrancas()
         {
             // Arrange
-            var cobranca02 = new Cobranca(grupoAutomoveis, TipoPlanoEnum.PlanoDiario, 30, 20);
-            var cobranca03 = new Cobranca(grupoAutomoveis, TipoPlanoEnum.PlanoDiario, 40, 30);
+            var cobranca02 = new Cobranca(grupoAutomoveis, "Camila", TipoPlanoEnum.PlanoDiario, 30, 20);
+            var cobranca03 = new Cobranca(grupoAutomoveis, "Camila", TipoPlanoEnum.PlanoDiario, 40, 30);
 
             // Act
             grupoAutomoveis.listaDeCobrancas.Add(cobranca01);

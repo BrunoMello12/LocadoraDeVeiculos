@@ -3,6 +3,7 @@ using FluentResults;
 using FluentResults.Extensions.FluentAssertions;
 using FluentValidation.Results;
 using LocadoraDeVeiculos.Aplicacao.ModuloCondutor;
+using LocadoraDeVeiculos.Dominio.Compartilhado;
 using LocadoraDeVeiculos.Dominio.ModuloCliente;
 using LocadoraDeVeiculos.Dominio.ModuloCondutor;
 using LocadoraDeVeiculos.TestesUnitarios.Compartilhado;
@@ -15,6 +16,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloCondutor
     {
         Mock<IRepositorioCondutor> repositorioCondutorMoq;
         Mock<IValidadorCondutor> validadorMoq;
+        Mock<IContextoPersistencia> contextoMoq;
 
         private ServicoCondutor servicoCondutor;
         Condutor condutor;
@@ -24,7 +26,8 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloCondutor
         {
             repositorioCondutorMoq = new Mock<IRepositorioCondutor>();
             validadorMoq = new Mock<IValidadorCondutor>();
-            servicoCondutor = new ServicoCondutor(repositorioCondutorMoq.Object, validadorMoq.Object);
+            contextoMoq = new Mock<IContextoPersistencia>();
+            servicoCondutor = new ServicoCondutor(repositorioCondutorMoq.Object, validadorMoq.Object, contextoMoq.Object);
 
             cliente = new Cliente("Valeria");
 

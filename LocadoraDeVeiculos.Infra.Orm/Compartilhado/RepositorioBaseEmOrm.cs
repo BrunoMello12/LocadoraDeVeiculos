@@ -19,22 +19,16 @@ namespace LocadoraDeVeiculos.Infra.Orm.Compartilhado
         public void Inserir(T novoRegistro)
         {
             registros.Add(novoRegistro);
-
-            dbContext.SaveChanges();
         }
 
         public void Editar(T registro)
         {
             registros.Update(registro);
-
-            dbContext.SaveChanges();
         }
 
         public void Excluir(T registro)
         {
             registros.Remove(registro);
-
-            dbContext.SaveChanges();
         }
 
         public bool Existe(T registro)

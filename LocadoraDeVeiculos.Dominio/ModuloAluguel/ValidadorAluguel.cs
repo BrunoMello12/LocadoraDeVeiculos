@@ -2,7 +2,7 @@
 
 namespace LocadoraDeVeiculos.Dominio.ModuloAluguel
 {
-    public class ValidadorAluguel : AbstractValidator<Aluguel>
+    public class ValidadorAluguel : AbstractValidator<Aluguel>, IValidadorAluguel
     {
         public ValidadorAluguel()
         {

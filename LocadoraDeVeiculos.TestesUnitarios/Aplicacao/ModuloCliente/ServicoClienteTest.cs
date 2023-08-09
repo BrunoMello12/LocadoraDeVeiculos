@@ -3,6 +3,8 @@ using FluentResults;
 using FluentResults.Extensions.FluentAssertions;
 using FluentValidation.Results;
 using LocadoraDeVeiculos.Aplicacao.ModuloCliente;
+using LocadoraDeVeiculos.Aplicacao.ModuloCupom;
+using LocadoraDeVeiculos.Dominio.Compartilhado;
 using LocadoraDeVeiculos.Dominio.ModuloCliente;
 using LocadoraDeVeiculos.Dominio.ModuloCupom;
 using LocadoraDeVeiculos.TestesUnitarios.Compartilhado;
@@ -16,6 +18,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloCliente
     {
         Mock<IRepositorioCliente> repositorioClienteMoq;
         Mock<IValidadorCliente> validadorMoq;
+        Mock<IContextoPersistencia> contextoMoq;
 
         private ServicoCliente servicoCliente;
 
@@ -25,7 +28,8 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloCliente
         {
             repositorioClienteMoq = new Mock<IRepositorioCliente>();
             validadorMoq = new Mock<IValidadorCliente>();
-            servicoCliente = new ServicoCliente(repositorioClienteMoq.Object, validadorMoq.Object);
+            contextoMoq = new Mock<IContextoPersistencia>();
+            servicoCliente = new ServicoCliente(repositorioClienteMoq.Object, validadorMoq.Object, contextoMoq.Object);
 
             cliente = new Cliente("JOANA", "s@c.c", "49 99999-9999", TipoClienteEnum.PessoaFisica, "123.456.789-00", "cnpj", "SC", "Floripa", "Centro", "Rua das Flores", 444);
         }
@@ -281,4 +285,3 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloCliente
         //}
     }
 }
-

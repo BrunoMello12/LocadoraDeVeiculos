@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace LocadoraDeVeiculos.Infra.Orm.Migrations
 {
     /// <inheritdoc />
-    public partial class ConfigurarTabelas : Migration
+    public partial class ConfigTables : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -94,6 +94,7 @@ namespace LocadoraDeVeiculos.Infra.Orm.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     GrupoAutomoveisId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     TipoPlano = table.Column<int>(type: "int", nullable: false),
                     PrecoDiaria = table.Column<decimal>(type: "decimal(18,2)", nullable: false),

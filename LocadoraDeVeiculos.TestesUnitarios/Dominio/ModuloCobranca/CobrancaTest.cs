@@ -1,6 +1,8 @@
 ﻿using FluentAssertions;
 using LocadoraDeVeiculos.Dominio.ModuloCobranca;
 using LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloCobranca
 {
@@ -24,7 +26,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloCobranca
             TipoPlanoEnum tipoPlano = TipoPlanoEnum.PlanoDiario;
 
             // Act
-            Cobranca cobranca = new Cobranca(grupoAutomoveis, tipoPlano, precoDiaria, precoPorKm);
+            Cobranca cobranca = new Cobranca(grupoAutomoveis, "Camila", tipoPlano, precoDiaria, precoPorKm);
 
             // Assert
             cobranca.GrupoAutomoveis.Should().Be(grupoAutomoveis);
@@ -44,7 +46,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloCobranca
             TipoPlanoEnum tipoPlano = TipoPlanoEnum.PlanoControlador;
 
             // Act
-            Cobranca cobranca = new Cobranca(grupoAutomoveis, tipoPlano, precoDiaria, precoPorKm, kmDisponivel);
+            Cobranca cobranca = new Cobranca(grupoAutomoveis, "Camila", tipoPlano, precoDiaria, precoPorKm, kmDisponivel);
 
             // Assert
             cobranca.GrupoAutomoveis.Should().Be(grupoAutomoveis);
@@ -62,13 +64,13 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloCobranca
             decimal precoPorKmOriginal = 3;
             decimal kmDisponivelOriginal = 800;
             TipoPlanoEnum tipoPlanoOriginal = TipoPlanoEnum.PlanoControlador;
-            Cobranca cobranca = new Cobranca(grupoAutomoveis, tipoPlanoOriginal, precoDiariaOriginal, precoPorKmOriginal, kmDisponivelOriginal);
+            Cobranca cobranca = new Cobranca(grupoAutomoveis, "Camila", tipoPlanoOriginal, precoDiariaOriginal, precoPorKmOriginal, kmDisponivelOriginal);
 
             decimal precoDiariaAtualizado = 130;
             decimal precoPorKmAtualizado = 4;
             decimal kmDisponivelAtualizado = 900;
             TipoPlanoEnum tipoPlanoAtualizado = TipoPlanoEnum.PlanoControlador;
-            Cobranca cobrancaAtualizada = new Cobranca(grupoAutomoveis, tipoPlanoAtualizado, precoDiariaAtualizado, precoPorKmAtualizado, kmDisponivelAtualizado);
+            Cobranca cobrancaAtualizada = new Cobranca(grupoAutomoveis, "Camila", tipoPlanoAtualizado, precoDiariaAtualizado, precoPorKmAtualizado, kmDisponivelAtualizado);
 
             // Act
             cobranca.Atualizar(cobrancaAtualizada);
@@ -82,4 +84,3 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloCobranca
         }
     }
 }
-
