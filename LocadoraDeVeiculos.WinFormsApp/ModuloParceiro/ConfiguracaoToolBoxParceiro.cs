@@ -12,8 +12,8 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloParceiro
 
         public override string TooltipExcluir => "Excluir um Parceiro existente";
 
-        public virtual bool FiltrarHabilitado { get { return false; } }
+        public override bool FiltrarHabilitado { get { return false; } }
 
-        public virtual bool PrecoHabilitado { get { return false; } }
+        public override bool PrecoHabilitado { get { return false; } }
     }
 }

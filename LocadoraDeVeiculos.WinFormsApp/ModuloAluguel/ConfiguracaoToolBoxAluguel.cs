@@ -14,9 +14,9 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
 
         public override string TooltipPrecos => "Configurar Precos";
 
-        public virtual bool FiltrarHabilitado { get { return false; } }
+        public override bool FiltrarHabilitado { get { return false; } }
 
-        public virtual bool PrecoHabilitado { get { return true; } }
+        public override bool PrecoHabilitado { get { return true; } }
 
     }
 }

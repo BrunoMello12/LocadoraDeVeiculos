@@ -16,6 +16,8 @@
 
         public virtual string TooltipFiltrar { get; }
 
+        public virtual string TooltipDevolucao { get; }
+
         #endregion
 
         #region estados dos botões
@@ -28,6 +30,8 @@
         public virtual bool PrecoHabilitado { get { return false; } }
 
         public virtual bool FiltrarHabilitado { get { return false; } }
+
+        public virtual bool DevolucaoHabilitado { get { return false; } }
 
         #endregion
     }

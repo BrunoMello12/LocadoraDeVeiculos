@@ -83,6 +83,16 @@ namespace LocadoraDeVeiculos.WinFormsApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap charging_location {
+            get {
+                object obj = ResourceManager.GetObject("charging-location", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delete_FILL0_wght400_GRAD0_opsz24 {
             get {
                 object obj = ResourceManager.GetObject("delete_FILL0_wght400_GRAD0_opsz24", resourceCulture);
@@ -136,6 +146,16 @@ namespace LocadoraDeVeiculos.WinFormsApp.Properties {
         internal static System.Drawing.Bitmap fifties {
             get {
                 object obj = ResourceManager.GetObject("fifties", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file {
+            get {
+                object obj = ResourceManager.GetObject("file", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

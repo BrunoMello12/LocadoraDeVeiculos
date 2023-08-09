@@ -28,5 +28,10 @@
         {
             return mensagemRodape;
         }
+
+        internal void Devolucao()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

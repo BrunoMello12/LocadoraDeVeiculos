@@ -182,6 +182,7 @@ namespace LocadoraDeVeiculos.WinFormsApp
             btnExcluir.Enabled = configuracao.ExcluirHabilitado;
             btnPrecos.Enabled = configuracao.PrecoHabilitado;
             btnFiltrar.Enabled = configuracao.FiltrarHabilitado;
+            btnDevolucao.Enabled = configuracao.DevolucaoHabilitado;
         }
 
         private void ConfigurarTooltips(ConfiguracaoToolBoxBase configuracao)
@@ -191,6 +192,7 @@ namespace LocadoraDeVeiculos.WinFormsApp
             btnExcluir.ToolTipText = configuracao.TooltipExcluir;
             btnPrecos.ToolTipText = configuracao.TooltipPrecos;
             btnFiltrar.ToolTipText = configuracao.TooltipFiltrar;
+            btnDevolucao.ToolTipText = configuracao.TooltipDevolucao;
         }
 
         private void ConfigurarTelaPrincipal(ControladorBase controlador)
@@ -258,6 +260,11 @@ namespace LocadoraDeVeiculos.WinFormsApp
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
             controlador.Filtrar();
+        }
+
+        private void btnDevolucao_Click(object sender, EventArgs e)
+        {
+            controlador.Devolucao();
         }
 
         private void funcionárioToolStripMenuItem_Click(object sender, EventArgs e)

@@ -49,8 +49,11 @@
             btnEditar = new ToolStripButton();
             btnExcluir = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
+            btnDevolucao = new ToolStripButton();
             btnPrecos = new ToolStripButton();
+            toolStripSeparator2 = new ToolStripSeparator();
             btnFiltrar = new ToolStripButton();
+            toolStripSeparator3 = new ToolStripSeparator();
             lblTipoCadastro = new ToolStripLabel();
             panelRegistros = new Panel();
             statusStrip1 = new StatusStrip();
@@ -183,7 +186,7 @@
             // 
             // toolBox
             // 
-            toolBox.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, toolStripSeparator1, btnPrecos, btnFiltrar, lblTipoCadastro });
+            toolBox.Items.AddRange(new ToolStripItem[] { btnAdicionar, btnEditar, btnExcluir, toolStripSeparator1, btnDevolucao, btnPrecos, toolStripSeparator2, btnFiltrar, toolStripSeparator3, lblTipoCadastro });
             toolBox.Location = new Point(0, 24);
             toolBox.Name = "toolBox";
             toolBox.Size = new Size(567, 53);
@@ -231,6 +234,18 @@
             toolStripSeparator1.Name = "toolStripSeparator1";
             toolStripSeparator1.Size = new Size(6, 53);
             // 
+            // btnDevolucao
+            // 
+            btnDevolucao.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnDevolucao.Enabled = false;
+            btnDevolucao.Image = Properties.Resources.file;
+            btnDevolucao.ImageScaling = ToolStripItemImageScaling.None;
+            btnDevolucao.ImageTransparentColor = Color.Magenta;
+            btnDevolucao.Name = "btnDevolucao";
+            btnDevolucao.Padding = new Padding(7);
+            btnDevolucao.Size = new Size(50, 50);
+            btnDevolucao.Click += btnDevolucao_Click;
+            // 
             // btnPrecos
             // 
             btnPrecos.DisplayStyle = ToolStripItemDisplayStyle.Image;
@@ -243,6 +258,11 @@
             btnPrecos.Size = new Size(50, 50);
             btnPrecos.Click += btnPrecos_Click;
             // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(6, 53);
+            // 
             // btnFiltrar
             // 
             btnFiltrar.DisplayStyle = ToolStripItemDisplayStyle.Image;
@@ -254,6 +274,11 @@
             btnFiltrar.Padding = new Padding(7);
             btnFiltrar.Size = new Size(50, 50);
             btnFiltrar.Click += btnFiltrar_Click;
+            // 
+            // toolStripSeparator3
+            // 
+            toolStripSeparator3.Name = "toolStripSeparator3";
+            toolStripSeparator3.Size = new Size(6, 53);
             // 
             // lblTipoCadastro
             // 
@@ -336,5 +361,8 @@
         private ToolStripMenuItem clienteToolStripMenuItem1;
         private ToolStripButton btnPrecos;
         private ToolStripButton btnFiltrar;
+        private ToolStripButton btnDevolucao;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripSeparator toolStripSeparator3;
     }
 }

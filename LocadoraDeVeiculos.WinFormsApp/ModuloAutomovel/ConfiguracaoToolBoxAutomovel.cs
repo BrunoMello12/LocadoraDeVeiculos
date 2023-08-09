@@ -14,8 +14,8 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
 
         public override string TooltipFiltrar => "Filtrar por Grupo de Automóvel";
 
-        public virtual bool FiltrarHabilitado { get { return true; } }
+        public override bool FiltrarHabilitado { get { return true; } }
 
-        public virtual bool PrecoHabilitado { get { return true; } }
+        public override bool PrecoHabilitado { get { return true; } }
     }
 }
