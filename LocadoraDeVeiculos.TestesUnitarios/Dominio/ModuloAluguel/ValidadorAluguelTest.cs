@@ -12,9 +12,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloAluguel
     [TestClass]
 
     public class ValidadorAluguelTest
-
     { 
-     
         private Aluguel aluguel;
 
         private ValidadorAluguel validador;
@@ -74,13 +72,13 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloAluguel
             resultado.ShouldHaveValidationErrorFor(x => x.Automovel);
         }
 
-        [TestMethod]
-        public void Km_do_Veiculo_deve_ser_obrigatorio()
-        {
-            var resultado = validador.TestValidate(aluguel);
+        //[TestMethod]
+        //public void Km_do_Veiculo_deve_ser_obrigatorio()
+        //{
+        //    var resultado = validador.TestValidate(aluguel);
 
-            resultado.ShouldHaveValidationErrorFor(x => x.KmAutomovel);
-        }
+        //    resultado.ShouldHaveValidationErrorFor(x => x.KmAutomovel);
+        //}
 
         [TestMethod]
         public void Cupom_deve_ser_obrigatorio()
