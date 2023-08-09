@@ -17,10 +17,20 @@
 
         public virtual void Filtrar()
         {
-         
+
         }
 
         public virtual void Devolucao()
+        {
+
+        }
+
+        public virtual void Pdf()
+        {
+
+        }
+
+        public virtual void Email()
         {
 
         }
