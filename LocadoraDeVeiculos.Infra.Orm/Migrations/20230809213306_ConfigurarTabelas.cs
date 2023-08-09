@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace LocadoraDeVeiculos.Infra.Orm.Migrations
 {
     /// <inheritdoc />
-    public partial class ConfigTables : Migration
+    public partial class ConfigurarTabelas : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -258,11 +258,11 @@ namespace LocadoraDeVeiculos.Infra.Orm.Migrations
                 columns: table => new
                 {
                     ListaAlugueisId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    listaTaxasSelecionadasId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    ListaTaxasSelecionadasId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AluguelTaxasServicos", x => new { x.ListaAlugueisId, x.listaTaxasSelecionadasId });
+                    table.PrimaryKey("PK_AluguelTaxasServicos", x => new { x.ListaAlugueisId, x.ListaTaxasSelecionadasId });
                     table.ForeignKey(
                         name: "FK_AluguelTaxasServicos_Aluguel_ListaAlugueisId",
                         column: x => x.ListaAlugueisId,
@@ -270,8 +270,8 @@ namespace LocadoraDeVeiculos.Infra.Orm.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_AluguelTaxasServicos_TBTaxasServicos_listaTaxasSelecionadasId",
-                        column: x => x.listaTaxasSelecionadasId,
+                        name: "FK_AluguelTaxasServicos_TBTaxasServicos_ListaTaxasSelecionadasId",
+                        column: x => x.ListaTaxasSelecionadasId,
                         principalTable: "TBTaxasServicos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -313,9 +313,9 @@ namespace LocadoraDeVeiculos.Infra.Orm.Migrations
                 column: "GrupoAutomoveisId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AluguelTaxasServicos_listaTaxasSelecionadasId",
+                name: "IX_AluguelTaxasServicos_ListaTaxasSelecionadasId",
                 table: "AluguelTaxasServicos",
-                column: "listaTaxasSelecionadasId");
+                column: "ListaTaxasSelecionadasId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TBAutomovel_GrupoDoAutomovelId",

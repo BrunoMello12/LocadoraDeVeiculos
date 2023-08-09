@@ -27,12 +27,12 @@ namespace LocadoraDeVeiculos.Infra.Orm.Migrations
                     b.Property<Guid>("ListaAlugueisId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("listaTaxasSelecionadasId")
+                    b.Property<Guid>("ListaTaxasSelecionadasId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("ListaAlugueisId", "listaTaxasSelecionadasId");
+                    b.HasKey("ListaAlugueisId", "ListaTaxasSelecionadasId");
 
-                    b.HasIndex("listaTaxasSelecionadasId");
+                    b.HasIndex("ListaTaxasSelecionadasId");
 
                     b.ToTable("AluguelTaxasServicos");
                 });
@@ -378,7 +378,7 @@ namespace LocadoraDeVeiculos.Infra.Orm.Migrations
 
                     b.HasOne("LocadoraDeVeiculos.Dominio.ModuloTaxasServicos.TaxasServicos", null)
                         .WithMany()
-                        .HasForeignKey("listaTaxasSelecionadasId")
+                        .HasForeignKey("ListaTaxasSelecionadasId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
