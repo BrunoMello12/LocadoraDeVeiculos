@@ -16,18 +16,22 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
         {
             InitializeComponent();
             this.ConfigurarDialog();
-            CarregarGrupoDeAutomoveis(grupoDeAutomoveis);
+            CarregarGrupoDeAltomoveis(grupoDeAutomoveis);
             CarregarTipoCombustivel();
         }
 
         public Automovel ObterAutomovel()
         {
             decimal capacidadelitros;
+            decimal kmAutomovel;
 
             automovel.Placa = txtPlaca.Text;
             automovel.Marca = txtMarca.Text;
             automovel.Cor = txtCor.Text;
             automovel.Modelo = txtModelo.Text;
+
+            decimal.TryParse(txtKmAutomovel.Text, out kmAutomovel);
+            automovel.KmAutomovel = kmAutomovel;
 
             decimal.TryParse(txtCapacidadeEmLitros.Text, out capacidadelitros);
             automovel.CapacidadeLitros = capacidadelitros;
@@ -52,6 +56,7 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
             txtCor.Text = automovel.Cor;
             txtModelo.Text = automovel.Modelo;
             txtCapacidadeEmLitros.Text = automovel.CapacidadeLitros.ToString();
+            txtKmAutomovel.Text = automovel.KmAutomovel.ToString();
             cbGrpAutomoveis.SelectedItem = automovel.GrupoDoAutomovel;
             cbTipoCombustivel.SelectedItem = automovel.TipoCombustivel;
 
@@ -112,15 +117,6 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
             cbTipoCombustivel.DataSource = items;
         }
 
-        private void CarregarGrupoDeAutomoveis(List<GrupoAutomoveis> grupoDeAutomoveis)
-        {
-            cbGrpAutomoveis.Items.Clear();
-
-            foreach (var item in grupoDeAutomoveis)
-            {
-                cbGrpAutomoveis.Items.Add(item);
-            }
-        }
         private void btnGravar_Click(object sender, EventArgs e)
         {
             this.automovel = ObterAutomovel();

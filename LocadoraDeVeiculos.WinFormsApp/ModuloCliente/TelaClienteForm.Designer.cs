@@ -185,17 +185,19 @@
             rdbFisica.TabStop = true;
             rdbFisica.Text = "Pessoa Física";
             rdbFisica.UseVisualStyleBackColor = true;
+            rdbFisica.CheckedChanged += rdbFisica_CheckedChanged;
             // 
             // rdbJuridica
             // 
             rdbJuridica.AutoSize = true;
-            rdbJuridica.Location = new Point(222, 114);
+            rdbJuridica.Location = new Point(222, 112);
             rdbJuridica.Name = "rdbJuridica";
             rdbJuridica.Size = new Size(104, 19);
             rdbJuridica.TabIndex = 53;
             rdbJuridica.TabStop = true;
             rdbJuridica.Text = "Pessoa Jurídica";
             rdbJuridica.UseVisualStyleBackColor = true;
+            rdbJuridica.CheckedChanged += rdbJuridica_CheckedChanged;
             // 
             // label8
             // 

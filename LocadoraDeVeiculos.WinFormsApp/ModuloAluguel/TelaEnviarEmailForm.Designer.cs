@@ -158,6 +158,7 @@
             btnSelecionarPdf.TabIndex = 6;
             btnSelecionarPdf.Text = "Buscar";
             btnSelecionarPdf.UseVisualStyleBackColor = false;
+            btnSelecionarPdf.Click += btnSelecionarPdf_Click_1;
             // 
             // btnGravar
             // 
@@ -170,6 +171,7 @@
             btnGravar.TabIndex = 7;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = false;
+            btnGravar.Click += btnGravar_Click;
             // 
             // btnCancelar
             // 

@@ -86,6 +86,8 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloCobranca
 
             if (tipoPlano == TipoPlanoEnum.PlanoDiario)
             {
+                txtKmDisponivel.Clear();
+
                 txtPrecoExtrapolado.Enabled = true;
                 txtKmDisponivel.Enabled = false;
             }
@@ -96,6 +98,9 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloCobranca
             }
             else
             {
+                txtPrecoExtrapolado.Clear();
+                txtKmDisponivel.Clear();
+
                 txtPrecoExtrapolado.Enabled = false;
                 txtKmDisponivel.Enabled = false;
             }

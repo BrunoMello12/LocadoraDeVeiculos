@@ -116,6 +116,7 @@
             cbCliente.Name = "cbCliente";
             cbCliente.Size = new Size(230, 23);
             cbCliente.TabIndex = 1;
+            cbCliente.SelectedIndexChanged += cbCliente_SelectedIndexChanged;
             // 
             // chEhCondutor
             // 

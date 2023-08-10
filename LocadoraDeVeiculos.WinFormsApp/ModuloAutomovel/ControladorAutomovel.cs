@@ -2,10 +2,8 @@
 using LocadoraDeVeiculos.Aplicacao.ModuloAutomovel;
 using LocadoraDeVeiculos.Dominio.ModuloAutomovel;
 using LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis;
-using LocadoraDeVeiculos.Dominio.ModuloPrecos;
 using LocadoraDeVeiculos.Infra.Json.ModuloPrecos;
 using LocadoraDeVeiculos.WinFormsApp.Compartilhado;
-using LocadoraDeVeiculos.WinFormsApp.ModuloPrecos;
 
 namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
 {

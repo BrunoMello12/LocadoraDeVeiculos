@@ -3,6 +3,7 @@ using LocadoraDeVeiculos.Aplicacao.ModuloCupom;
 using LocadoraDeVeiculos.Dominio.ModuloCupom;
 using LocadoraDeVeiculos.Dominio.ModuloParceiro;
 using LocadoraDeVeiculos.WinFormsApp.Compartilhado;
+using LocadoraDeVeiculos.WinFormsApp.ModuloAluguel;
 
 namespace LocadoraDeVeiculos.WinFormsApp.ModuloCupom
 {

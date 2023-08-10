@@ -51,7 +51,7 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
         {
             List<Aluguel> aluguel = repositorioAluguel.SelecionarTodos();
 
-            TelaAluguelForm tela = new TelaAluguelForm(repositorioFuncionario.SelecionarTodos(), repositorioCliente.SelecionarTodos(),repositorioGrupoAutomoveis.SelecionarTodos(),
+            TelaAluguelForm tela = new TelaAluguelForm(repositorioFuncionario.SelecionarTodos(), repositorioCliente.SelecionarTodos(), repositorioGrupoAutomoveis.SelecionarTodos(),
                                                        repositorioCobranca.SelecionarTodos(), repositorioCondutor.SelecionarTodos(), repositorioAutomovel.SelecionarTodos(),
                                                        repositorioCupom.SelecionarTodos(), repositorioTaxasServicos.SelecionarTodos());
 
@@ -146,7 +146,7 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
 
         private void CarregarAlugueis()
         {
-            List<Aluguel> alugueis = repositorioAluguel.SelecionarTodos();
+            List<Aluguel> alugueis = repositorioAluguel.SelecionarTodos(incluirCupom: true);
 
             tabelaAluguel.AtualizarRegistros(alugueis);
 
@@ -163,12 +163,51 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
 
             DialogResult resultado = tela.ShowDialog();
 
-            if(resultado == DialogResult.OK)
+            if (resultado == DialogResult.OK)
             {
                 Precos preco = tela.ObterPrecos();
 
                 repositorioPrecosJson.Salvar(preco);
-            } 
+            }
         }
+
+        public override void Devolucao()
+        {
+            Guid id = tabelaAluguel.ObtemIdSelecionado();
+
+            Aluguel aluguelSelecionado = repositorioAluguel.SelecionarPorId(id);
+
+            if (aluguelSelecionado == null)
+            {
+                MessageBox.Show("Selecione um aluguel primeiro",
+                "Devolução de Aluguel", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            List<Aluguel> alugueis = repositorioAluguel.SelecionarTodos();
+
+            TelaDevolucaoAluguelForm tela = new TelaDevolucaoAluguelForm(repositorioFuncionario.SelecionarTodos(), repositorioCliente.SelecionarTodos(), repositorioGrupoAutomoveis.SelecionarTodos(),
+                                                       repositorioCobranca.SelecionarTodos(), repositorioCondutor.SelecionarTodos(), repositorioAutomovel.SelecionarTodos(),
+                                                       repositorioCupom.SelecionarTodos(), repositorioTaxasServicos.SelecionarTodos());
+
+            tela.onGravarRegistro += servicoAluguel.Devolucao;
+
+            tela.ConfigurarAluguel(aluguelSelecionado);
+
+            DialogResult resultado = tela.ShowDialog();
+
+            if (resultado == DialogResult.OK)
+            {
+                CarregarAlugueis();
+            }
+        }
+
+        public override void Email()
+        {
+            TelaEnviarEmailForm tela = new TelaEnviarEmailForm();
+
+            DialogResult resultado = tela.ShowDialog();
+        }
+
     }
 }

@@ -91,6 +91,7 @@
             btnDiretorio.TabIndex = 109;
             btnDiretorio.Text = "Diretório";
             btnDiretorio.UseVisualStyleBackColor = false;
+            btnDiretorio.Click += btnDiretorio_Click;
             // 
             // txtDiretorio
             // 
@@ -109,8 +110,9 @@
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(76, 34);
             btnGravar.TabIndex = 115;
-            btnGravar.Text = "Gravar";
+            btnGravar.Text = "Gerar";
             btnGravar.UseVisualStyleBackColor = false;
+            btnGravar.Click += btnGravar_Click;
             // 
             // btnCancelar
             // 

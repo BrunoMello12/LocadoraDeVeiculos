@@ -168,6 +168,7 @@
             cbAutomovel.Name = "cbAutomovel";
             cbAutomovel.Size = new Size(121, 23);
             cbAutomovel.TabIndex = 5;
+            cbAutomovel.SelectedIndexChanged += cbAutomovel_SelectedIndexChanged;
             // 
             // label10
             // 

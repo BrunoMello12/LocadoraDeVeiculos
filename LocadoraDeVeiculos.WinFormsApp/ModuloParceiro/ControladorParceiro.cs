@@ -35,7 +35,6 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloParceiro
             }
         }
 
-
         public override void Editar()
         {
             Guid id = tabelaParceiro.ObtemIdSelecionado();
@@ -95,7 +94,6 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloParceiro
             }
         }
 
-
         public override ConfiguracaoToolBoxBase ObtemConfiguracaoToolbox()
         {
             return new ConfiguracaoToolBoxParceiro();
@@ -108,8 +106,9 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloParceiro
 
             CarregarParceiros();
 
-            return tabelaParceiro; 
+            return tabelaParceiro;
         }
+
         private void CarregarParceiros()
         {
             List<Parceiro> parceiros = repositorioParceiro.SelecionarTodos();

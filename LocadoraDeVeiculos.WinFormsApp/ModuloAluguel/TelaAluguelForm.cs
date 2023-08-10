@@ -16,6 +16,8 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
     {
         Aluguel aluguel;
 
+        bool telaCarregada = false;
+
         public event GravarRegistroDelegate<Aluguel> onGravarRegistro;
 
         List<TaxasServicos> taxasServicos;
@@ -37,15 +39,19 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
 
         public Aluguel ObterAluguel()
         {
+            decimal kmAutomovel;
+
             aluguel.Funcionario = (Funcionario)cbFuncionario.SelectedItem;
             aluguel.Cliente = (Cliente)cbCliente.SelectedItem;
             aluguel.GrupoAutomoveis = (GrupoAutomoveis)cbGrupoAutomoveis.SelectedItem;
             aluguel.Cobranca = (Cobranca)cbPlanoDeCobranca.SelectedItem;
-            aluguel.DataLocacao = DateTime.Parse(dtLocacao.Text);
-            aluguel.DevolucaoPrevista = DateTime.Parse(dtDevolucaoPrevista.Text);
+            aluguel.DataLocacao = dtLocacao.Value.Date;
+            aluguel.DevolucaoPrevista = dtDevolucaoPrevista.Value.Date;
             aluguel.Condutor = (Condutor)cbCondutor.SelectedItem;
             aluguel.Automovel = (Automovel)cbAutomovel.SelectedItem;
-            aluguel.KmAutomovel = Convert.ToDecimal(txtKmAutomovel.Text);
+
+            decimal.TryParse(txtKmAutomovel.Text, out kmAutomovel);
+            aluguel.KmAutomovel = kmAutomovel;
 
             if (cbCupom != null)
             {
@@ -71,9 +77,10 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
             dtDevolucaoPrevista.MinDate = aluguel.DevolucaoPrevista;
             txtKmAutomovel.Text = aluguel.KmAutomovel.ToString();
 
+
             if (aluguel.Cupom != null)
             {
-                cbCupom.SelectedItem = aluguel.Cupom;
+                cbCupom.SelectedItem = this.aluguel.Cupom;
             }
 
             CarregarTaxasServicos();
@@ -89,6 +96,8 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
 
                 i++;
             }
+
+            telaCarregada = true;
 
             txtValorTotal.Text = aluguel.ValorTotalPrevisto.ToString();
         }
@@ -178,15 +187,6 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
             return chListTaxas.CheckedItems.Cast<TaxasServicos>().ToList();
         }
 
-        private void cbPlanoDeCobranca_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            dtLocacao.Enabled = true;
-            dtDevolucaoPrevista.Enabled = true;
-            cbCupom.Enabled = true;
-            chListTaxas.Enabled = true;
-            RealizarCalculoValorTotal();
-        }
-
         private void RealizarCalculoValorTotal()
         {
             aluguel = ObterAluguel();
@@ -218,27 +218,43 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
             dtDevolucaoPrevista.Enabled = true;
             cbCupom.Enabled = true;
             chListTaxas.Enabled = true;
-            RealizarCalculoValorTotal();
+
+            if (telaCarregada)
+                RealizarCalculoValorTotal();
         }
 
         private void chListTaxas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            RealizarCalculoValorTotal();
+            if (telaCarregada)
+                RealizarCalculoValorTotal();
         }
 
         private void cbCupom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            RealizarCalculoValorTotal();
+            if (telaCarregada)
+                RealizarCalculoValorTotal();
         }
 
         private void dtLocacao_ValueChanged(object sender, EventArgs e)
         {
-            RealizarCalculoValorTotal();
+            if (telaCarregada)
+                RealizarCalculoValorTotal();
         }
 
         private void dtDevolucaoPrevista_ValueChanged(object sender, EventArgs e)
         {
-            RealizarCalculoValorTotal();
+            if (telaCarregada)
+                RealizarCalculoValorTotal();
+        }
+
+        private void cbAutomovel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (telaCarregada)
+                RealizarCalculoValorTotal();
+
+            Automovel automovel = cbAutomovel.SelectedItem as Automovel;
+
+            txtKmAutomovel.Text = automovel.KmAutomovel.ToString();
         }
     }
 }

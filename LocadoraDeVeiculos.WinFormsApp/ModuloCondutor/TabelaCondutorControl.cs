@@ -13,7 +13,6 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloCondutor
             grid.Columns.AddRange(ObterColunas());
         }
 
-
         public DataGridViewColumn[] ObterColunas()
         {
             var colunas = new DataGridViewColumn[]

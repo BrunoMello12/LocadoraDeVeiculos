@@ -43,8 +43,6 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloCliente
 
         public void ConfigurarCliente(Cliente cliente)
         {
-            int numerocasa;
-
             this.cliente = cliente;
             txtBairro.Text = cliente.Bairro;
             txtCidade.Text = cliente.Cidade;
@@ -52,10 +50,7 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloCliente
             txtCpf.Text = cliente.Cpf;
             txtEmail.Text = cliente.Email;
             txtEstado.Text = cliente.Estado;
-
-            int.TryParse(txtNumero.Text, out numerocasa);
-            cliente.NumeroCasa = numerocasa;
-
+            txtNumero.Text = cliente.NumeroCasa.ToString();
             txtRua.Text = cliente.Rua;
             txtTelefone.Text = cliente.Telefone;
             txtNome.Text = cliente.Nome;
@@ -80,6 +75,20 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloCliente
 
                 DialogResult = DialogResult.None;
             }
+        }
+
+        private void rdbFisica_CheckedChanged(object sender, EventArgs e)
+        {
+            txtCnpj.Clear();
+            txtCnpj.Enabled = false;
+            txtCpf.Enabled = true;
+        }
+
+        private void rdbJuridica_CheckedChanged(object sender, EventArgs e)
+        {
+            txtCpf.Clear();
+            txtCpf.Enabled = false;
+            txtCnpj.Enabled = true;
         }
     }
 }

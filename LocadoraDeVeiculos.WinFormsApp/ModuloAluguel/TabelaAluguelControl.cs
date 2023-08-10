@@ -29,8 +29,7 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
 
                 new DataGridViewTextBoxColumn { Name = "DevolucaoPrevista", HeaderText = "Devolução Prevista", FillWeight=25F },
 
-                //necessário
-                //new DataGridViewTextBoxColumn { Name = "ValorTotalPrevisto", HeaderText = "Valor Total Previsto", FillWeight=25F },
+                new DataGridViewTextBoxColumn { Name = "ValorTotalPrevisto", HeaderText = "Valor Total Previsto", FillWeight=25F },
             };
 
             return colunas;
@@ -42,7 +41,7 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
 
             foreach (Aluguel aluguel in alugueis)
             {
-                grid.Rows.Add(aluguel.Id, aluguel.Condutor, aluguel.Cobranca, aluguel.Automovel, aluguel.DataLocacao, aluguel.DevolucaoPrevista);
+                grid.Rows.Add(aluguel.Id, aluguel.Condutor, aluguel.Cobranca, aluguel.Automovel, aluguel.DataLocacao, aluguel.DevolucaoPrevista, aluguel.ValorTotalPrevisto);
             }
         }
 

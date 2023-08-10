@@ -17,5 +17,9 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloCupom
         public override bool PrecoHabilitado { get { return false; } }
 
         public override bool DevolucaoHabilitado { get { return false; } }
+
+        public override bool EmailHabilitado { get { return false; } }
+
+        public override bool PdfHabilitado { get { return false; } }
     }
 }

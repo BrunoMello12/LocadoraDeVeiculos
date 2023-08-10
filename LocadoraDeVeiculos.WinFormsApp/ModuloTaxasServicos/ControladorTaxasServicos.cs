@@ -2,6 +2,11 @@
 using LocadoraDeVeiculos.Aplicacao.ModuloTaxasServicos;
 using LocadoraDeVeiculos.Dominio.ModuloTaxasServicos;
 using LocadoraDeVeiculos.WinFormsApp.Compartilhado;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace LocadoraDeVeiculos.WinFormsApp.ModuloTaxasServicos
 {
@@ -36,7 +41,6 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloTaxasServicos
                 CarregarTaxasServicos();
             }
         }
-
 
         public override void Editar()
         {

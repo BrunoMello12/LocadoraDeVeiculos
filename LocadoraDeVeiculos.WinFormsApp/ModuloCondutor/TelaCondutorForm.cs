@@ -74,12 +74,27 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloCondutor
             if (condutor == null)
                 condutor = new Condutor();
 
-            Cliente cliente = (Cliente)cbCliente.SelectedItem;
+            if (chEhCondutor.Checked)
+            {
+                Cliente cliente = (Cliente)cbCliente.SelectedItem;
 
-            txtNome.Text = cliente.Nome;
-            txtTelefone.Text = cliente.Telefone;
-            txtEmail.Text = cliente.Email;
-            txtCpf.Text = cliente.Cpf;
+                txtNome.Text = cliente.Nome;
+                txtTelefone.Text = cliente.Telefone;
+                txtEmail.Text = cliente.Email;
+                txtCpf.Text = cliente.Cpf;
+            }
+            else
+            {
+                txtNome.Clear();
+                txtTelefone.Clear();
+                txtEmail.Clear();
+                txtCpf.Clear();
+            }
+        }
+
+        private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            chEhCondutor.Enabled = true;
         }
     }
 }
