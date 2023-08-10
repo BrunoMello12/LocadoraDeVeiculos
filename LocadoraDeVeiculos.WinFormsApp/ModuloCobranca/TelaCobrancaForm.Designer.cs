@@ -171,7 +171,6 @@
             cbTipoPlano.Name = "cbTipoPlano";
             cbTipoPlano.Size = new Size(142, 23);
             cbTipoPlano.TabIndex = 2;
-            cbTipoPlano.SelectedIndexChanged += cbTipoPlano_SelectedIndexChanged;
             // 
             // TelaCobrancaForm
             // 

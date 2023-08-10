@@ -30,7 +30,6 @@ namespace LocadoraDeVeiculos.Dominio.ModuloParceiro
             Nome = registro.Nome;
         }
 
-
         public bool AdicionarCupom(Cupom cupom)
         {
             if (Cupons.Contains(cupom))
@@ -40,6 +39,7 @@ namespace LocadoraDeVeiculos.Dominio.ModuloParceiro
 
             return true;
         }
+
         public override string ToString()
         {
             return Nome;

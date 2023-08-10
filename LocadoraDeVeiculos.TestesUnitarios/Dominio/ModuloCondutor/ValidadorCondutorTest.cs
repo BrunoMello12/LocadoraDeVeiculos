@@ -49,7 +49,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloCondutor
         public void Nome_condutor_deve_ser_composto_por_letras_e_numeros()
         {
             //arrange
-            condutor.Nome = "Gabriel #";
+            condutor.Nome = "Larissa @";
 
             //action
             var resultado = validador.TestValidate(condutor);
@@ -63,7 +63,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloCondutor
         public void Email_condutor_deve_ser_valido()
         {
             //arrange
-            condutor.Email = "emailinvalido";
+            condutor.Email = "emaildeteste";
 
             //action
             var resultado = validador.TestValidate(condutor);
@@ -77,7 +77,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloCondutor
         public void Telefone_condutor_deve_estar_no_formato_correto()
         {
             //arrange
-            condutor.Telefone = "1234567890";
+            condutor.Telefone = "4868464684";
 
             //action
             var resultado = validador.TestValidate(condutor);
@@ -91,7 +91,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloCondutor
         public void Cnh_condutor_deve_estar_no_formato_correto()
         {
             //arrange
-            condutor.Cnh = "12345678901234";
+            condutor.Cnh = "4846464646486";
 
             //action
             var resultado = validador.TestValidate(condutor);

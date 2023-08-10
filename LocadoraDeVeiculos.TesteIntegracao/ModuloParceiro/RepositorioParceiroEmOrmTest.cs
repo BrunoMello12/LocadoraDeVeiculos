@@ -24,7 +24,6 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloParceiro
             repositorioParceiro.SelecionarPorId(parceiro.Id).Should().Be(parceiro);
         }
 
-
         [TestMethod]
         public void Deve_editar_parceiro()
         {
@@ -59,7 +58,6 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloParceiro
             repositorioParceiro.SelecionarPorId(parceiro.Id).Should().BeNull();
         }
 
-
         [TestMethod]
         public void Deve_selecionar_todos_parceiros()
         {
@@ -73,20 +71,6 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloParceiro
             //assert
             disciplinas.Should().ContainInOrder(parceiro01, parceiro02);
             disciplinas.Should().HaveCount(2);
-        }
-
-
-        [TestMethod]
-        public void Deve_selecionar_parceiro_por_nome()
-        {
-            //arrange
-            var parceiro02 = Builder<Parceiro>.CreateNew().Persist();
-
-            //action
-            var disciplinasEncontrada = repositorioParceiro.SelecionarPorNome(parceiro02.Nome);
-
-            //assert
-            disciplinasEncontrada.Should().Be(parceiro02);
         }
 
         [TestMethod]

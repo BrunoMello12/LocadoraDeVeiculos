@@ -155,15 +155,6 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
             }
         }
 
-        private void RealizarCalculoValorTotal()
-        {
-            aluguel = ObterAluguel();
-
-            aluguel.CalcularValorTotal();
-
-            txtValorTotal.Text = aluguel.ValorTotalPrevisto.ToString();
-        }
-
         private void btnGravar_Click_1(object sender, EventArgs e)
         {
             this.aluguel = ObterAluguel();

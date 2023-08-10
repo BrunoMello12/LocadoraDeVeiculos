@@ -25,6 +25,7 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloPlanoDeCobranca
             //assert
             repositorioCobranca.SelecionarPorId(cobranca.Id).Should().Be(cobranca);
         }
+
         [TestMethod]
         public void Deve_editar_cobranca()
         {
@@ -46,6 +47,7 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloPlanoDeCobranca
             repositorioCobranca.SelecionarPorId(cobrancaId.Id)
                 .Should().Be(cobrancaId);
         }
+
         [TestMethod]
         public void Deve_excluir_cobranca()
         {

@@ -39,7 +39,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloAutomovel
             servicoAutomovel = new ServicoAutomovel(repositorioAutomovel.Object, validadorMoq.Object, contextoMoq.Object);
 
             grupoAutomoveis = new GrupoAutomoveis("GrupoA");
-            automovel = new Automovel(1000, "AAA-1234", "Fiat", "azul", "4 portas", TipoCombustivelEnum.Gasolina, 100, 2010, grupoAutomoveis);
+            automovel = new Automovel(1000, "AAA-1111", "Uno", "amarelo", "Teste", TipoCombustivelEnum.Alcool, 100, 2005, grupoAutomoveis);
         }
 
 

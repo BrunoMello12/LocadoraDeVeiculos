@@ -43,7 +43,7 @@ namespace LocadorDeVeiculos.TesteUnitarios.Dominio.ModuloGrupoAutomoveis
         public void Nome_GrupoAutomoveis_deve_ser_composto_por_letras_e_numeros()
         {
             //arrange
-            grupoAutomoveis.Nome = "@ Ford";
+            grupoAutomoveis.Nome = "@ Chebette";
 
             //action
             var resultado = validador.TestValidate(grupoAutomoveis);

@@ -43,7 +43,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloParceiro
         public void Nome_parceiro_deve_ser_composto_por_letras_e_numeros()
         {
             //arrange
-            parceiro.Nome = "Artes @";
+            parceiro.Nome = "Carolina @";
 
             //action
             var resultado = validador.TestValidate(parceiro);

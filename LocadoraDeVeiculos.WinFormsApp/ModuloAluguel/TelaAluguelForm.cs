@@ -15,12 +15,12 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
     public partial class TelaAluguelForm : Form
     {
         Aluguel aluguel;
+        List<TaxasServicos> taxasServicos;
 
         bool telaCarregada = false;
 
         public event GravarRegistroDelegate<Aluguel> onGravarRegistro;
 
-        List<TaxasServicos> taxasServicos;
 
         public TelaAluguelForm(List<Funcionario> funcionarios, List<Cliente> clientes, List<GrupoAutomoveis> grupoAutomoveis, List<Cobranca> planoCobrancas, List<Condutor> condutores, List<Automovel> automoveis, List<Cupom> cupons, List<TaxasServicos> taxasServicos)
         {
@@ -35,6 +35,16 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
             CarregarAutomoveis(automoveis);
             CarregarCupons(cupons);
             this.taxasServicos = taxasServicos;
+        }
+
+        private void CarregarAutomoveis(List<Automovel> automoveis)
+        {
+            cbCondutor.Items.Clear();
+
+            foreach (Automovel automovel in automoveis)
+            {
+                cbCondutor.Items.Add(automovel);
+            }
         }
 
         public Aluguel ObterAluguel()
@@ -100,86 +110,6 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
             telaCarregada = true;
 
             txtValorTotal.Text = aluguel.ValorTotalPrevisto.ToString();
-        }
-
-        private void CarregarTaxasServicos()
-        {
-            chListTaxas.Items.Clear();
-
-            foreach (var taxa in taxasServicos)
-            {
-                chListTaxas.Items.Add(taxa);
-            }
-        }
-
-        private void CarregarAutomoveis(List<Automovel> automoveis)
-        {
-            cbAutomovel.Items.Clear();
-
-            foreach (Automovel automovel in automoveis)
-            {
-                cbAutomovel.Items.Add(automovel);
-            }
-        }
-
-        private void CarregarCupons(List<Cupom> cupons)
-        {
-            cbCupom.Items.Clear();
-
-            foreach (Cupom cupom in cupons)
-            {
-                cbCupom.Items.Add(cupom);
-            }
-        }
-
-        private void CarregarCondutor(List<Condutor> condutores)
-        {
-            cbCondutor.Items.Clear();
-
-            foreach (Condutor condutor in condutores)
-            {
-                cbCondutor.Items.Add(condutor);
-            }
-        }
-
-        private void CarregarPlanoCobranca(List<Cobranca> planoCobrancas)
-        {
-            cbPlanoDeCobranca.Items.Clear();
-
-            foreach (Cobranca planoCobranca in planoCobrancas)
-            {
-                cbPlanoDeCobranca.Items.Add(planoCobranca);
-            }
-        }
-
-        private void CarregarGrupoAutomoveis(List<GrupoAutomoveis> grupoAutomoveis)
-        {
-            cbGrupoAutomoveis.Items.Clear();
-
-            foreach (GrupoAutomoveis grupoAutomovel in grupoAutomoveis)
-            {
-                cbGrupoAutomoveis.Items.Add(grupoAutomovel);
-            }
-        }
-
-        private void CarregarCliente(List<Cliente> clientes)
-        {
-            cbCliente.Items.Clear();
-
-            foreach (Cliente cliente in clientes)
-            {
-                cbCliente.Items.Add(cliente);
-            }
-        }
-
-        private void CarregarFuncionario(List<Funcionario> funcionarios)
-        {
-            cbFuncionario.Items.Clear();
-
-            foreach (Funcionario funcionario in funcionarios)
-            {
-                cbFuncionario.Items.Add(funcionario);
-            }
         }
 
         public List<TaxasServicos> ObterItensMarcados()
@@ -256,5 +186,76 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
 
             txtKmAutomovel.Text = automovel.KmAutomovel.ToString();
         }
+
+        private void CarregarTaxasServicos()
+        {
+            chListTaxas.Items.Clear();
+
+            foreach (var taxa in taxasServicos)
+            {
+                chListTaxas.Items.Add(taxa);
+            }
+        }
+
+        private void CarregarCupons(List<Cupom> cupons)
+        {
+            cbCupom.Items.Clear();
+
+            foreach (Cupom cupom in cupons)
+            {
+                cbCupom.Items.Add(cupom);
+            }
+        }
+
+        private void CarregarCondutor(List<Condutor> condutores)
+        {
+            cbCondutor.Items.Clear();
+
+            foreach (Condutor condutor in condutores)
+            {
+                cbCondutor.Items.Add(condutor);
+            }
+        }
+
+        private void CarregarPlanoCobranca(List<Cobranca> planoCobrancas)
+        {
+            cbPlanoDeCobranca.Items.Clear();
+
+            foreach (Cobranca planoCobranca in planoCobrancas)
+            {
+                cbPlanoDeCobranca.Items.Add(planoCobranca);
+            }
+        }
+
+        private void CarregarGrupoAutomoveis(List<GrupoAutomoveis> grupoAutomoveis)
+        {
+            cbGrupoAutomoveis.Items.Clear();
+
+            foreach (GrupoAutomoveis grupoAutomovel in grupoAutomoveis)
+            {
+                cbGrupoAutomoveis.Items.Add(grupoAutomovel);
+            }
+        }
+
+        private void CarregarCliente(List<Cliente> clientes)
+        {
+            cbCliente.Items.Clear();
+
+            foreach (Cliente cliente in clientes)
+            {
+                cbCliente.Items.Add(cliente);
+            }
+        }
+
+        private void CarregarFuncionario(List<Funcionario> funcionarios)
+        {
+            cbFuncionario.Items.Clear();
+
+            foreach (Funcionario funcionario in funcionarios)
+            {
+                cbFuncionario.Items.Add(funcionario);
+            }
+        }
+
     }
 }

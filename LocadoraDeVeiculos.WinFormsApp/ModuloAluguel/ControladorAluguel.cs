@@ -209,5 +209,15 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
             DialogResult resultado = tela.ShowDialog();
         }
 
+        public override void Pdf()
+        {
+            Guid id = tabelaAluguel.ObtemIdSelecionado();
+
+            Aluguel aluguelSelecionado = repositorioAluguel.SelecionarPorId(id);
+
+            TelaGerarPdfForm tela = new TelaGerarPdfForm(aluguelSelecionado);
+
+            DialogResult resultado = tela.ShowDialog();
+        }
     }
 }

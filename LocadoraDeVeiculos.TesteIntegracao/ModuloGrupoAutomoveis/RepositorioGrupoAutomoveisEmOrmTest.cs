@@ -109,19 +109,6 @@ namespace LocadoraDeVeiculos.TesteIntegracao.ModuloGrupoAutomoveis
         }
 
         [TestMethod]
-        public void Deve_selecionar_grupoAutomoveis_por_nome()
-        {
-            //arrange
-            var grupo01 = Builder<GrupoAutomoveis>.CreateNew().Persist();
-
-            //action
-            var grupoAutomoveisEncontrado = repositorioGrupoAutomoveis.SelecionarPorNome(grupo01.Nome);
-
-            //assert
-            grupoAutomoveisEncontrado.Should().Be(grupo01);
-        }
-
-        [TestMethod]
         public void Deve_selecionar_grupoAutomoveis_por_id()
         {
             //arrange

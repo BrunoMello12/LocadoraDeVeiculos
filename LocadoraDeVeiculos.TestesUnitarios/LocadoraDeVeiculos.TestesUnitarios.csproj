@@ -30,8 +30,4 @@
     <ProjectReference Include="..\LocadoraDeVeiculos.Dominio\LocadoraDeVeiculos.Dominio.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Aplicacao\ModuloAluguel\" />
-  </ItemGroup>
-
 </Project>

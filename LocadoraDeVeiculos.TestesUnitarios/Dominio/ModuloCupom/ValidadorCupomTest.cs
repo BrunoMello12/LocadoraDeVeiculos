@@ -36,7 +36,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloCupom
         [TestMethod]
         public void Nome_cupom_deve_ser_composto_por_letras_e_numeros()
         {
-            cupom.Nome = "Cupom @";
+            cupom.Nome = "Teste @";
 
             var resultado = validador.TestValidate(cupom);
 

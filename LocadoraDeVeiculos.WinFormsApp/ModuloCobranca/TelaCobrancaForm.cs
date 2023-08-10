@@ -131,10 +131,5 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloCobranca
                 cbGrupoAutomoveis.Items.Add(gp);
             }
         }
-
-        private void cbTipoPlano_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

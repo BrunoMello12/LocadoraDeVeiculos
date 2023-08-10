@@ -24,12 +24,12 @@ namespace LocadoraDeVeiculos.Dominio.ModuloCobranca
                 RuleFor(cobranca => cobranca.TipoPlano)
                     .Must((cobranca, tipoPlano) =>
                     {
-                        if (cobranca.Id == Guid.Empty) // Inserção
+                        if (cobranca.Id == Guid.Empty) 
                         {
                             return !cobranca.GrupoAutomoveis.listaDeCobrancas.Any(c =>
                                 c.TipoPlano == tipoPlano);
                         }
-                        else // Edição
+                        else 
                         {
                             return !cobranca.GrupoAutomoveis.listaDeCobrancas.Any(c =>
                                 c.TipoPlano == tipoPlano && !c.Id.Equals(cobranca.Id));

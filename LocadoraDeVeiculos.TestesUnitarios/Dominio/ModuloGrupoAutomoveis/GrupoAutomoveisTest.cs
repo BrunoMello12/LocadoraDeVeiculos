@@ -14,24 +14,24 @@ namespace LocadorDeVeiculos.TesteUnitarios.Dominio.ModuloGrupoAutomoveis
 
         public GrupoAutomoveisTeste()
         {
-            grupoAutomoveis = new GrupoAutomoveis("Grupo01");
-            automovel1 = new Automovel(1000, "Ford", "AAA-3333", "Preto", "FordK", TipoCombustivelEnum.Gasolina, 50, 2010);
+            grupoAutomoveis = new GrupoAutomoveis("Teste");
+            automovel1 = new Automovel(5000, "Ford", "AAA-3333", "Verde", "Chevette", TipoCombustivelEnum.Diesel, 50, 2002);
             cobranca01 = new Cobranca(grupoAutomoveis, TipoPlanoEnum.PlanoDiario, 20, 10);
         }
 
         [TestMethod]
         public void Teste_Permitir_Inserir_Automoveis()
         {
-            // Arrange
-            var automovel2 = new Automovel(1000, "Ford", "BBB-4333", "Verde", "FordK", TipoCombustivelEnum.Gasolina, 50, 2010);
-            var automovel3 = new Automovel(1000, "Ford", "CCC-5333", "Branco", "FordK", TipoCombustivelEnum.Gasolina, 50, 2010);
+            // arrange
+            var automovel2 = new Automovel(5000, "Ford", "AAA-1234", "Verde", "Marca", TipoCombustivelEnum.Gasolina, 50, 2002);
+            var automovel3 = new Automovel(5000, "Ford", "BBB-1234", "Branco", "Marca", TipoCombustivelEnum.Gasolina, 50, 2002);
 
-            // Act
+            // act
             grupoAutomoveis.listaDeAutomoveis.Add(automovel1);
             grupoAutomoveis.listaDeAutomoveis.Add(automovel2);
             grupoAutomoveis.listaDeAutomoveis.Add(automovel3);
 
-            // Assert
+            // assert
             grupoAutomoveis.listaDeAutomoveis.Count.Should().Be(3);
 
         }
@@ -39,16 +39,16 @@ namespace LocadorDeVeiculos.TesteUnitarios.Dominio.ModuloGrupoAutomoveis
         [TestMethod]
         public void Teste_Permitir_Inserir_Cobrancas()
         {
-            // Arrange
-            var cobranca02 = new Cobranca(grupoAutomoveis, TipoPlanoEnum.PlanoDiario, 30, 20);
-            var cobranca03 = new Cobranca(grupoAutomoveis, TipoPlanoEnum.PlanoDiario, 40, 30);
+            //arrange
+            var cobranca02 = new Cobranca(grupoAutomoveis, TipoPlanoEnum.PlanoControlador, 50, 20);
+            var cobranca03 = new Cobranca(grupoAutomoveis, TipoPlanoEnum.PlanoControlador, 40, 90);
 
-            // Act
+            // act
             grupoAutomoveis.listaDeCobrancas.Add(cobranca01);
             grupoAutomoveis.listaDeCobrancas.Add(cobranca02);
             grupoAutomoveis.listaDeCobrancas.Add(cobranca03);
 
-            // Assert
+            // assert
             grupoAutomoveis.listaDeCobrancas.Count.Should().Be(3);
         }
 

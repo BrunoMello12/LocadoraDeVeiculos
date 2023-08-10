@@ -21,17 +21,17 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
         {
             try
             {
-                MailMessage mm = new MailMessage();
+                MailMessage emailMensagem = new MailMessage();
                 SmtpClient sc = new SmtpClient("smtp.gmail.com");
-                mm.From = new MailAddress(txtEmailFuncionario.Text);
-                mm.To.Add(txtEmailCliente.Text);
-                mm.Subject = txtAssunto.Text;
-                mm.Body = txtMensagem.Text;
+                emailMensagem.From = new MailAddress(txtEmailFuncionario.Text);
+                emailMensagem.To.Add(txtEmailCliente.Text);
+                emailMensagem.Subject = txtAssunto.Text;
+                emailMensagem.Body = txtMensagem.Text;
 
                 sc.Port = 587;
                 sc.Credentials = new System.Net.NetworkCredential(txtEmailFuncionario.Text, txtSenhaEmail.Text);
                 sc.EnableSsl = true;
-                sc.Send(mm);
+                sc.Send(emailMensagem);
                 MessageBox.Show("Email Enviado com sucesso!");
             }
             catch (Exception ex)

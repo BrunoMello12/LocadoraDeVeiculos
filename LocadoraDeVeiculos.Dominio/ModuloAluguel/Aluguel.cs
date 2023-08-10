@@ -24,7 +24,6 @@ namespace LocadoraDeVeiculos.Dominio.ModuloAluguel
         public Cupom? Cupom { get; set; }
         public decimal ValorTotalPrevisto { get; set; }
         public List<TaxasServicos> ListaTaxasSelecionadas { get; set; }
-
         public decimal KmPercorrida { get; set; }
         public DateTime DataDevolucao { get; set; }
         public CombustivelNoTanqueEnum CombustivelNoTanque { get; set; }
@@ -47,22 +46,6 @@ namespace LocadoraDeVeiculos.Dominio.ModuloAluguel
             DataLocacao = dataLocacao;
             DevolucaoPrevista = devolucaoPrevista;
             Cupom = cupom;
-            ValorTotalPrevisto = valorTotalPrevisto;
-            KmPercorrida = 0;
-            ListaTaxasSelecionadas = new List<TaxasServicos>();
-        }
-
-        public Aluguel(Funcionario funcionario, Cliente cliente, GrupoAutomoveis grupoAutomoveis, Cobranca cobranca, Condutor condutor, Automovel automovel, decimal kmAutomovel, DateTime dataLocacao, DateTime devolucaoPrevista, decimal valorTotalPrevisto)
-        {
-            Funcionario = funcionario;
-            Cliente = cliente;
-            GrupoAutomoveis = grupoAutomoveis;
-            Cobranca = cobranca;
-            Condutor = condutor;
-            Automovel = automovel;
-            KmAutomovel = kmAutomovel;
-            DataLocacao = dataLocacao;
-            DevolucaoPrevista = devolucaoPrevista;
             ValorTotalPrevisto = valorTotalPrevisto;
             KmPercorrida = 0;
             ListaTaxasSelecionadas = new List<TaxasServicos>();

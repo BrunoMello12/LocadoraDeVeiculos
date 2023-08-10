@@ -58,7 +58,6 @@ namespace LocadorDeVeiculos.TesteUnitarios.Dominio.ModuloTaxasServicos
                 .WithErrorMessage("'Nome' deve ser composto por letras e números.");
         }
 
-
         [TestMethod]
         public void Preco_deve_ser_maior_que_zero()
         {

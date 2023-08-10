@@ -15,7 +15,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloParceiro
         {
             parceiro = new Parceiro("Parceiro01");
 
-            cupom01 = new Cupom("Cupom01", 200, DateTime.Now, parceiro);
+            cupom01 = new Cupom("Teste", 500, DateTime.Now, parceiro);
         }
 
         [TestMethod]
@@ -28,7 +28,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloParceiro
         public void Deve_permitir_adicionar_cupons_no_parceiro()
         {
             //Cenário -- Arrange
-            cupom02 = new Cupom("Cupom02", 500, DateTime.Now, parceiro);
+            cupom02 = new Cupom("Teste", 500, DateTime.Now, parceiro);
 
             //Ação -- Action
             parceiro.AdicionarCupom(cupom01);
@@ -42,7 +42,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloParceiro
         public void Nao_deve_adicionar_cupons_iguais_no_parceiro()
         {
             //arrange
-            cupom01 = new Cupom("Cupom01", 200, DateTime.Now, parceiro);
+            cupom01 = new Cupom("Teste", 500, DateTime.Now, parceiro);
 
             //action
             parceiro.AdicionarCupom(cupom01);
