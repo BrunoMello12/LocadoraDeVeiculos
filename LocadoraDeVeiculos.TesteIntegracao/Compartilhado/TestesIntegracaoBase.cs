@@ -135,7 +135,7 @@ namespace LocadoraDeVeiculos.TesteIntegracao.Compartilhado
 
             string sqlLimpezaTabela =
                 @"
-
+                DELETE FROM [DBO].[TBALUGUEL]
                 
                 DELETE FROM [DBO].[TBTAXASSERVICOS]
 
