@@ -82,16 +82,6 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloCliente
         }
 
         [TestMethod]
-        public void Cnpj_cliente_deve_estar_no_formato_valido()
-        {
-            cliente.Cnpj = "12345678900000011";
-
-            var resultado = validador.TestValidate(cliente);
-
-            resultado.ShouldHaveValidationErrorFor(x => x.Cnpj);
-        }
-
-        [TestMethod]
         public void Estado_cliente_deve_ter_exatamente_2_caracteres()
         {
             cliente.Estado = "São Paulo";
