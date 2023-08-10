@@ -88,10 +88,10 @@
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnGravar.BackColor = Color.IndianRed;
             btnGravar.DialogResult = DialogResult.OK;
-            btnGravar.Location = new Point(217, 258);
+            btnGravar.Location = new Point(178, 246);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(76, 34);
-            btnGravar.TabIndex = 86;
+            btnGravar.TabIndex = 8;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = false;
             btnGravar.Click += btnGravar_Click;
@@ -101,20 +101,21 @@
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnCancelar.BackColor = Color.IndianRed;
             btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.Location = new Point(299, 258);
+            btnCancelar.Location = new Point(260, 246);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(76, 34);
-            btnCancelar.TabIndex = 85;
+            btnCancelar.TabIndex = 9;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
             // 
             // cbCliente
             // 
+            cbCliente.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCliente.FormattingEnabled = true;
             cbCliente.Location = new Point(86, 26);
             cbCliente.Name = "cbCliente";
             cbCliente.Size = new Size(230, 23);
-            cbCliente.TabIndex = 87;
+            cbCliente.TabIndex = 1;
             // 
             // chEhCondutor
             // 
@@ -151,7 +152,7 @@
             dateValidade.Location = new Point(86, 199);
             dateValidade.Name = "dateValidade";
             dateValidade.Size = new Size(100, 23);
-            dateValidade.TabIndex = 93;
+            dateValidade.TabIndex = 7;
             // 
             // label7
             // 
@@ -167,14 +168,14 @@
             txtEmail.Location = new Point(86, 112);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(230, 23);
-            txtEmail.TabIndex = 95;
+            txtEmail.TabIndex = 3;
             // 
             // txtNome
             // 
             txtNome.Location = new Point(86, 83);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(230, 23);
-            txtNome.TabIndex = 96;
+            txtNome.TabIndex = 2;
             // 
             // txtCnh
             // 
@@ -182,7 +183,7 @@
             txtCnh.Mask = "99,999,999/9999-99";
             txtCnh.Name = "txtCnh";
             txtCnh.Size = new Size(100, 23);
-            txtCnh.TabIndex = 99;
+            txtCnh.TabIndex = 6;
             // 
             // txtCpf
             // 
@@ -190,7 +191,7 @@
             txtCpf.Mask = "999,999,999-99";
             txtCpf.Name = "txtCpf";
             txtCpf.Size = new Size(93, 23);
-            txtCpf.TabIndex = 98;
+            txtCpf.TabIndex = 5;
             // 
             // txtTelefone
             // 
@@ -198,14 +199,14 @@
             txtTelefone.Mask = "(99) 00000-0000";
             txtTelefone.Name = "txtTelefone";
             txtTelefone.Size = new Size(100, 23);
-            txtTelefone.TabIndex = 97;
+            txtTelefone.TabIndex = 4;
             // 
             // TelaCondutorForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SeaShell;
-            ClientSize = new Size(387, 304);
+            ClientSize = new Size(348, 292);
             Controls.Add(txtCnh);
             Controls.Add(txtCpf);
             Controls.Add(txtTelefone);

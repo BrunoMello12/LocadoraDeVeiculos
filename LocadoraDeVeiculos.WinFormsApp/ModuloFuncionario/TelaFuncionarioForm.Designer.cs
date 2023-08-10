@@ -44,7 +44,7 @@
             dateAdmissao.Location = new Point(87, 50);
             dateAdmissao.Name = "dateAdmissao";
             dateAdmissao.Size = new Size(100, 23);
-            dateAdmissao.TabIndex = 15;
+            dateAdmissao.TabIndex = 2;
             // 
             // txtSalario
             // 
@@ -52,7 +52,7 @@
             txtSalario.Name = "txtSalario";
             txtSalario.PlaceholderText = "R$";
             txtSalario.Size = new Size(100, 23);
-            txtSalario.TabIndex = 14;
+            txtSalario.TabIndex = 3;
             // 
             // btnGravar
             // 
@@ -85,7 +85,7 @@
             txtNome.Name = "txtNome";
             txtNome.PlaceholderText = "Inserir...";
             txtNome.Size = new Size(201, 23);
-            txtNome.TabIndex = 11;
+            txtNome.TabIndex = 1;
             // 
             // label3
             // 

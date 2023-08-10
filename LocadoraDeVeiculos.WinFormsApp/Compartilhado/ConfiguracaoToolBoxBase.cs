@@ -18,6 +18,10 @@
 
         public virtual string TooltipDevolucao { get; }
 
+        public virtual string TooltipPdf { get; }
+
+        public virtual string TooltipEmail { get; }
+
         #endregion
 
         #region estados dos botões
@@ -32,6 +36,10 @@
         public virtual bool FiltrarHabilitado { get { return false; } }
 
         public virtual bool DevolucaoHabilitado { get { return false; } }
+
+        public virtual bool PdfHabilitado { get { return false; } }
+
+        public virtual bool EmailHabilitado { get { return false; } }
 
         #endregion
     }

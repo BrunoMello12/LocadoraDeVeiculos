@@ -70,7 +70,7 @@
             txtGasolina.Name = "txtGasolina";
             txtGasolina.PlaceholderText = "Inserir....";
             txtGasolina.Size = new Size(201, 23);
-            txtGasolina.TabIndex = 13;
+            txtGasolina.TabIndex = 1;
             // 
             // label1
             // 
@@ -87,7 +87,7 @@
             txtGas.Name = "txtGas";
             txtGas.PlaceholderText = "Inserir....";
             txtGas.Size = new Size(201, 23);
-            txtGas.TabIndex = 15;
+            txtGas.TabIndex = 2;
             // 
             // label2
             // 
@@ -104,7 +104,7 @@
             txtDiesel.Name = "txtDiesel";
             txtDiesel.PlaceholderText = "Inserir....";
             txtDiesel.Size = new Size(201, 23);
-            txtDiesel.TabIndex = 17;
+            txtDiesel.TabIndex = 3;
             // 
             // label3
             // 
@@ -121,7 +121,7 @@
             txtAlcool.Name = "txtAlcool";
             txtAlcool.PlaceholderText = "Inserir....";
             txtAlcool.Size = new Size(201, 23);
-            txtAlcool.TabIndex = 19;
+            txtAlcool.TabIndex = 4;
             // 
             // label4
             // 

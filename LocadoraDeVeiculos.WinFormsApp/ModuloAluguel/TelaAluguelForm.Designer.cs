@@ -63,12 +63,13 @@
             // 
             // cbCupom
             // 
+            cbCupom.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCupom.Enabled = false;
             cbCupom.FormattingEnabled = true;
-            cbCupom.Location = new Point(412, 77);
+            cbCupom.Location = new Point(418, 74);
             cbCupom.Name = "cbCupom";
             cbCupom.Size = new Size(121, 23);
-            cbCupom.TabIndex = 92;
+            cbCupom.TabIndex = 7;
             cbCupom.SelectedIndexChanged += cbCupom_SelectedIndexChanged;
             // 
             // tabControl1
@@ -115,7 +116,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(296, 109);
+            label13.Location = new Point(302, 106);
             label13.Name = "label13";
             label13.Size = new Size(110, 15);
             label13.TabIndex = 88;
@@ -125,10 +126,10 @@
             // 
             dtDevolucaoPrevista.Enabled = false;
             dtDevolucaoPrevista.Format = DateTimePickerFormat.Short;
-            dtDevolucaoPrevista.Location = new Point(412, 106);
+            dtDevolucaoPrevista.Location = new Point(418, 103);
             dtDevolucaoPrevista.Name = "dtDevolucaoPrevista";
             dtDevolucaoPrevista.Size = new Size(121, 23);
-            dtDevolucaoPrevista.TabIndex = 87;
+            dtDevolucaoPrevista.TabIndex = 8;
             dtDevolucaoPrevista.ValueChanged += dtDevolucaoPrevista_ValueChanged;
             // 
             // label12
@@ -147,13 +148,13 @@
             dtLocacao.Location = new Point(145, 103);
             dtLocacao.Name = "dtLocacao";
             dtLocacao.Size = new Size(121, 23);
-            dtLocacao.TabIndex = 85;
+            dtLocacao.TabIndex = 4;
             dtLocacao.ValueChanged += dtLocacao_ValueChanged;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(296, 54);
+            label11.Location = new Point(302, 51);
             label11.Name = "label11";
             label11.Size = new Size(110, 15);
             label11.TabIndex = 84;
@@ -161,16 +162,17 @@
             // 
             // cbAutomovel
             // 
+            cbAutomovel.DropDownStyle = ComboBoxStyle.DropDownList;
             cbAutomovel.FormattingEnabled = true;
-            cbAutomovel.Location = new Point(412, 20);
+            cbAutomovel.Location = new Point(418, 17);
             cbAutomovel.Name = "cbAutomovel";
             cbAutomovel.Size = new Size(121, 23);
-            cbAutomovel.TabIndex = 83;
+            cbAutomovel.TabIndex = 5;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(334, 23);
+            label10.Location = new Point(340, 20);
             label10.Name = "label10";
             label10.Size = new Size(72, 15);
             label10.TabIndex = 82;
@@ -195,11 +197,12 @@
             // 
             // cbPlanoDeCobranca
             // 
+            cbPlanoDeCobranca.DropDownStyle = ComboBoxStyle.DropDownList;
             cbPlanoDeCobranca.FormattingEnabled = true;
             cbPlanoDeCobranca.Location = new Point(145, 74);
             cbPlanoDeCobranca.Name = "cbPlanoDeCobranca";
             cbPlanoDeCobranca.Size = new Size(121, 23);
-            cbPlanoDeCobranca.TabIndex = 79;
+            cbPlanoDeCobranca.TabIndex = 3;
             cbPlanoDeCobranca.SelectedIndexChanged += cbPlanoDeCobranca_SelectedIndexChanged_1;
             // 
             // label8
@@ -213,11 +216,12 @@
             // 
             // cbGrupoAutomoveis
             // 
+            cbGrupoAutomoveis.DropDownStyle = ComboBoxStyle.DropDownList;
             cbGrupoAutomoveis.FormattingEnabled = true;
             cbGrupoAutomoveis.Location = new Point(145, 45);
             cbGrupoAutomoveis.Name = "cbGrupoAutomoveis";
             cbGrupoAutomoveis.Size = new Size(121, 23);
-            cbGrupoAutomoveis.TabIndex = 77;
+            cbGrupoAutomoveis.TabIndex = 2;
             // 
             // label4
             // 
@@ -231,7 +235,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(352, 81);
+            label7.Location = new Point(358, 78);
             label7.Name = "label7";
             label7.Size = new Size(53, 15);
             label7.TabIndex = 75;
@@ -239,11 +243,12 @@
             // 
             // cbCliente
             // 
+            cbCliente.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCliente.FormattingEnabled = true;
             cbCliente.Location = new Point(145, 16);
             cbCliente.Name = "cbCliente";
             cbCliente.Size = new Size(121, 23);
-            cbCliente.TabIndex = 74;
+            cbCliente.TabIndex = 1;
             // 
             // label6
             // 
@@ -256,10 +261,11 @@
             // 
             // txtKmAutomovel
             // 
-            txtKmAutomovel.Location = new Point(412, 49);
+            txtKmAutomovel.Location = new Point(418, 46);
             txtKmAutomovel.Name = "txtKmAutomovel";
+            txtKmAutomovel.ReadOnly = true;
             txtKmAutomovel.Size = new Size(121, 23);
-            txtKmAutomovel.TabIndex = 72;
+            txtKmAutomovel.TabIndex = 6;
             // 
             // cbFuncionario
             // 

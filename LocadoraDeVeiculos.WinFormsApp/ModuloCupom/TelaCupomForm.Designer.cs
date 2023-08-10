@@ -55,7 +55,7 @@
             dateValidade.Location = new Point(75, 77);
             dateValidade.Name = "dateValidade";
             dateValidade.Size = new Size(124, 23);
-            dateValidade.TabIndex = 103;
+            dateValidade.TabIndex = 3;
             // 
             // txtValor
             // 
@@ -63,7 +63,7 @@
             txtValor.Name = "txtValor";
             txtValor.PlaceholderText = "R$";
             txtValor.Size = new Size(124, 23);
-            txtValor.TabIndex = 102;
+            txtValor.TabIndex = 2;
             // 
             // label6
             // 
@@ -105,7 +105,7 @@
             txtNome.Name = "txtNome";
             txtNome.PlaceholderText = "Inserir...";
             txtNome.Size = new Size(124, 23);
-            txtNome.TabIndex = 96;
+            txtNome.TabIndex = 1;
             // 
             // label5
             // 
@@ -127,11 +127,12 @@
             // 
             // cbParceiro
             // 
+            cbParceiro.DropDownStyle = ComboBoxStyle.DropDownList;
             cbParceiro.FormattingEnabled = true;
             cbParceiro.Location = new Point(75, 108);
             cbParceiro.Name = "cbParceiro";
             cbParceiro.Size = new Size(124, 23);
-            cbParceiro.TabIndex = 106;
+            cbParceiro.TabIndex = 4;
             // 
             // TelaCupomForm
             // 

@@ -51,6 +51,9 @@
             toolStripSeparator1 = new ToolStripSeparator();
             btnDevolucao = new ToolStripButton();
             btnPrecos = new ToolStripButton();
+            toolStripSeparator4 = new ToolStripSeparator();
+            btnPdf = new ToolStripButton();
+            btnEmail = new ToolStripButton();
             toolStripSeparator2 = new ToolStripSeparator();
             btnFiltrar = new ToolStripButton();
             toolStripSeparator3 = new ToolStripSeparator();
@@ -58,9 +61,6 @@
             panelRegistros = new Panel();
             statusStrip1 = new StatusStrip();
             labelRodape = new ToolStripStatusLabel();
-            btnPdf = new ToolStripButton();
-            btnEmail = new ToolStripButton();
-            toolStripSeparator4 = new ToolStripSeparator();
             menuStrip1.SuspendLayout();
             toolBox.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -199,6 +199,7 @@
             // btnAdicionar
             // 
             btnAdicionar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnAdicionar.Enabled = false;
             btnAdicionar.Image = Properties.Resources.new_document;
             btnAdicionar.ImageScaling = ToolStripItemImageScaling.None;
             btnAdicionar.ImageTransparentColor = Color.Magenta;
@@ -210,6 +211,7 @@
             // btnEditar
             // 
             btnEditar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnEditar.Enabled = false;
             btnEditar.Image = Properties.Resources.quill;
             btnEditar.ImageScaling = ToolStripItemImageScaling.None;
             btnEditar.ImageTransparentColor = Color.Magenta;
@@ -221,6 +223,7 @@
             // btnExcluir
             // 
             btnExcluir.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnExcluir.Enabled = false;
             btnExcluir.Image = Properties.Resources.trash_can;
             btnExcluir.ImageScaling = ToolStripItemImageScaling.None;
             btnExcluir.ImageTransparentColor = Color.Magenta;
@@ -237,6 +240,7 @@
             // btnDevolucao
             // 
             btnDevolucao.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnDevolucao.Enabled = false;
             btnDevolucao.Image = Properties.Resources.file;
             btnDevolucao.ImageScaling = ToolStripItemImageScaling.None;
             btnDevolucao.ImageTransparentColor = Color.Magenta;
@@ -248,6 +252,7 @@
             // btnPrecos
             // 
             btnPrecos.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnPrecos.Enabled = false;
             btnPrecos.Image = Properties.Resources.gas_station__1_;
             btnPrecos.ImageScaling = ToolStripItemImageScaling.None;
             btnPrecos.ImageTransparentColor = Color.Magenta;
@@ -255,6 +260,35 @@
             btnPrecos.Padding = new Padding(7);
             btnPrecos.Size = new Size(50, 50);
             btnPrecos.Click += btnPrecos_Click;
+            // 
+            // toolStripSeparator4
+            // 
+            toolStripSeparator4.Name = "toolStripSeparator4";
+            toolStripSeparator4.Size = new Size(6, 53);
+            // 
+            // btnPdf
+            // 
+            btnPdf.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnPdf.Enabled = false;
+            btnPdf.Image = Properties.Resources.pdf;
+            btnPdf.ImageScaling = ToolStripItemImageScaling.None;
+            btnPdf.ImageTransparentColor = Color.Magenta;
+            btnPdf.Name = "btnPdf";
+            btnPdf.Padding = new Padding(7);
+            btnPdf.Size = new Size(50, 50);
+            btnPdf.Text = "toolStripButton1";
+            // 
+            // btnEmail
+            // 
+            btnEmail.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnEmail.Enabled = false;
+            btnEmail.Image = Properties.Resources.mail__1_;
+            btnEmail.ImageScaling = ToolStripItemImageScaling.None;
+            btnEmail.ImageTransparentColor = Color.Magenta;
+            btnEmail.Name = "btnEmail";
+            btnEmail.Padding = new Padding(7);
+            btnEmail.Size = new Size(50, 50);
+            btnEmail.Text = "toolStripButton1";
             // 
             // toolStripSeparator2
             // 
@@ -264,6 +298,7 @@
             // btnFiltrar
             // 
             btnFiltrar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnFiltrar.Enabled = false;
             btnFiltrar.Image = (Image)resources.GetObject("btnFiltrar.Image");
             btnFiltrar.ImageScaling = ToolStripItemImageScaling.None;
             btnFiltrar.ImageTransparentColor = Color.Magenta;
@@ -306,33 +341,6 @@
             labelRodape.Name = "labelRodape";
             labelRodape.Size = new Size(255, 17);
             labelRodape.Text = "Bem-Vindo! As informações irão aparecer aqui.";
-            // 
-            // btnPdf
-            // 
-            btnPdf.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnPdf.Image = Properties.Resources.pdf;
-            btnPdf.ImageScaling = ToolStripItemImageScaling.None;
-            btnPdf.ImageTransparentColor = Color.Magenta;
-            btnPdf.Name = "btnPdf";
-            btnPdf.Padding = new Padding(7);
-            btnPdf.Size = new Size(50, 50);
-            btnPdf.Text = "toolStripButton1";
-            // 
-            // btnEmail
-            // 
-            btnEmail.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnEmail.Image = Properties.Resources.mail__1_;
-            btnEmail.ImageScaling = ToolStripItemImageScaling.None;
-            btnEmail.ImageTransparentColor = Color.Magenta;
-            btnEmail.Name = "btnEmail";
-            btnEmail.Padding = new Padding(7);
-            btnEmail.Size = new Size(50, 50);
-            btnEmail.Text = "toolStripButton1";
-            // 
-            // toolStripSeparator4
-            // 
-            toolStripSeparator4.Name = "toolStripSeparator4";
-            toolStripSeparator4.Size = new Size(6, 53);
             // 
             // TelaPrincipalForm
             // 

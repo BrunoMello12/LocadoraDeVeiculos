@@ -61,7 +61,7 @@
             txtNome.Name = "txtNome";
             txtNome.PlaceholderText = "Inserir...";
             txtNome.Size = new Size(230, 23);
-            txtNome.TabIndex = 46;
+            txtNome.TabIndex = 1;
             // 
             // label7
             // 
@@ -87,7 +87,7 @@
             txtBairro.Name = "txtBairro";
             txtBairro.PlaceholderText = "Inserir....";
             txtBairro.Size = new Size(235, 23);
-            txtBairro.TabIndex = 40;
+            txtBairro.TabIndex = 8;
             // 
             // label5
             // 
@@ -104,7 +104,7 @@
             txtEstado.Name = "txtEstado";
             txtEstado.PlaceholderText = "DF";
             txtEstado.Size = new Size(48, 23);
-            txtEstado.TabIndex = 38;
+            txtEstado.TabIndex = 6;
             // 
             // label3
             // 
@@ -141,7 +141,7 @@
             btnGravar.Location = new Point(205, 301);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(76, 34);
-            btnGravar.TabIndex = 48;
+            btnGravar.TabIndex = 11;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = false;
             btnGravar.Click += btnGravar_Click;
@@ -154,7 +154,7 @@
             btnCancelar.Location = new Point(287, 301);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(76, 34);
-            btnCancelar.TabIndex = 47;
+            btnCancelar.TabIndex = 12;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
             // 
@@ -173,7 +173,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "g@gmail.com";
             txtEmail.Size = new Size(230, 23);
-            txtEmail.TabIndex = 50;
+            txtEmail.TabIndex = 2;
             // 
             // rdbFisica
             // 
@@ -221,7 +221,7 @@
             txtCidade.Name = "txtCidade";
             txtCidade.PlaceholderText = "Inserir....";
             txtCidade.Size = new Size(125, 23);
-            txtCidade.TabIndex = 57;
+            txtCidade.TabIndex = 7;
             // 
             // txtRua
             // 
@@ -229,7 +229,7 @@
             txtRua.Name = "txtRua";
             txtRua.PlaceholderText = "Inserir....";
             txtRua.Size = new Size(235, 23);
-            txtRua.TabIndex = 59;
+            txtRua.TabIndex = 9;
             // 
             // label10
             // 
@@ -246,7 +246,7 @@
             txtNumero.Name = "txtNumero";
             txtNumero.PlaceholderText = "Inserir....";
             txtNumero.Size = new Size(48, 23);
-            txtNumero.TabIndex = 61;
+            txtNumero.TabIndex = 10;
             // 
             // label11
             // 
@@ -263,7 +263,7 @@
             txtTelefone.Mask = "(99) 00000-0000";
             txtTelefone.Name = "txtTelefone";
             txtTelefone.Size = new Size(88, 23);
-            txtTelefone.TabIndex = 62;
+            txtTelefone.TabIndex = 3;
             // 
             // txtCpf
             // 
@@ -271,7 +271,7 @@
             txtCpf.Mask = "999,999,999-99";
             txtCpf.Name = "txtCpf";
             txtCpf.Size = new Size(93, 23);
-            txtCpf.TabIndex = 63;
+            txtCpf.TabIndex = 4;
             // 
             // txtCnpj
             // 
@@ -279,7 +279,7 @@
             txtCnpj.Mask = "99,999,999/9999-99";
             txtCnpj.Name = "txtCnpj";
             txtCnpj.Size = new Size(100, 23);
-            txtCnpj.TabIndex = 64;
+            txtCnpj.TabIndex = 5;
             // 
             // TelaClienteForm
             // 

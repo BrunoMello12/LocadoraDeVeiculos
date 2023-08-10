@@ -72,6 +72,7 @@
             // 
             txtCupom.Location = new Point(416, 99);
             txtCupom.Name = "txtCupom";
+            txtCupom.ReadOnly = true;
             txtCupom.Size = new Size(121, 23);
             txtCupom.TabIndex = 93;
             // 
@@ -187,6 +188,7 @@
             // 
             // cbAutomovel
             // 
+            cbAutomovel.DropDownStyle = ComboBoxStyle.DropDownList;
             cbAutomovel.FormattingEnabled = true;
             cbAutomovel.Location = new Point(416, 41);
             cbAutomovel.Name = "cbAutomovel";
@@ -204,6 +206,7 @@
             // 
             // cbCondutor
             // 
+            cbCondutor.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCondutor.FormattingEnabled = true;
             cbCondutor.Location = new Point(416, 12);
             cbCondutor.Name = "cbCondutor";
@@ -221,6 +224,7 @@
             // 
             // cbPlanoDeCobranca
             // 
+            cbPlanoDeCobranca.DropDownStyle = ComboBoxStyle.DropDownList;
             cbPlanoDeCobranca.FormattingEnabled = true;
             cbPlanoDeCobranca.Location = new Point(149, 103);
             cbPlanoDeCobranca.Name = "cbPlanoDeCobranca";
@@ -238,6 +242,7 @@
             // 
             // cbGrupoAutomoveis
             // 
+            cbGrupoAutomoveis.DropDownStyle = ComboBoxStyle.DropDownList;
             cbGrupoAutomoveis.FormattingEnabled = true;
             cbGrupoAutomoveis.Location = new Point(149, 74);
             cbGrupoAutomoveis.Name = "cbGrupoAutomoveis";
@@ -264,6 +269,7 @@
             // 
             // cbCliente
             // 
+            cbCliente.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCliente.FormattingEnabled = true;
             cbCliente.Location = new Point(149, 45);
             cbCliente.Name = "cbCliente";
@@ -283,11 +289,13 @@
             // 
             txtKmAutomovel.Location = new Point(416, 70);
             txtKmAutomovel.Name = "txtKmAutomovel";
+            txtKmAutomovel.ReadOnly = true;
             txtKmAutomovel.Size = new Size(121, 23);
             txtKmAutomovel.TabIndex = 72;
             // 
             // cbFuncionario
             // 
+            cbFuncionario.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFuncionario.FormattingEnabled = true;
             cbFuncionario.Location = new Point(149, 16);
             cbFuncionario.Name = "cbFuncionario";
@@ -362,6 +370,7 @@
             // 
             // cbNivelDoTanque
             // 
+            cbNivelDoTanque.DropDownStyle = ComboBoxStyle.DropDownList;
             cbNivelDoTanque.FormattingEnabled = true;
             cbNivelDoTanque.Location = new Point(416, 186);
             cbNivelDoTanque.Name = "cbNivelDoTanque";

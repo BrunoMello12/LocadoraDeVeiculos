@@ -66,7 +66,7 @@
             txtPreco.Name = "txtPreco";
             txtPreco.PlaceholderText = "R$";
             txtPreco.Size = new Size(72, 23);
-            txtPreco.TabIndex = 59;
+            txtPreco.TabIndex = 2;
             // 
             // label4
             // 
@@ -85,7 +85,7 @@
             btnGravar.Location = new Point(106, 176);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(76, 34);
-            btnGravar.TabIndex = 57;
+            btnGravar.TabIndex = 3;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = false;
             btnGravar.Click += btnGravar_Click;
@@ -98,7 +98,7 @@
             btnCancelar.Location = new Point(188, 176);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(76, 34);
-            btnCancelar.TabIndex = 56;
+            btnCancelar.TabIndex = 4;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
             // 
@@ -108,7 +108,7 @@
             txtNome.Name = "txtNome";
             txtNome.PlaceholderText = "Inserir...";
             txtNome.Size = new Size(194, 23);
-            txtNome.TabIndex = 55;
+            txtNome.TabIndex = 1;
             // 
             // label1
             // 

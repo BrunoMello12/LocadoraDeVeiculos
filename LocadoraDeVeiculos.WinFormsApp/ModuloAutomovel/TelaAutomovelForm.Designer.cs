@@ -56,7 +56,7 @@
             txtMarca.Name = "txtMarca";
             txtMarca.PlaceholderText = "Inserir....";
             txtMarca.Size = new Size(121, 23);
-            txtMarca.TabIndex = 22;
+            txtMarca.TabIndex = 5;
             // 
             // btnGravar
             // 
@@ -66,7 +66,7 @@
             btnGravar.Location = new Point(121, 309);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(76, 34);
-            btnGravar.TabIndex = 21;
+            btnGravar.TabIndex = 8;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = false;
             btnGravar.Click += btnGravar_Click;
@@ -79,7 +79,7 @@
             btnCancelar.Location = new Point(203, 309);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(76, 34);
-            btnCancelar.TabIndex = 20;
+            btnCancelar.TabIndex = 9;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
             // 
@@ -154,15 +154,17 @@
             txtCor.Name = "txtCor";
             txtCor.PlaceholderText = "Inserir....";
             txtCor.Size = new Size(121, 23);
-            txtCor.TabIndex = 28;
+            txtCor.TabIndex = 6;
             // 
             // cbGrpAutomoveis
             // 
+            cbGrpAutomoveis.DropDownStyle = ComboBoxStyle.DropDownList;
             cbGrpAutomoveis.FormattingEnabled = true;
+            cbGrpAutomoveis.ItemHeight = 15;
             cbGrpAutomoveis.Location = new Point(158, 92);
             cbGrpAutomoveis.Name = "cbGrpAutomoveis";
             cbGrpAutomoveis.Size = new Size(121, 23);
-            cbGrpAutomoveis.TabIndex = 29;
+            cbGrpAutomoveis.TabIndex = 1;
             // 
             // txtModelo
             // 
@@ -170,15 +172,16 @@
             txtModelo.Name = "txtModelo";
             txtModelo.PlaceholderText = "Inserir....";
             txtModelo.Size = new Size(121, 23);
-            txtModelo.TabIndex = 30;
+            txtModelo.TabIndex = 4;
             // 
             // cbTipoCombustivel
             // 
+            cbTipoCombustivel.DropDownStyle = ComboBoxStyle.DropDownList;
             cbTipoCombustivel.FormattingEnabled = true;
             cbTipoCombustivel.Location = new Point(158, 121);
             cbTipoCombustivel.Name = "cbTipoCombustivel";
             cbTipoCombustivel.Size = new Size(121, 23);
-            cbTipoCombustivel.TabIndex = 32;
+            cbTipoCombustivel.TabIndex = 2;
             // 
             // label6
             // 
@@ -195,7 +198,7 @@
             txtCapacidadeEmLitros.Name = "txtCapacidadeEmLitros";
             txtCapacidadeEmLitros.PlaceholderText = "Inserir....";
             txtCapacidadeEmLitros.Size = new Size(121, 23);
-            txtCapacidadeEmLitros.TabIndex = 34;
+            txtCapacidadeEmLitros.TabIndex = 3;
             // 
             // label7
             // 
@@ -212,7 +215,7 @@
             txtPlaca.Name = "txtPlaca";
             txtPlaca.PlaceholderText = "Inserir....";
             txtPlaca.Size = new Size(121, 23);
-            txtPlaca.TabIndex = 36;
+            txtPlaca.TabIndex = 7;
             // 
             // lblPlaca
             // 

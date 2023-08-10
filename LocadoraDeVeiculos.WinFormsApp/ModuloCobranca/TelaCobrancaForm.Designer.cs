@@ -52,7 +52,7 @@
             btnGravar.Location = new Point(195, 220);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(76, 34);
-            btnGravar.TabIndex = 13;
+            btnGravar.TabIndex = 6;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = false;
             btnGravar.Click += btnGravar_Click;
@@ -65,7 +65,7 @@
             btnCancelar.Location = new Point(277, 220);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(76, 34);
-            btnCancelar.TabIndex = 12;
+            btnCancelar.TabIndex = 7;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
             // 
@@ -74,7 +74,7 @@
             txtPrecoDiaria.Location = new Point(169, 51);
             txtPrecoDiaria.Name = "txtPrecoDiaria";
             txtPrecoDiaria.Size = new Size(142, 23);
-            txtPrecoDiaria.TabIndex = 11;
+            txtPrecoDiaria.TabIndex = 3;
             // 
             // label1
             // 
@@ -87,11 +87,12 @@
             // 
             // cbGrupoAutomoveis
             // 
+            cbGrupoAutomoveis.DropDownStyle = ComboBoxStyle.DropDownList;
             cbGrupoAutomoveis.FormattingEnabled = true;
             cbGrupoAutomoveis.Location = new Point(144, 21);
             cbGrupoAutomoveis.Name = "cbGrupoAutomoveis";
             cbGrupoAutomoveis.Size = new Size(188, 23);
-            cbGrupoAutomoveis.TabIndex = 14;
+            cbGrupoAutomoveis.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -116,7 +117,7 @@
             txtKmDisponivel.Location = new Point(169, 109);
             txtKmDisponivel.Name = "txtKmDisponivel";
             txtKmDisponivel.Size = new Size(142, 23);
-            txtKmDisponivel.TabIndex = 21;
+            txtKmDisponivel.TabIndex = 5;
             // 
             // label5
             // 
@@ -133,7 +134,7 @@
             txtPrecoExtrapolado.Location = new Point(169, 80);
             txtPrecoExtrapolado.Name = "txtPrecoExtrapolado";
             txtPrecoExtrapolado.Size = new Size(142, 23);
-            txtPrecoExtrapolado.TabIndex = 19;
+            txtPrecoExtrapolado.TabIndex = 4;
             // 
             // label4
             // 
@@ -164,11 +165,12 @@
             // 
             // cbTipoPlano
             // 
+            cbTipoPlano.DropDownStyle = ComboBoxStyle.DropDownList;
             cbTipoPlano.FormattingEnabled = true;
             cbTipoPlano.Location = new Point(169, 22);
             cbTipoPlano.Name = "cbTipoPlano";
             cbTipoPlano.Size = new Size(142, 23);
-            cbTipoPlano.TabIndex = 16;
+            cbTipoPlano.TabIndex = 2;
             cbTipoPlano.SelectedIndexChanged += cbTipoPlano_SelectedIndexChanged;
             // 
             // TelaCobrancaForm
