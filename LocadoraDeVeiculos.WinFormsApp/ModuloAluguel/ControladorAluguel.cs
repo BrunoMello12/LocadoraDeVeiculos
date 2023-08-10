@@ -1,6 +1,5 @@
 ﻿using FluentResults;
 using LocadoraDeVeiculos.Aplicacao.ModuloAluguel;
-using LocadoraDeVeiculos.Aplicacao.ModuloAutomovel;
 using LocadoraDeVeiculos.Dominio.ModuloAluguel;
 using LocadoraDeVeiculos.Dominio.ModuloAutomovel;
 using LocadoraDeVeiculos.Dominio.ModuloCliente;
@@ -13,7 +12,6 @@ using LocadoraDeVeiculos.Dominio.ModuloPrecos;
 using LocadoraDeVeiculos.Dominio.ModuloTaxasServicos;
 using LocadoraDeVeiculos.Infra.Json.ModuloPrecos;
 using LocadoraDeVeiculos.WinFormsApp.Compartilhado;
-using LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel;
 using LocadoraDeVeiculos.WinFormsApp.ModuloPrecos;
 
 namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
@@ -167,9 +165,15 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
             }
 
             TelaPrecosForm tela = new TelaPrecosForm(registroPreco);
-            tela.ShowDialog();
+            tela.ConfigurarPrecos(registroPreco);
 
-            repositorioPrecosJson.Salvar(registroPreco);
+            DialogResult opcaoEscolhida = tela.ShowDialog();
+
+            if (opcaoEscolhida == DialogResult.OK)
+            {
+                Precos precoEscolhido = tela.ObterPrecos();
+                repositorioPrecosJson.Salvar(registroPreco);
+            }
         }
     }
 }
