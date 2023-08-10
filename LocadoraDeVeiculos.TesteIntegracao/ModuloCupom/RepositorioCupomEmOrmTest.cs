@@ -89,5 +89,19 @@ namespace LocadoraDeVeiculos.TesteIntegracao.ModuloCupom
 
             cupomEncontrado.Should().Be(cupom);
         }
+
+        [TestMethod]
+        public void Deve_selecionar_cupom_por_nome()
+        {
+            var parceiroId = Builder<Parceiro>.CreateNew().Persist();
+
+            var cupom = Builder<Cupom>.CreateNew()
+                .With(c => c.Parceiro = parceiroId)
+                .Persist();
+
+            var cupomEncontrado = repositorioCupom.SelecionarPorNome(cupom.Nome);
+
+            cupomEncontrado.Should().Be(cupom);
+        }
     }
 }

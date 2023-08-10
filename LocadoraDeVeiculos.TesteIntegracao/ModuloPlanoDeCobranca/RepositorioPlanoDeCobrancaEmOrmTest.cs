@@ -2,6 +2,7 @@
 using FluentAssertions;
 using LocadoraDeVeiculos.Dominio.ModuloCobranca;
 using LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis;
+using LocadoraDeVeiculos.Dominio.ModuloParceiro;
 using LocadoraDeVeiculos.TesteIntegracao.Compartilhado;
 
 namespace LocadoraDeVeiculos.TestesIntegracao.ModuloPlanoDeCobranca
@@ -25,7 +26,6 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloPlanoDeCobranca
             //assert
             repositorioCobranca.SelecionarPorId(cobranca.Id).Should().Be(cobranca);
         }
-
         [TestMethod]
         public void Deve_editar_cobranca()
         {
@@ -47,7 +47,6 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloPlanoDeCobranca
             repositorioCobranca.SelecionarPorId(cobrancaId.Id)
                 .Should().Be(cobrancaId);
         }
-
         [TestMethod]
         public void Deve_excluir_cobranca()
         {
@@ -101,6 +100,19 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloPlanoDeCobranca
             var cobrancaEncontrada = repositorioCobranca.SelecionarPorId(cobranca.Id);
 
             cobrancaEncontrada.Should().Be(cobranca);
+        }
+
+        [TestMethod]
+        public void Deve_selecionar_parceiro_por_nome()
+        {
+            //arrange
+            var parceiro02 = Builder<Parceiro>.CreateNew().Persist();
+
+            //action
+            var disciplinasEncontrada = repositorioParceiro.SelecionarPorNome(parceiro02.Nome);
+
+            //assert
+            disciplinasEncontrada.Should().Be(parceiro02);
         }
     }
 }

@@ -91,6 +91,20 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloCondutor
 
             condutorEncontrado.Should().Be(condutor);
         }
+
+        [TestMethod]
+        public void Deve_selecionar_condutor_por_nome()
+        {
+            var cliente = Builder<Cliente>.CreateNew().Persist();
+
+            var condutor = Builder<Condutor>.CreateNew()
+            .With(c => c.Cliente = cliente)
+            .Persist();
+
+            var condutorEncontrado = repositorioCondutor.SelecionarPorNome(condutor.Nome);
+
+            condutorEncontrado.Should().Be(condutor);
+        }
     }
 }
 

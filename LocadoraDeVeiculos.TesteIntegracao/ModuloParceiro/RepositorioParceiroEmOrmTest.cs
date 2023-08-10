@@ -85,6 +85,19 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloParceiro
             //assert            
             disciplinasEncontrada.Should().Be(parceiro02);
         }
+
+        [TestMethod]
+        public void Deve_selecionar_parceiro_por_nome()
+        {
+            //arrange
+            var parceiro02 = Builder<Parceiro>.CreateNew().Persist();
+
+            //action
+            var disciplinasEncontrada = repositorioParceiro.SelecionarPorNome(parceiro02.Nome);
+
+            //assert
+            disciplinasEncontrada.Should().Be(parceiro02);
+        }
     }
 }
 
