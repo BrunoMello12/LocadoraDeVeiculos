@@ -19,6 +19,8 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloCondutor
             //Action
             repositorioCondutor.Inserir(condutor);
 
+            contextoPersistencia.GravarDados();
+
             //Assert
             repositorioCondutor.SelecionarPorId(condutor.Id).Should().Be(condutor);
         }
@@ -35,6 +37,8 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloCondutor
             condutor.Nome = "Cleiton";
             repositorioCondutor.Editar(condutor);
 
+            contextoPersistencia.GravarDados();
+
             var cupomEditado = repositorioCondutor.SelecionarPorId(condutor.Id);
             cupomEditado.Should().BeEquivalentTo(condutor);
         }
@@ -49,6 +53,8 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloCondutor
             .Persist();
 
             repositorioCondutor.Excluir(condutor);
+
+            contextoPersistencia.GravarDados();
 
             repositorioCondutor.SelecionarPorId(condutor.Id).Should().BeNull();
         }

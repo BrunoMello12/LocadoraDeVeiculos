@@ -159,17 +159,18 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
 
         public override void Precos()
         {
-            Precos registroPreco = repositorioPrecosJson.ObterRegistros().FirstOrDefault();
+            TelaPrecosForm tela = new TelaPrecosForm();
 
-            if (registroPreco == null)
+            tela.ConfigurarPrecos(repositorioPrecosJson.ObterRegistro());
+
+            DialogResult resultado = tela.ShowDialog();
+
+            if(resultado == DialogResult.OK)
             {
-                registroPreco = new Precos(Guid.NewGuid(), 0, 0, 0, 0);
-            }
+                Precos preco = tela.ObterPrecos();
 
-            TelaPrecosForm tela = new TelaPrecosForm(registroPreco);
-            tela.ShowDialog();
-
-            repositorioPrecosJson.Salvar(registroPreco);
+                repositorioPrecosJson.Salvar(preco);
+            } 
         }
     }
 }

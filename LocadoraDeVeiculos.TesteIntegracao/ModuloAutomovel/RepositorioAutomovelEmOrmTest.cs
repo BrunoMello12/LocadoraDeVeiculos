@@ -19,6 +19,8 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloAutomovel
 
             repositorioAutomovel.Inserir(automovel);
 
+            contextoPersistencia.GravarDados();
+
             repositorioAutomovel.SelecionarPorId(automovel.Id).Should().Be(automovel);
         }
 
@@ -35,6 +37,8 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloAutomovel
 
             repositorioAutomovel.Editar(automovel);
 
+            contextoPersistencia.GravarDados();
+
             repositorioAutomovel.SelecionarPorId(automovel.Id)
                 .Should().Be(automovel);
         }
@@ -49,6 +53,8 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloAutomovel
             .Persist();
 
             repositorioAutomovel.Excluir(automovel);
+
+            contextoPersistencia.GravarDados();
 
             repositorioAutomovel.SelecionarPorId(automovel.Id).Should().BeNull();
         }

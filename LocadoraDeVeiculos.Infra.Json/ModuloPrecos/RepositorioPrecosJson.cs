@@ -7,29 +7,19 @@ namespace LocadoraDeVeiculos.Infra.Json.ModuloPrecos
     {
         protected ContextoDadosPrecos contextoDados;
 
-        public RepositorioPrecosJson(IContextoPersistencia contexto)
+        public RepositorioPrecosJson(ContextoDadosPrecos contexto)
         {
-            contextoDados = contexto as ContextoDadosPrecos;
+            contextoDados = contexto;
         }
 
-        public void Salvar(Precos registro)
+        public void Salvar(Precos preco)
         {
-            var registros = ObterRegistros();
-            var registroExistente = registros.FirstOrDefault(r => r.Id == registro.Id);
-
-            if (registroExistente != null)
-            {
-                registroExistente.Atualizar(registro);
-            }
-            else
-            {
-                registros.Add(registro);
-            }
+            contextoDados.Precos = preco;
 
             contextoDados.GravarDados();
         }
 
-        public List<Precos> ObterRegistros()
+        public Precos ObterRegistro()
         {
             return contextoDados.Precos;
         }

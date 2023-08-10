@@ -8,25 +8,27 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloPrecos
         private Precos precos;
         public event GravarRegistroDelegate<Precos> onGravarRegistro;
 
-        public TelaPrecosForm(Precos registro)
+        public TelaPrecosForm()
         {
             InitializeComponent();
             this.ConfigurarDialog();
-            this.precos = registro;
+            this.precos = new Precos();
         }
 
         public Precos ObterPrecos()
         {
-            precos.Gasolina = Convert.ToInt32(txtGasolina.Text);
-            precos.Gas = Convert.ToInt32(txtGas.Text);
-            precos.Diesel = Convert.ToInt32(txtDiesel.Text);
-            precos.Alcool = Convert.ToInt32(txtAlcool.Text);
+            Precos novoPrecos = new Precos(); // Cria um novo objeto Precos
+            novoPrecos.Gasolina = Convert.ToDecimal(txtGasolina.Text);
+            novoPrecos.Gas = Convert.ToDecimal(txtGas.Text);
+            novoPrecos.Diesel = Convert.ToDecimal(txtDiesel.Text);
+            novoPrecos.Alcool = Convert.ToDecimal(txtAlcool.Text);
 
-            return precos;
+            return novoPrecos;
         }
 
         public void ConfigurarPrecos(Precos precos)
         {
+            this.precos = precos; // Atualiza o objeto precos
             txtGasolina.Text = precos.Gasolina.ToString();
             txtGas.Text = precos.Gas.ToString();
             txtDiesel.Text = precos.Diesel.ToString();

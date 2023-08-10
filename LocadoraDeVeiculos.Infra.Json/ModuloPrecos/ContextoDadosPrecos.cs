@@ -5,13 +5,13 @@ using LocadoraDeVeiculos.Infra.Json.Serializadores;
 namespace LocadoraDeVeiculos.Infra.Json.ModuloPrecos
 {
     [Serializable]
-    public class ContextoDadosPrecos : IContextoPersistencia
+    public class ContextoDadosPrecos 
     {         
         private readonly SerializadorDadosEmJson serializador;
 
         public ContextoDadosPrecos()
         {
-            Precos = new List<Precos>();
+            Precos = new Precos();
         }
 
         public ContextoDadosPrecos(SerializadorDadosEmJson serializador) : this()
@@ -21,12 +21,7 @@ namespace LocadoraDeVeiculos.Infra.Json.ModuloPrecos
             CarregarDados();
         }
 
-        public List<Precos> Precos { get; set; }
-
-        public void DesfazerAlteracoes()
-        {
-            CarregarDados();
-        }
+        public Precos Precos { get; set; }
 
         public void GravarDados()
         {
@@ -37,8 +32,8 @@ namespace LocadoraDeVeiculos.Infra.Json.ModuloPrecos
         {
             var ctx = serializador.CarregarDadosDoArquivo();
 
-            if (ctx.Precos.Any())
-                this.Precos.AddRange(ctx.Precos);
+            if (ctx.Precos != null)
+                this.Precos = ctx.Precos;
         }
     }
 }

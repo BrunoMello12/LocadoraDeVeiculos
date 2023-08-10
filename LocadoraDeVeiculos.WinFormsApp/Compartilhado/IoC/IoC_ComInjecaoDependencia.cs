@@ -20,6 +20,7 @@ using LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis;
 using LocadoraDeVeiculos.Dominio.ModuloParceiro;
 using LocadoraDeVeiculos.Dominio.ModuloTaxasServicos;
 using LocadoraDeVeiculos.Infra.Json.ModuloPrecos;
+using LocadoraDeVeiculos.Infra.Json.Serializadores;
 using LocadoraDeVeiculos.Infra.Orm.Compartilhado;
 using LocadoraDeVeiculos.Infra.Orm.ModuloAluguel;
 using LocadoraDeVeiculos.Infra.Orm.ModuloAutomovel;
@@ -117,6 +118,10 @@ namespace LocadoraDeVeiculos.WinFormsApp.Compartilhado.IoC
             servicos.AddTransient<IValidadorTaxasServicos, ValidadorTaxasServicos>();
             servicos.AddTransient<ServicoTaxasServicos>();
             servicos.AddTransient<ControladorTaxasServicos>();
+
+            servicos.AddTransient<SerializadorDadosEmJson>();
+            servicos.AddTransient<ContextoDadosPrecos>();
+            servicos.AddTransient<RepositorioPrecosJson>();
 
             container = servicos.BuildServiceProvider();
         }

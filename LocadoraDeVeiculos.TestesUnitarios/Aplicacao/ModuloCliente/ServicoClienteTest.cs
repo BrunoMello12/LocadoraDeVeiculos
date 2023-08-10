@@ -254,6 +254,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloCliente
             //action
             Result resultado = servicoCliente.Excluir(cliente);
 
+
             //assert
             resultado.Should().BeFailure();
             resultado.Reasons[0].Message.Should().Be("Falha ao tentar excluir cliente");

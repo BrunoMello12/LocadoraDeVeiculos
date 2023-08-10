@@ -20,6 +20,8 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloPlanoDeCobranca
             //action
             repositorioCobranca.Inserir(cobranca);
 
+            contextoPersistencia.GravarDados();
+
             //assert
             repositorioCobranca.SelecionarPorId(cobranca.Id).Should().Be(cobranca);
         }
@@ -38,6 +40,8 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloPlanoDeCobranca
             //action
             repositorioCobranca.Editar(cobrancaId);
 
+            contextoPersistencia.GravarDados();
+
             //assert
             repositorioCobranca.SelecionarPorId(cobrancaId.Id)
                 .Should().Be(cobrancaId);
@@ -54,6 +58,8 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloPlanoDeCobranca
 
             //action
             repositorioCobranca.Excluir(cobranca);
+
+            contextoPersistencia.GravarDados();
 
             //assert
             repositorioCobranca.SelecionarPorId(cobranca.Id).Should().BeNull();

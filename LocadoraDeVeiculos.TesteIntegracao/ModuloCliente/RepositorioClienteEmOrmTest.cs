@@ -14,6 +14,8 @@ namespace LocadoraDeVeiculos.TesteIntegracao.ModuloCliente
             var cliente = Builder<Cliente>.CreateNew().Build();
             repositorioCliente.Inserir(cliente);
 
+            contextoPersistencia.GravarDados();
+
             repositorioCliente.SelecionarPorId(cliente.Id).Should().Be(cliente);
         }
 
@@ -27,6 +29,8 @@ namespace LocadoraDeVeiculos.TesteIntegracao.ModuloCliente
 
             repositorioCliente.Editar(cliente);
 
+            contextoPersistencia.GravarDados();
+
             repositorioCliente.SelecionarPorId(cliente.Id)
                 .Should().Be(cliente);
         }
@@ -37,6 +41,8 @@ namespace LocadoraDeVeiculos.TesteIntegracao.ModuloCliente
             var cliente = Builder<Cliente>.CreateNew().Persist();
 
             repositorioCliente.Excluir(cliente);
+
+            contextoPersistencia.GravarDados();
 
             repositorioCliente.SelecionarPorId(cliente.Id).Should().BeNull();
         }

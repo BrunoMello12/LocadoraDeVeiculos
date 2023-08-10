@@ -19,6 +19,8 @@ namespace LocadoraDeVeiculos.TesteIntegracao.ModuloCupom
             //Action
             repositorioCupom.Inserir(cupom);
 
+            contextoPersistencia.GravarDados();
+
             //Assert
             repositorioCupom.SelecionarPorId(cupom.Id).Should().Be(cupom);
         }
@@ -49,6 +51,8 @@ namespace LocadoraDeVeiculos.TesteIntegracao.ModuloCupom
                 .Persist();
 
             repositorioCupom.Excluir(cupom);
+
+            contextoPersistencia.GravarDados();
 
             repositorioCupom.SelecionarPorId(cupom.Id).Should().BeNull();
         }

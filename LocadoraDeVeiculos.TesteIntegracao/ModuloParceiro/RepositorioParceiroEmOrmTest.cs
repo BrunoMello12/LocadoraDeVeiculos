@@ -18,6 +18,8 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloParceiro
             //action
             repositorioParceiro.Inserir(parceiro);
 
+            contextoPersistencia.GravarDados();
+
             //assert
             repositorioParceiro.SelecionarPorId(parceiro.Id).Should().Be(parceiro);
         }
@@ -35,6 +37,8 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloParceiro
             //action
             repositorioParceiro.Editar(parceiro);
 
+            contextoPersistencia.GravarDados();
+
             //assert
             repositorioParceiro.SelecionarPorId(parceiro.Id)
                 .Should().Be(parceiro);
@@ -48,6 +52,8 @@ namespace LocadoraDeVeiculos.TestesIntegracao.ModuloParceiro
 
             //action
             repositorioParceiro.Excluir(parceiro);
+
+            contextoPersistencia.GravarDados();
 
             //assert
             repositorioParceiro.SelecionarPorId(parceiro.Id).Should().BeNull();

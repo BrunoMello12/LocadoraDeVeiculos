@@ -135,27 +135,6 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
             TelaPrincipalForm.Instancia.AtualizarRodape(mensagemRodape);
         }
 
-        public override void Precos()
-        {
-            Precos registroPreco = repositorioPrecosJson.ObterRegistros().FirstOrDefault();
-
-            if (registroPreco == null)
-            {
-                registroPreco = new Precos(Guid.NewGuid(), 0, 0, 0, 0);
-            }
-
-            TelaPrecosForm tela = new TelaPrecosForm(registroPreco);
-            tela.ConfigurarPrecos(registroPreco);
-
-            DialogResult opcaoEscolhida = tela.ShowDialog();
-
-            if (opcaoEscolhida == DialogResult.OK)
-            {
-                Precos precoEscolhido = tela.ObterPrecos();
-                repositorioPrecosJson.Salvar(registroPreco);
-            }
-        }
-
         public override void Filtrar()
         {
             TelaFiltroForm tela = new(repositorioGrupoAutomoveis);

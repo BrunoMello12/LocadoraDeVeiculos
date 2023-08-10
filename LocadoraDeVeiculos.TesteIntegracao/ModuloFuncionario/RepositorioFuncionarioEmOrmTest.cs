@@ -14,7 +14,9 @@ namespace LocadoraDeVeiculos.TesteIntegracao.ModuloFuncionario
             var Funcionario = Builder<Funcionario>.CreateNew().Build();
 
             repositorioFuncionario.Inserir(Funcionario);
-            
+
+            contextoPersistencia.GravarDados();
+
             repositorioFuncionario.SelecionarPorId(Funcionario.Id).Should().Be(Funcionario);
         }
 
@@ -28,6 +30,8 @@ namespace LocadoraDeVeiculos.TesteIntegracao.ModuloFuncionario
 
             repositorioFuncionario.Editar(funcionario);
 
+            contextoPersistencia.GravarDados();
+
             repositorioFuncionario.SelecionarPorId(funcionario.Id)
                 .Should().Be(funcionario);
         }
@@ -38,6 +42,8 @@ namespace LocadoraDeVeiculos.TesteIntegracao.ModuloFuncionario
             var funcionario = Builder<Funcionario>.CreateNew().Persist();
 
             repositorioFuncionario.Excluir(funcionario);
+
+            contextoPersistencia.GravarDados();
 
             repositorioFuncionario.SelecionarPorId(funcionario.Id).Should().BeNull();
         }
