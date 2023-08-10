@@ -1,4 +1,5 @@
-﻿using LocadoraDeVeiculos.WinFormsApp.Compartilhado;
+﻿using LocadoraDeVeiculos.Infra.Json.ModuloPrecos;
+using LocadoraDeVeiculos.WinFormsApp.Compartilhado;
 using LocadoraDeVeiculos.WinFormsApp.Compartilhado.IoC;
 using LocadoraDeVeiculos.WinFormsApp.ModuloAluguel;
 using LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel;
@@ -30,6 +31,7 @@ namespace LocadoraDeVeiculos.WinFormsApp
 
             IoC = new IoC_ComInjecaoDependencia();
         }
+
 
         public static TelaPrincipalForm Instancia
         {

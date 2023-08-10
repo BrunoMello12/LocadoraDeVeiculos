@@ -1,6 +1,5 @@
 ﻿using FluentResults;
 using LocadoraDeVeiculos.Aplicacao.ModuloAluguel;
-using LocadoraDeVeiculos.Aplicacao.ModuloAutomovel;
 using LocadoraDeVeiculos.Dominio.ModuloAluguel;
 using LocadoraDeVeiculos.Dominio.ModuloAutomovel;
 using LocadoraDeVeiculos.Dominio.ModuloCliente;
@@ -13,7 +12,6 @@ using LocadoraDeVeiculos.Dominio.ModuloPrecos;
 using LocadoraDeVeiculos.Dominio.ModuloTaxasServicos;
 using LocadoraDeVeiculos.Infra.Json.ModuloPrecos;
 using LocadoraDeVeiculos.WinFormsApp.Compartilhado;
-using LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel;
 using LocadoraDeVeiculos.WinFormsApp.ModuloPrecos;
 
 namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel

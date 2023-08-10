@@ -16,7 +16,6 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
         {
             InitializeComponent();
             this.ConfigurarDialog();
-
             CarregarGrupoDeAutomoveis(grupoDeAutomoveis);
             CarregarTipoCombustivel();
         }
@@ -40,6 +39,7 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
             foto = ConverterImagemEmByte(foto);
             automovel.Foto = foto;
 
+
             return automovel;
         }
 
@@ -56,29 +56,11 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
             cbTipoCombustivel.SelectedItem = automovel.TipoCombustivel;
 
             Image foto = null;
-            foto = ConverterByteEmImagem(automovel, foto);
+            foto = ConverterByteArrayEmImagem(automovel, foto);
             picFotoCarro.Image = foto;
         }
 
-        private byte[]? ConverterImagemEmByte(byte[]? foto)
-        {
-            try
-            {
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    picFotoCarro.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-                    foto = ms.ToArray();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Erro ao converter a imagem em byte array: {ex.Message}");
-            }
-
-            return foto;
-        }
-
-        private Image? ConverterByteEmImagem(Automovel automovel, Image? foto)
+        private Image? ConverterByteArrayEmImagem(Automovel automovel, Image? foto)
         {
             try
             {
@@ -90,6 +72,27 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
             catch (Exception ex)
             {
                 Console.WriteLine($"Erro ao converter o byte array em imagem: {ex.Message}");
+            }
+
+            return foto;
+        }
+
+        private byte[]? ConverterImagemEmByte(byte[]? foto)
+        {
+            if (picFotoCarro.Image != null)
+            {
+                try
+                {
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        picFotoCarro.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                        foto = ms.ToArray();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Erro ao converter a imagem em byte array: {ex.Message}");
+                }
             }
 
             return foto;
