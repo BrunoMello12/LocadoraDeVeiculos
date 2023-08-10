@@ -17,8 +17,6 @@ namespace LocadoraDeVeiculos.TesteIntegracao.ModuloTaxasServicos
             //action
             repositorioTaxasServicos.Inserir(taxa);
 
-            contextoPersistencia.GravarDados();
-
             //Assert
             repositorioTaxasServicos.SelecionarPorId(taxa.Id).Should().Be(taxa);
         }
@@ -32,8 +30,6 @@ namespace LocadoraDeVeiculos.TesteIntegracao.ModuloTaxasServicos
             taxa.Nome = "taxa";
 
             repositorioTaxasServicos.Editar(taxa);
-
-            contextoPersistencia.GravarDados();
 
             repositorioTaxasServicos.SelecionarPorId(taxa.Id)
                 .Should().Be(taxa);
@@ -78,7 +74,7 @@ namespace LocadoraDeVeiculos.TesteIntegracao.ModuloTaxasServicos
             var taxa = Builder<TaxasServicos>.CreateNew().Persist();
 
             var taxaEncontrada = repositorioTaxasServicos.SelecionarPorId(taxa.Id);
-          
+
             taxaEncontrada.Should().Be(taxa);
         }
     }

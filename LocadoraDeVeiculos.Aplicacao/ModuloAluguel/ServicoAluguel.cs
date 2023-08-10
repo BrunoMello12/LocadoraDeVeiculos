@@ -1,5 +1,6 @@
 ﻿using LocadoraDeVeiculos.Dominio.Compartilhado;
 using LocadoraDeVeiculos.Dominio.ModuloAluguel;
+using LocadoraDeVeiculos.Dominio.ModuloTaxasServicos;
 
 namespace LocadoraDeVeiculos.Aplicacao.ModuloAluguel
 {
@@ -122,6 +123,41 @@ namespace LocadoraDeVeiculos.Aplicacao.ModuloAluguel
                 Log.Logger.Error(ex, msgErro + " {AluguelId}", aluguel.Id);
 
                 return Result.Fail(erros);
+            }
+        }
+
+        public Result Devolucao(Aluguel aluguel)
+        {
+            Log.Debug("Tentando executar devolução aluguel...{@a}", aluguel);
+
+            List<string> erros = ValidarAluguel(aluguel);
+
+            if (erros.Count() > 0)
+            {
+                contextoPersistencia.DesfazerAlteracoes();
+
+                return Result.Fail(erros);
+            }
+
+            try
+            {
+                repositorioAluguel.Editar(aluguel);
+
+                contextoPersistencia.GravarDados();
+
+                Log.Debug("Aluguel {AluguelId} devovido com sucesso", aluguel.Id);
+
+                return Result.Ok();
+            }
+            catch (Exception exc)
+            {
+                contextoPersistencia.DesfazerAlteracoes();
+
+                string msgErro = "Falha ao tentar devolver aluguel.";
+
+                Log.Error(exc, msgErro + "{@a}", aluguel);
+
+                return Result.Fail(msgErro);
             }
         }
 

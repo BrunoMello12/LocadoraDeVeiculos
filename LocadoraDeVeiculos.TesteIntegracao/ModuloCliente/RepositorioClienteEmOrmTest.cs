@@ -75,7 +75,7 @@ namespace LocadoraDeVeiculos.TesteIntegracao.ModuloCliente
             var cliente = Builder<Cliente>.CreateNew().Persist();
 
             var clienteEncontrado = repositorioCliente.SelecionarPorId(cliente.Id);
-          
+
             clienteEncontrado.Should().Be(cliente);
         }
     }

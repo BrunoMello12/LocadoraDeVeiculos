@@ -32,7 +32,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloCobranca
             servicoCobranca = new ServicoCobranca(repositorioCobrancaMoq.Object, validadorMoq.Object, contextoMoq.Object);
 
             grupoAutomoveis = new GrupoAutomoveis("Picape");
-            cobranca = new Cobranca(grupoAutomoveis, "Camila", TipoPlanoEnum.PlanoDiario, 20, 0);
+            cobranca = new Cobranca(grupoAutomoveis, TipoPlanoEnum.PlanoDiario, 20, 0);
         }
 
         [TestMethod]

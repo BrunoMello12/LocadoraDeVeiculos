@@ -16,8 +16,18 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
         {
             InitializeComponent();
             this.ConfigurarDialog();
-            CarregarGrupoDeAltomoveis(grupoDeAutomoveis);
+            CarregarGrupoDeAutomoveis(grupoDeAutomoveis);
             CarregarTipoCombustivel();
+        }
+
+        private void CarregarGrupoDeAutomoveis(List<GrupoAutomoveis> grupoDeAutomoveis)
+        {
+            cbGrpAutomoveis.Items.Clear();
+
+            foreach (var item in grupoDeAutomoveis)
+            {
+                cbGrpAutomoveis.Items.Add(item);
+            }
         }
 
         public Automovel ObterAutomovel()

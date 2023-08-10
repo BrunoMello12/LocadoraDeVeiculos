@@ -47,6 +47,8 @@
             label7 = new Label();
             txtPlaca = new TextBox();
             lblPlaca = new Label();
+            txtKmAutomovel = new TextBox();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)picFotoCarro).BeginInit();
             SuspendLayout();
             // 
@@ -63,7 +65,7 @@
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnGravar.BackColor = Color.IndianRed;
             btnGravar.DialogResult = DialogResult.OK;
-            btnGravar.Location = new Point(121, 309);
+            btnGravar.Location = new Point(121, 343);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(76, 34);
             btnGravar.TabIndex = 8;
@@ -76,7 +78,7 @@
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnCancelar.BackColor = Color.IndianRed;
             btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.Location = new Point(203, 309);
+            btnCancelar.Location = new Point(203, 343);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(76, 34);
             btnCancelar.TabIndex = 9;
@@ -220,18 +222,37 @@
             // lblPlaca
             // 
             lblPlaca.AutoSize = true;
-            lblPlaca.Location = new Point(120, 268);
+            lblPlaca.Location = new Point(111, 268);
             lblPlaca.Name = "lblPlaca";
             lblPlaca.Size = new Size(41, 15);
             lblPlaca.TabIndex = 35;
             lblPlaca.Text = "Placa: ";
+            // 
+            // txtKmAutomovel
+            // 
+            txtKmAutomovel.Location = new Point(158, 294);
+            txtKmAutomovel.Name = "txtKmAutomovel";
+            txtKmAutomovel.PlaceholderText = "Inserir....";
+            txtKmAutomovel.Size = new Size(121, 23);
+            txtKmAutomovel.TabIndex = 36;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(62, 297);
+            label8.Name = "label8";
+            label8.Size = new Size(90, 15);
+            label8.TabIndex = 37;
+            label8.Text = "Km Automovel:";
             // 
             // TelaAutomovelForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SeaShell;
-            ClientSize = new Size(299, 355);
+            ClientSize = new Size(299, 389);
+            Controls.Add(txtKmAutomovel);
+            Controls.Add(label8);
             Controls.Add(txtPlaca);
             Controls.Add(lblPlaca);
             Controls.Add(txtCapacidadeEmLitros);
@@ -281,5 +302,7 @@
         private Label label7;
         private TextBox txtPlaca;
         private Label lblPlaca;
+        private TextBox txtKmAutomovel;
+        private Label label8;
     }
 }

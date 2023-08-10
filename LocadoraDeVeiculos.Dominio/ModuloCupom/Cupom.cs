@@ -46,5 +46,10 @@ namespace LocadoraDeVeiculos.Dominio.ModuloCupom
             DataValidade = registro.DataValidade;
             Parceiro = registro.Parceiro;
         }
+
+        public override string ToString()
+        {
+            return Nome;
+        }
     }
 }

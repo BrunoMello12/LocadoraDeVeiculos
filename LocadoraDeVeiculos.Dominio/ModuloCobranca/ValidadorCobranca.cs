@@ -16,7 +16,27 @@ namespace LocadoraDeVeiculos.Dominio.ModuloCobranca
                 .Must(x => x != TipoPlanoEnum.Nenhum).WithMessage("Selecione um Plano de cobrança!");
 
             RuleFor(x => x.GrupoAutomoveis)
-                .NotNull();
+                .NotEmpty()
+                .NotNull().WithMessage("É necessário selecionar um grupo de automoveis");
+
+            When(cobranca => cobranca.GrupoAutomoveis != null, () =>
+            {
+                RuleFor(cobranca => cobranca.TipoPlano)
+                    .Must((cobranca, tipoPlano) =>
+                    {
+                        if (cobranca.Id == Guid.Empty) // Inserção
+                        {
+                            return !cobranca.GrupoAutomoveis.listaDeCobrancas.Any(c =>
+                                c.TipoPlano == tipoPlano);
+                        }
+                        else // Edição
+                        {
+                            return !cobranca.GrupoAutomoveis.listaDeCobrancas.Any(c =>
+                                c.TipoPlano == tipoPlano && !c.Id.Equals(cobranca.Id));
+                        }
+                    })
+                    .WithMessage("Já existe um plano de cobrança com este tipo no grupo de automóveis.");
+            });
 
             When(x => x.TipoPlano == TipoPlanoEnum.PlanoDiario || x.TipoPlano == TipoPlanoEnum.PlanoControlador, () =>
             {

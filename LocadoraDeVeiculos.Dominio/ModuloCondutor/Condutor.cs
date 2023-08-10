@@ -23,17 +23,17 @@ namespace LocadoraDeVeiculos.Dominio.ModuloCondutor
 
         public Condutor()
         {
-            
-        }
 
-        public Condutor(Guid id, string nome)
-        {
-            Id = id;
-            Nome = nome;
         }
 
         public Condutor(string nome)
         {
+            Nome = nome;
+        }
+
+        public Condutor(Guid id, string nome)
+        {
+            this.Id = id;
             Nome = nome;
         }
 
@@ -59,6 +59,11 @@ namespace LocadoraDeVeiculos.Dominio.ModuloCondutor
             Cpf = registro.Cpf;
             Cnh = registro.Cnh;
             Validade = registro.Validade;
+        }
+
+        public override string ToString()
+        {
+            return Nome;
         }
     }
 }

@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtCupom = new TextBox();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            chListTaxasSelecionadas = new CheckedListBox();
+            chListTaxas = new CheckedListBox();
             tabPage2 = new TabPage();
             chTaxasAdicionais = new CheckedListBox();
             txtValorTotal = new TextBox();
@@ -63,18 +62,11 @@
             dtDataDevolucao = new DateTimePicker();
             cbNivelDoTanque = new ComboBox();
             label14 = new Label();
+            cbCupom = new ComboBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             SuspendLayout();
-            // 
-            // txtCupom
-            // 
-            txtCupom.Location = new Point(416, 99);
-            txtCupom.Name = "txtCupom";
-            txtCupom.ReadOnly = true;
-            txtCupom.Size = new Size(121, 23);
-            txtCupom.TabIndex = 93;
             // 
             // tabControl1
             // 
@@ -89,7 +81,7 @@
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(chListTaxasSelecionadas);
+            tabPage1.Controls.Add(chListTaxas);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
@@ -98,13 +90,13 @@
             tabPage1.Text = "Taxas Selecionadas";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // chListTaxasSelecionadas
+            // chListTaxas
             // 
-            chListTaxasSelecionadas.FormattingEnabled = true;
-            chListTaxasSelecionadas.Location = new Point(15, 15);
-            chListTaxasSelecionadas.Name = "chListTaxasSelecionadas";
-            chListTaxasSelecionadas.Size = new Size(504, 112);
-            chListTaxasSelecionadas.TabIndex = 0;
+            chListTaxas.FormattingEnabled = true;
+            chListTaxas.Location = new Point(15, 15);
+            chListTaxas.Name = "chListTaxas";
+            chListTaxas.Size = new Size(504, 112);
+            chListTaxas.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -313,6 +305,7 @@
             btnGravar.TabIndex = 70;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = false;
+            btnGravar.Click += btnGravar_Click_1;
             // 
             // btnCancelar
             // 
@@ -386,19 +379,29 @@
             label14.TabIndex = 98;
             label14.Text = "Nível do Tanque:";
             // 
+            // cbCupom
+            // 
+            cbCupom.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbCupom.Enabled = false;
+            cbCupom.FormattingEnabled = true;
+            cbCupom.Location = new Point(416, 98);
+            cbCupom.Name = "cbCupom";
+            cbCupom.Size = new Size(121, 23);
+            cbCupom.TabIndex = 100;
+            // 
             // TelaDevolucaoAluguelForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SeaShell;
             ClientSize = new Size(561, 430);
+            Controls.Add(cbCupom);
             Controls.Add(cbNivelDoTanque);
             Controls.Add(label14);
             Controls.Add(label5);
             Controls.Add(dtDataDevolucao);
             Controls.Add(label3);
             Controls.Add(txtKmPercorrido);
-            Controls.Add(txtCupom);
             Controls.Add(tabControl1);
             Controls.Add(txtValorTotal);
             Controls.Add(label2);
@@ -437,7 +440,7 @@
         private TextBox txtCupom;
         private TabControl tabControl1;
         private TabPage tabPage1;
-        private CheckedListBox chListTaxasSelecionadas;
+        private CheckedListBox chListTaxas;
         private TabPage tabPage2;
         private CheckedListBox chTaxasAdicionais;
         private TextBox txtValorTotal;
@@ -469,5 +472,6 @@
         private DateTimePicker dtDataDevolucao;
         private ComboBox cbNivelDoTanque;
         private Label label14;
+        private ComboBox cbCupom;
     }
 }

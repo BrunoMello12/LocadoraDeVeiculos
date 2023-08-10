@@ -7,11 +7,6 @@ using LocadoraDeVeiculos.Dominio.Compartilhado;
 using LocadoraDeVeiculos.Dominio.ModuloFuncionario;
 using LocadoraDeVeiculos.TestesUnitarios.Compartilhado;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LocadorDeVeiculos.TesteUnitarios.Aplicacao
 {
@@ -161,28 +156,6 @@ namespace LocadorDeVeiculos.TesteUnitarios.Aplicacao
             repositorioFuncionarioMoq.Verify(x => x.Editar(outraFuncionario), Times.Once());
         }
 
-        //[TestMethod]
-        //public void Nao_deve_editar_funcionario_caso_o_nome_ja_esteja_cadastrado() //cenário 4
-        //{
-        //    Guid id = Guid.NewGuid();
-        //    //arrange
-        //    repositorioFuncionarioMoq.Setup(x => x.SelecionarPorNome("Gabriel"))
-        //         .Returns(() =>
-        //         {
-        //             return new Funcionario(id, "Gabriel");
-        //         });
-
-        //    Funcionario novoFuncionario = new Funcionario(id, "Gabriel");
-
-        //    //action
-        //    var resultado = servicoFuncionario.Editar(novoFuncionario);
-
-        //    //assert 
-        //    resultado.Should().BeFailure();
-
-        //    repositorioFuncionarioMoq.Verify(x => x.Editar(novoFuncionario), Times.Never());
-        //}
-
         [TestMethod]
         public void Deve_tratar_erro_caso_ocorra_falha_ao_tentar_editar_funcionario() //cenário 5
         {
@@ -242,35 +215,6 @@ namespace LocadorDeVeiculos.TesteUnitarios.Aplicacao
             resultado.Should().BeFailure();
             repositorioFuncionarioMoq.Verify(x => x.Excluir(funcionario), Times.Never());
         }
-
-        //[TestMethod]
-        //public void Nao_deve_excluir_funcionario_caso_ela_esteja_relacionada_com_aluguel() //cenário 3
-        //{
-        //    Guid id = Guid.NewGuid();
-
-        //    var disciplina = new Funcionario(id, "Gabriel");
-
-        //    repositorioFuncionarioMoq.Setup(x => x.Existe(disciplina))
-        //       .Returns(() =>
-        //       {
-        //           return true;
-        //       });
-
-        //    // como configurar um método para ele lançar uma sqlexception utilizando moq
-
-        //    repositorioFuncionarioMoq.Setup(x => x.Excluir(It.IsAny<Funcionario>()))
-        //        .Throws(() =>
-        //        {
-        //            return SqlExceptionCreator.NewSqlException(errorMessage: "FK_TBAluguel_TBFuncionario");
-        //        });
-
-        //    //action
-        //    Result resultado = servicoFuncionario.Excluir(disciplina);
-
-        //    //assert 
-        //    resultado.Should().BeFailure();
-        //    resultado.Reasons[0].Message.Should().Be("Este fucnionario está relacionado com um aluguel e não pode ser excluído");
-        //}
 
         [TestMethod]
         public void Deve_tratar_erro_caso_ocorra_falha_ao_tentar_excluir_disciplina() //cenário 4

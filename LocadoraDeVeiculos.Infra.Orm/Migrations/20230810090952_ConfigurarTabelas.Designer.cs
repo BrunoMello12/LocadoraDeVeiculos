@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LocadoraDeVeiculos.Infra.Orm.Migrations
 {
     [DbContext(typeof(LocadoraDeVeiculosDbContext))]
-    [Migration("20230809213306_ConfigurarTabelas")]
+    [Migration("20230810090952_ConfigurarTabelas")]
     partial class ConfigurarTabelas
     {
         /// <inheritdoc />
@@ -37,13 +37,12 @@ namespace LocadoraDeVeiculos.Infra.Orm.Migrations
 
                     b.HasIndex("ListaTaxasSelecionadasId");
 
-                    b.ToTable("AluguelTaxasServicos");
+                    b.ToTable("TBAluguel_TaxasServicos", (string)null);
                 });
 
             modelBuilder.Entity("LocadoraDeVeiculos.Dominio.ModuloAluguel.Aluguel", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("AutomovelId")
@@ -55,11 +54,17 @@ namespace LocadoraDeVeiculos.Infra.Orm.Migrations
                     b.Property<Guid>("CobrancaId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<decimal>("CombustivelNoTanque")
+                        .HasColumnType("decimal");
+
                     b.Property<Guid>("CondutorId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CupomId")
+                    b.Property<Guid?>("CupomId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("DataDevolucao")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DataLocacao")
                         .HasColumnType("datetime2");
@@ -74,6 +79,9 @@ namespace LocadoraDeVeiculos.Infra.Orm.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("KmAutomovel")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("KmPercorrida")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("ValorTotalPrevisto")
@@ -95,7 +103,7 @@ namespace LocadoraDeVeiculos.Infra.Orm.Migrations
 
                     b.HasIndex("GrupoAutomoveisId");
 
-                    b.ToTable("Aluguel");
+                    b.ToTable("TBAluguel", (string)null);
                 });
 
             modelBuilder.Entity("LocadoraDeVeiculos.Dominio.ModuloAutomovel.Automovel", b =>
@@ -118,6 +126,9 @@ namespace LocadoraDeVeiculos.Infra.Orm.Migrations
 
                     b.Property<Guid>("GrupoDoAutomovelId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("KmAutomovel")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Marca")
                         .IsRequired()
@@ -208,10 +219,6 @@ namespace LocadoraDeVeiculos.Infra.Orm.Migrations
 
                     b.Property<decimal?>("KmDisponivel")
                         .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("PrecoDiaria")
                         .HasColumnType("decimal(18,2)");
@@ -391,44 +398,50 @@ namespace LocadoraDeVeiculos.Infra.Orm.Migrations
                     b.HasOne("LocadoraDeVeiculos.Dominio.ModuloAutomovel.Automovel", "Automovel")
                         .WithMany()
                         .HasForeignKey("AutomovelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired()
+                        .HasConstraintName("FK_TBAluguel_TBAutomovel");
 
                     b.HasOne("LocadoraDeVeiculos.Dominio.ModuloCliente.Cliente", "Cliente")
                         .WithMany()
                         .HasForeignKey("ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired()
+                        .HasConstraintName("FK_TBAluguel_TBCliente");
 
                     b.HasOne("LocadoraDeVeiculos.Dominio.ModuloCobranca.Cobranca", "Cobranca")
                         .WithMany()
                         .HasForeignKey("CobrancaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired()
+                        .HasConstraintName("FK_TBAluguel_TBCobranca");
 
                     b.HasOne("LocadoraDeVeiculos.Dominio.ModuloCondutor.Condutor", "Condutor")
                         .WithMany()
                         .HasForeignKey("CondutorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired()
+                        .HasConstraintName("FK_TBAluguel_TBCondutor");
 
                     b.HasOne("LocadoraDeVeiculos.Dominio.ModuloCupom.Cupom", "Cupom")
                         .WithMany()
                         .HasForeignKey("CupomId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .HasConstraintName("FK_TBAluguel_TBCupom");
 
                     b.HasOne("LocadoraDeVeiculos.Dominio.ModuloFuncionario.Funcionario", "Funcionario")
                         .WithMany()
                         .HasForeignKey("FuncionarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired()
+                        .HasConstraintName("FK_TBAluguel_TBFuncionario");
 
                     b.HasOne("LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis.GrupoAutomoveis", "GrupoAutomoveis")
                         .WithMany()
                         .HasForeignKey("GrupoAutomoveisId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired()
+                        .HasConstraintName("FK_TBAluguel_TBGrupoAutomoveis");
 
                     b.Navigation("Automovel");
 

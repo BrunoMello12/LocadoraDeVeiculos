@@ -11,7 +11,6 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
     {
         private IRepositorioGrupoAutomoveis repositorioGrupoAutomoveis;
         private IRepositorioAutomovel repositorioAutomovel;
-        private RepositorioPrecosJson repositorioPrecosJson;
 
         private ServicoAutomovel servicoAutomovel;
 
@@ -20,13 +19,11 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAutomovel
         public ControladorAutomovel(
             IRepositorioAutomovel repositorioAutomovel,
             IRepositorioGrupoAutomoveis repositorioGrupoAutomoveis,
-            ServicoAutomovel servicoAutomovel,
-            RepositorioPrecosJson repositorioPrecosJson)
+            ServicoAutomovel servicoAutomovel)
         {
             this.repositorioAutomovel = repositorioAutomovel;
             this.repositorioGrupoAutomoveis = repositorioGrupoAutomoveis;
             this.servicoAutomovel = servicoAutomovel;
-            this.repositorioPrecosJson = repositorioPrecosJson;
         }
 
         public override void Inserir()

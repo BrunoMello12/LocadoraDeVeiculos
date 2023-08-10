@@ -1,18 +1,14 @@
 ﻿using FluentValidation.TestHelper;
 using LocadoraDeVeiculos.Dominio.ModuloAluguel;
-using LocadoraDeVeiculos.Dominio.ModuloAutomovel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloAluguel
 {
     [TestClass]
 
     public class ValidadorAluguelTest
-    { 
+
+    {
+
         private Aluguel aluguel;
 
         private ValidadorAluguel validador;
@@ -70,22 +66,6 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloAluguel
             var resultado = validador.TestValidate(aluguel);
 
             resultado.ShouldHaveValidationErrorFor(x => x.Automovel);
-        }
-
-        //[TestMethod]
-        //public void Km_do_Veiculo_deve_ser_obrigatorio()
-        //{
-        //    var resultado = validador.TestValidate(aluguel);
-
-        //    resultado.ShouldHaveValidationErrorFor(x => x.KmAutomovel);
-        //}
-
-        [TestMethod]
-        public void Cupom_deve_ser_obrigatorio()
-        {
-            var resultado = validador.TestValidate(aluguel);
-
-            resultado.ShouldHaveValidationErrorFor(x => x.Cupom);
         }
     }
 }

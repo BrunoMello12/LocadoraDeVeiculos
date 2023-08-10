@@ -2,11 +2,6 @@
 using LocadoraDeVeiculos.Dominio.ModuloAutomovel;
 using LocadoraDeVeiculos.Dominio.ModuloCobranca;
 using LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LocadorDeVeiculos.TesteUnitarios.Dominio.ModuloGrupoAutomoveis
 {
@@ -20,16 +15,16 @@ namespace LocadorDeVeiculos.TesteUnitarios.Dominio.ModuloGrupoAutomoveis
         public GrupoAutomoveisTeste()
         {
             grupoAutomoveis = new GrupoAutomoveis("Grupo01");
-            automovel1 = new Automovel("Ford", "AAA-3333", "Preto", "FordK", TipoCombustivelEnum.Gasolina, 50, 2010);
-            cobranca01 = new Cobranca(grupoAutomoveis, "Camila", TipoPlanoEnum.PlanoDiario, 20, 10);
+            automovel1 = new Automovel(1000, "Ford", "AAA-3333", "Preto", "FordK", TipoCombustivelEnum.Gasolina, 50, 2010);
+            cobranca01 = new Cobranca(grupoAutomoveis, TipoPlanoEnum.PlanoDiario, 20, 10);
         }
 
         [TestMethod]
         public void Teste_Permitir_Inserir_Automoveis()
         {
             // Arrange
-            var automovel2 = new Automovel("Ford", "BBB-4333", "Verde", "FordK", TipoCombustivelEnum.Gasolina, 50, 2010);
-            var automovel3 = new Automovel("Ford", "CCC-5333", "Branco", "FordK", TipoCombustivelEnum.Gasolina, 50, 2010);
+            var automovel2 = new Automovel(1000, "Ford", "BBB-4333", "Verde", "FordK", TipoCombustivelEnum.Gasolina, 50, 2010);
+            var automovel3 = new Automovel(1000, "Ford", "CCC-5333", "Branco", "FordK", TipoCombustivelEnum.Gasolina, 50, 2010);
 
             // Act
             grupoAutomoveis.listaDeAutomoveis.Add(automovel1);
@@ -39,18 +34,14 @@ namespace LocadorDeVeiculos.TesteUnitarios.Dominio.ModuloGrupoAutomoveis
             // Assert
             grupoAutomoveis.listaDeAutomoveis.Count.Should().Be(3);
 
-            //Assert.AreEqual(3, grupoAutomoveis.listaDeAutomoveis.Count);
-            //CollectionAssert.Contains(grupoAutomoveis.listaDeAutomoveis, automovel1);
-            //CollectionAssert.Contains(grupoAutomoveis.listaDeAutomoveis, automovel2);
-            //CollectionAssert.Contains(grupoAutomoveis.listaDeAutomoveis, automovel3);
         }
 
         [TestMethod]
         public void Teste_Permitir_Inserir_Cobrancas()
         {
             // Arrange
-            var cobranca02 = new Cobranca(grupoAutomoveis, "Camila", TipoPlanoEnum.PlanoDiario, 30, 20);
-            var cobranca03 = new Cobranca(grupoAutomoveis, "Camila", TipoPlanoEnum.PlanoDiario, 40, 30);
+            var cobranca02 = new Cobranca(grupoAutomoveis, TipoPlanoEnum.PlanoDiario, 30, 20);
+            var cobranca03 = new Cobranca(grupoAutomoveis, TipoPlanoEnum.PlanoDiario, 40, 30);
 
             // Act
             grupoAutomoveis.listaDeCobrancas.Add(cobranca01);

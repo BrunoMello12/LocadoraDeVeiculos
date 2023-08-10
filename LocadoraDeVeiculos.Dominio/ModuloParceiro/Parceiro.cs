@@ -30,10 +30,6 @@ namespace LocadoraDeVeiculos.Dominio.ModuloParceiro
             Nome = registro.Nome;
         }
 
-        public override string ToString()
-        {
-            return Nome;
-        }
 
         public bool AdicionarCupom(Cupom cupom)
         {
@@ -43,6 +39,10 @@ namespace LocadoraDeVeiculos.Dominio.ModuloParceiro
             Cupons.Add(cupom);
 
             return true;
+        }
+        public override string ToString()
+        {
+            return Nome;
         }
     }
 }

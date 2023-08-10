@@ -1,6 +1,5 @@
 ﻿using FluentValidation;
 using LocadoraDeVeiculos.Dominio.Compartilhado;
-using System;
 
 namespace LocadoraDeVeiculos.Dominio.ModuloCupom
 {

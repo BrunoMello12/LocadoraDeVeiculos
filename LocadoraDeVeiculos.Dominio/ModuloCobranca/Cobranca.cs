@@ -1,17 +1,10 @@
 ﻿using LocadoraDeVeiculos.Dominio.Compartilhado;
 using LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LocadoraDeVeiculos.Dominio.ModuloCobranca
 {
     public class Cobranca : EntidadeBase<Cobranca>
     {
-        public string Nome { get; set; }
-
         public GrupoAutomoveis GrupoAutomoveis { get; set; }
 
         public TipoPlanoEnum TipoPlano { get; set; }
@@ -27,30 +20,27 @@ namespace LocadoraDeVeiculos.Dominio.ModuloCobranca
 
         }
 
-        public Cobranca(GrupoAutomoveis grupoAutomoveis, string nome, TipoPlanoEnum tipoPlano, decimal precoDiaria, decimal precoPorKm)
+        public Cobranca(GrupoAutomoveis grupoAutomoveis, TipoPlanoEnum tipoPlano, decimal precoDiaria, decimal precoPorKm)
         {
             GrupoAutomoveis = grupoAutomoveis;
-            Nome = nome;
             TipoPlano = tipoPlano;
             PrecoDiaria = precoDiaria;
             PrecoPorKm = precoPorKm;
         }
 
-        public Cobranca(GrupoAutomoveis grupoAutomoveis, string nome, TipoPlanoEnum tipoPlano, decimal precoDiaria, decimal precoPorKm, decimal kmDisponivel)
+        public Cobranca(GrupoAutomoveis grupoAutomoveis, TipoPlanoEnum tipoPlano, decimal precoDiaria, decimal precoPorKm, decimal kmDisponivel)
         {
             GrupoAutomoveis = grupoAutomoveis;
-            Nome = nome;
             TipoPlano = tipoPlano;
             PrecoDiaria = precoDiaria;
             PrecoPorKm = precoPorKm;
             KmDisponivel = kmDisponivel;
         }
 
-        public Cobranca(Guid id, GrupoAutomoveis grupoAutomoveis, string nome, TipoPlanoEnum tipoPlano, decimal precoDiaria)
+        public Cobranca(Guid id, GrupoAutomoveis grupoAutomoveis, TipoPlanoEnum tipoPlano, decimal precoDiaria)
         {
             Id = id;
             GrupoAutomoveis = grupoAutomoveis;
-            Nome = nome;
             TipoPlano = tipoPlano;
             PrecoDiaria = precoDiaria;
         }
@@ -66,7 +56,7 @@ namespace LocadoraDeVeiculos.Dominio.ModuloCobranca
 
         public override string ToString()
         {
-            return Nome;
+            return TipoPlano.ToString();
         }
     }
 }

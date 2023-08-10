@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using LocadoraDeVeiculos.Dominio.ModuloFuncionario;
 
 namespace LocadoraDeVeiculos.Dominio.ModuloCliente
 {

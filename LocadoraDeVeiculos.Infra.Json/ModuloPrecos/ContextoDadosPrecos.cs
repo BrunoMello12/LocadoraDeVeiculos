@@ -5,8 +5,8 @@ using LocadoraDeVeiculos.Infra.Json.Serializadores;
 namespace LocadoraDeVeiculos.Infra.Json.ModuloPrecos
 {
     [Serializable]
-    public class ContextoDadosPrecos 
-    {         
+    public class ContextoDadosPrecos
+    {
         private readonly SerializadorDadosEmJson serializador;
 
         public ContextoDadosPrecos()

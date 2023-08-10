@@ -24,13 +24,13 @@ namespace LocadoraDeVeiculos.Infra.Orm.ModuloAutomovel
         {
             if (incluirGrupoDoAutomovel)
                 return registros.Include(x => x.GrupoDoAutomovel).ToList();
-
             return registros.ToList();
         }
 
         public List<Automovel> SelecionarPorGrupo(GrupoAutomoveis grupo)
         {
             return registros.Where(x => x.GrupoDoAutomovel == grupo).ToList();
+
         }
     }
 }

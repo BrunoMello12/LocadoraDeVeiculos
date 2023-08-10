@@ -48,11 +48,11 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace LocadoraDeVeiculos.WinFormsApp.Compartilhado.IoC
 {
-    public class IoC_ComInjecaoDependencia : IoC
+    public class IoC_ComInjecaoDespendecia : IoC
     {
         private ServiceProvider container;
 
-        public IoC_ComInjecaoDependencia()
+        public IoC_ComInjecaoDespendecia()
         {
             var configuracao = new ConfigurationBuilder()
                .SetBasePath(Directory.GetCurrentDirectory())
@@ -68,12 +68,12 @@ namespace LocadoraDeVeiculos.WinFormsApp.Compartilhado.IoC
                 OptionsBuilder.UseSqlServer(connectionString);
             });
 
+            servicos.AddTransient<RepositorioPrecosJson>();
             servicos.AddTransient<ControladorAluguel>();
             servicos.AddTransient<ServicoAluguel>();
             servicos.AddTransient<IValidadorAluguel, ValidadorAluguel>();
             servicos.AddTransient<IRepositorioAluguel, RepositorioAluguelEmOrm>();
 
-            servicos.AddTransient<RepositorioPrecosJson>();
             servicos.AddTransient<ControladorAutomovel>();
             servicos.AddTransient<ServicoAutomovel>();
             servicos.AddTransient<IValidadorAutomovel, ValidadorAutomovel>();

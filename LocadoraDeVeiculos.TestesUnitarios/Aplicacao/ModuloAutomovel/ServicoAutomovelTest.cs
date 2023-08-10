@@ -3,11 +3,19 @@ using FluentResults;
 using FluentResults.Extensions.FluentAssertions;
 using FluentValidation.Results;
 using LocadoraDeVeiculos.Aplicacao.ModuloAutomovel;
+using LocadoraDeVeiculos.Aplicacao.ModuloCliente;
 using LocadoraDeVeiculos.Dominio.Compartilhado;
 using LocadoraDeVeiculos.Dominio.ModuloAutomovel;
+using LocadoraDeVeiculos.Dominio.ModuloCliente;
+using LocadoraDeVeiculos.Dominio.ModuloCupom;
 using LocadoraDeVeiculos.Dominio.ModuloGrupoAutomoveis;
 using LocadoraDeVeiculos.TestesUnitarios.Compartilhado;
 using Moq;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloAutomovel
 {
@@ -31,7 +39,7 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloAutomovel
             servicoAutomovel = new ServicoAutomovel(repositorioAutomovel.Object, validadorMoq.Object, contextoMoq.Object);
 
             grupoAutomoveis = new GrupoAutomoveis("GrupoA");
-            automovel = new Automovel("AAA-1234", "Fiat", "azul", "4 portas", TipoCombustivelEnum.Gasolina, 100, 2010, grupoAutomoveis);
+            automovel = new Automovel(1000, "AAA-1234", "Fiat", "azul", "4 portas", TipoCombustivelEnum.Gasolina, 100, 2010, grupoAutomoveis);
         }
 
 
@@ -193,31 +201,6 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloAutomovel
             resultado.Should().BeFailure();
             resultado.Reasons[0].Message.Should().Be("Este automóvel não pode ser excluído");
         }
-
-        ////[TestMethod]
-        ////public void Nao_deve_excluir_cliente_caso_ele_esteja_relacionado_com_aluguel() //cenário 4
-        ////{
-        ////    var cliente = new Cliente("JOANA");
-
-        ////    repositorioClienteMoq.Setup(x => x.Existe(cliente))
-        ////       .Returns(() =>
-        ////       {
-        ////           return true;
-        ////       });
-
-        ////    repositorioClienteMoq.Setup(x => x.Excluir(It.IsAny<Cliente>()))
-        ////        .Throws(() =>
-        ////        {
-        ////            return SqlExceptionCreator.NewSqlException(errorMessage: "FK_TBAluguel_TBCliente");
-        ////        });
-
-        ////    //action
-        ////    Result resultado = servicoCliente.Excluir(cliente);
-
-        ////    //assert 
-        ////    resultado.Should().BeFailure();
-        ////    resultado.Reasons[0].Message.Should().Be("Este cliente está relacionada com um aluguel e não pode ser excluído");
-        ////}
     }
 }
 

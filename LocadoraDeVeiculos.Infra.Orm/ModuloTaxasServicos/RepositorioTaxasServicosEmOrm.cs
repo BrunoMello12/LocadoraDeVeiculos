@@ -14,5 +14,6 @@ namespace LocadoraDeVeiculos.Infra.Orm.ModuloTaxasServicos
         {
             return registros.FirstOrDefault(x => x.Nome == nome);
         }
+
     }
 }

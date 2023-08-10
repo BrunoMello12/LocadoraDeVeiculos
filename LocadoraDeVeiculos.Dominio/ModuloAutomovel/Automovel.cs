@@ -23,17 +23,14 @@ namespace LocadoraDeVeiculos.Dominio.ModuloAutomovel
 
         public GrupoAutomoveis GrupoDoAutomovel { get; set; }
 
+        public decimal KmAutomovel { get; set; }
+
         public Automovel()
         {
         }
-
-        public Automovel(string placa, string marca, string cor, string modelo, TipoCombustivelEnum tipoCombustivel, decimal capacidadeLitros, int ano, GrupoAutomoveis grupoDoAutomovel) : this(placa, marca, cor, modelo, tipoCombustivel, capacidadeLitros, ano)
+        public Automovel(decimal kmAutomovel, string placa, string marca, string cor, string modelo, TipoCombustivelEnum tipoCombustivel, decimal capacidadeLitros, int ano)
         {
-            GrupoDoAutomovel = grupoDoAutomovel;
-        }
-
-        public Automovel(string placa, string marca, string cor, string modelo, TipoCombustivelEnum tipoCombustivel, decimal capacidadeLitros, int ano)
-        {
+            KmAutomovel = kmAutomovel;
             Placa = placa;
             Marca = marca;
             Cor = cor;
@@ -43,8 +40,15 @@ namespace LocadoraDeVeiculos.Dominio.ModuloAutomovel
             Ano = ano;
         }
 
-        public Automovel(string placa, string marca, string cor, string modelo, TipoCombustivelEnum tipoCombustivel, decimal capacidadeLitros, int ano, Byte[] foto)
+        public Automovel(decimal kmAutomovel, string placa, string marca, string cor, string modelo, TipoCombustivelEnum tipoCombustivel, decimal capacidadeLitros, int ano, GrupoAutomoveis grupoDoAutomovel) : this(kmAutomovel, placa, marca, cor, modelo, tipoCombustivel, capacidadeLitros, ano)
         {
+            GrupoDoAutomovel = grupoDoAutomovel;
+        }
+
+
+        public Automovel(decimal kmAutomovel, string placa, string marca, string cor, string modelo, TipoCombustivelEnum tipoCombustivel, decimal capacidadeLitros, int ano, Byte[] foto)
+        {
+            KmAutomovel = kmAutomovel;
             Placa = placa;
             Marca = marca;
             Cor = cor;
@@ -63,8 +67,13 @@ namespace LocadoraDeVeiculos.Dominio.ModuloAutomovel
             Modelo = registro.Modelo;
             TipoCombustivel = registro.TipoCombustivel;
             CapacidadeLitros = registro.CapacidadeLitros;
+            Foto = registro.Foto;
             Ano = registro.Ano;
-            Foto = registro.Foto;   
+        }
+
+        public override string ToString()
+        {
+            return Modelo;
         }
     }
 }

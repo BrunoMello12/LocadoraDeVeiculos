@@ -13,8 +13,6 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Dominio.ModuloCondutor
     [TestClass]
     public class ValidadorCondutorTeste
     {
-        //string nome, string email, string telefone, TipoClienteEnum tipoCliente, string cpf, string cnpj, string estado, string cidade, string bairro, string rua, int numeroCasa
-
         private Condutor condutor;
         private ValidadorCondutor validador;
 

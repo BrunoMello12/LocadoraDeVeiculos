@@ -276,7 +276,6 @@
             btnPdf.Name = "btnPdf";
             btnPdf.Padding = new Padding(7);
             btnPdf.Size = new Size(50, 50);
-            btnPdf.Text = "toolStripButton1";
             // 
             // btnEmail
             // 
@@ -288,7 +287,6 @@
             btnEmail.Name = "btnEmail";
             btnEmail.Padding = new Padding(7);
             btnEmail.Size = new Size(50, 50);
-            btnEmail.Text = "toolStripButton1";
             // 
             // toolStripSeparator2
             // 

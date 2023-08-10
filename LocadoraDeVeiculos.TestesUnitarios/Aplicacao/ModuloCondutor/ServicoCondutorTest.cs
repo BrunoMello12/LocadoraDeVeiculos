@@ -260,30 +260,5 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloCondutor
             resultado.Reasons[0].Message.Should().Be("Falha ao tentar excluir Condutor");
         }
 
-        //[TestMethod]
-        //public void Nao_deve_excluir_condutor_caso_ele_esteja_relacionado_com_aluguel() //cenário 4
-        //{
-        //    var condutor = new Condutor(cliente, true, "Miguel", "miguel@exemplo.com", "47 55555-5555", "123.456.789-01", "98765432", DateTime.Now);
-
-        //    repositorioCondutorMoq.Setup(x => x.Existe(condutor))
-        //        .Returns(() =>
-        //        {
-        //            return true;
-        //        });
-
-        //    repositorioCondutorMoq.Setup(x => x.Excluir(It.IsAny<Condutor>()))
-        //        .Throws(() =>
-        //        {
-        //            return SqlExceptionCreator.NewSqlException(errorMessage: "FK_TBAluguel_TBCondutor");
-        //        });
-
-        //    //action
-        //    Result resultado = servicoCondutor.Excluir(condutor);
-
-        //    //assert 
-        //    resultado.Should().BeFailure();
-        //    resultado.Reasons[0].Message.Should().Be("Este condutor está relacionada com um aluguel e não pode ser excluído");
-        //}
-
     }
 }

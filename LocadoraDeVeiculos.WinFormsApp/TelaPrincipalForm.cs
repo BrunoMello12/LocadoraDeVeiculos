@@ -29,7 +29,7 @@ namespace LocadoraDeVeiculos.WinFormsApp
             labelRodape.Text = string.Empty;
             lblTipoCadastro.Text = string.Empty;
 
-            IoC = new IoC_ComInjecaoDependencia();
+            IoC = new IoC_ComInjecaoDespendecia();
         }
 
 

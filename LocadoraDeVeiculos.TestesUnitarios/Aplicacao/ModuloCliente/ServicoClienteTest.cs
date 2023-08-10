@@ -254,35 +254,9 @@ namespace LocadoraDeVeiculos.TestesUnitarios.Aplicacao.ModuloCliente
             //action
             Result resultado = servicoCliente.Excluir(cliente);
 
-
             //assert
             resultado.Should().BeFailure();
             resultado.Reasons[0].Message.Should().Be("Falha ao tentar excluir cliente");
         }
-
-        //[TestMethod]
-        //public void Nao_deve_excluir_cliente_caso_ele_esteja_relacionado_com_aluguel() //cenário 4
-        //{
-        //    var cliente = new Cliente("JOANA");
-
-        //    repositorioClienteMoq.Setup(x => x.Existe(cliente))
-        //       .Returns(() =>
-        //       {
-        //           return true;
-        //       });
-
-        //    repositorioClienteMoq.Setup(x => x.Excluir(It.IsAny<Cliente>()))
-        //        .Throws(() =>
-        //        {
-        //            return SqlExceptionCreator.NewSqlException(errorMessage: "FK_TBAluguel_TBCliente");
-        //        });
-
-        //    //action
-        //    Result resultado = servicoCliente.Excluir(cliente);
-
-        //    //assert 
-        //    resultado.Should().BeFailure();
-        //    resultado.Reasons[0].Message.Should().Be("Este cliente está relacionada com um aluguel e não pode ser excluído");
-        //}
     }
 }

@@ -35,9 +35,6 @@ namespace LocadoraDeVeiculos.Dominio.ModuloAluguel
                 .NotNull().WithMessage("A Data de Devolução Prevista deve ser informada.")
                 .GreaterThanOrEqualTo(x => x.DataLocacao).WithMessage("A Devolução Prevista deve ser após a Data de Locação.");
 
-            RuleFor(x => x.Cupom)
-                .NotNull().WithMessage("O Cupom deve ser informado.");
-
             RuleFor(x => x.ValorTotalPrevisto)
                 .GreaterThanOrEqualTo(0).WithMessage("O Valor Total Previsto deve ser maior ou igual a 0.");
         }

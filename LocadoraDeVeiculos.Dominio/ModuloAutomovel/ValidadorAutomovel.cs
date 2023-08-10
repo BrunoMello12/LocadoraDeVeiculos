@@ -25,6 +25,9 @@ namespace LocadoraDeVeiculos.Dominio.ModuloAutomovel
             RuleFor(x => x.TipoCombustivel)
                 .NotNull().WithMessage("O Tipo de Combustível do Automóvel deve ser informado.");
 
+            RuleFor(x => x.KmAutomovel)
+                .NotNull().WithMessage("O Km do Automóvel deve ser informado.");
+
             RuleFor(x => x.CapacidadeLitros)
                 .NotNull()
                 .WithMessage("A Capacidade em Litros do Automóvel deve ser informada.")
