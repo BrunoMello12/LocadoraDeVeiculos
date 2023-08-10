@@ -201,5 +201,13 @@ namespace LocadoraDeVeiculos.WinFormsApp.ModuloAluguel
                 CarregarAlugueis();
             }
         }
+
+        public override void Email()
+        {
+            TelaEnviarEmailForm tela = new TelaEnviarEmailForm();
+
+            DialogResult resultado = tela.ShowDialog();
+        }
+
     }
 }
